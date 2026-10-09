@@ -46,7 +46,7 @@ C {gnd.sym} 140 50 0 0 {name=l10 lab=0}
 C {vdd.sym} -30 -290 0 0 {name=l11 lab=dvdd}
 C {vdd.sym} 140 -200 3 0 {name=l12 lab=dvdd}
 C {iopin.sym} 70 -30 3 0 {name=p5 lab=vdd}
-C {iopin.sym} 140 -30 3 0 {name=p6 lab=vdd}
+C {iopin.sym} 140 -30 3 0 {name=p6 lab=dvdd}
 C {simulator_commands_shown.sym} -450 -210 0 0 {
 name=Libs_Ngspice
 simulator=ngspice
@@ -56,12 +56,16 @@ value="
 .lib cornerMOShv.lib mos_tt
 .lib cornerRES.lib res_typ
 .lib cornerDIO.lib dio_tt
+.lib cornerPNP.lib typ
+.lib cornerCAP.lib cap_typ
 "
       }
-C {simulator_commands_shown.sym} -450 -500 0 0 {name=COMMANDS
+C {simulator_commands_shown.sym} -450 -560 0 0 {name=COMMANDS
 simulator=ngspice
 only_toplevel=false 
 value="
+.include $PDK_ROOT/ihp-sg13cmos5l/libs.ref/sg13cmos5l_stdcell/spice/sg13cmos5l_stdcell.spice
+
 .option
 + reltol=1e-5
 + abstol=1e-14
