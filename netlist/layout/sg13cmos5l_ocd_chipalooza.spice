@@ -1,4 +1,802 @@
-* NGSPICE file created from chipalooza_frame.ext - technology: ihp-sg13cmos5l
+* NGSPICE file created from sg13cmos5l_ocd_chipalooza.ext - technology: ihp-sg13cmos5l
+
+.subckt sg13cmos5l_SecondaryProtection core pad iovss iovdd
+X0 core iovdd dpantenna l=0.64u w=4.98u
+X1 core pad iovss rppd l=2u w=1u
+X2 iovss core dantenna l=3.1u w=0.64u
+.ends
+
+.subckt sg13cmos5l_DCPDiode anode cathode guard anode_uq0
+X0 anode_uq0 cathode dpantenna l=1.26u w=27.78u
+X1 anode cathode dpantenna l=1.26u w=27.78u
+.ends
+
+.subckt sg13cmos5l_Clamp_P20N0D iovdd iovss pad pad_uq0 pad_uq1 pad_uq2 pad_uq3 pad_uq4
++ pad_uq5 pad_uq6 pad_uq7 pad_uq8
+X0 iovdd a_5044_476# pad_uq3 iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X1 pad_uq5 a_5044_476# iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+X2 iovdd a_5044_476# pad_uq1 iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X3 pad_uq7 a_5044_476# iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+X4 pad_uq6 a_5044_476# iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+X5 iovdd a_5044_476# pad_uq2 iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X6 a_5044_476# iovdd iovdd rppd l=12.9u w=0.5u
+X7 pad_uq6 a_5044_476# iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+X8 iovdd a_5044_476# pad_uq6 iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X9 pad_uq2 a_5044_476# iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+X10 iovdd a_5044_476# pad iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X11 iovdd a_5044_476# pad_uq6 iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X12 pad_uq2 a_5044_476# iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+X13 iovdd a_5044_476# pad_uq5 iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X14 iovdd a_5044_476# pad_uq1 iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X15 pad_uq3 a_5044_476# iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+X16 pad_uq1 a_5044_476# iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+X17 iovdd a_5044_476# pad_uq7 iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X18 pad_uq0 a_5044_476# iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+X19 iovdd a_5044_476# pad_uq3 iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X20 pad_uq7 a_5044_476# iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+X21 iovdd a_5044_476# pad_uq0 iovdd sg13_hv_pmos ad=3.1302p pd=14.26u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X22 pad_uq8 a_5044_476# iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=3.1302p ps=14.26u w=6.66u l=0.6u
+X23 pad_uq8 a_5044_476# iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=3.1302p ps=14.26u w=6.66u l=0.6u
+X24 iovdd a_5044_476# pad iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X25 pad_uq4 a_5044_476# iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+X26 iovdd a_5044_476# pad_uq7 iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X27 pad_uq3 a_5044_476# iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+X28 iovdd a_5044_476# pad_uq8 iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X29 pad_uq5 a_5044_476# iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+X30 pad_uq0 a_5044_476# iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+X31 iovdd a_5044_476# pad_uq0 iovdd sg13_hv_pmos ad=3.1302p pd=14.26u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X32 pad a_5044_476# iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+X33 iovdd a_5044_476# pad_uq8 iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X34 iovdd a_5044_476# pad_uq4 iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X35 iovdd a_5044_476# pad_uq2 iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X36 iovdd a_5044_476# pad_uq4 iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X37 pad_uq4 a_5044_476# iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+X38 pad a_5044_476# iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+X39 iovdd a_5044_476# pad_uq5 iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X40 pad_uq1 a_5044_476# iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+.ends
+
+.subckt sg13cmos5l_DCNDiode anode cathode guard cathode_uq0
+X0 anode cathode_uq0 dantenna l=1.26u w=27.78u
+X1 anode cathode dantenna l=1.26u w=27.78u
+.ends
+
+.subckt sg13cmos5l_Clamp_N20N0D iovss pad pad_uq0 pad_uq1 pad_uq2 pad_uq3 pad_uq4
++ pad_uq5 pad_uq6 pad_uq7 pad_uq8 w_n124_n124#
+X0 pad_uq5 a_5044_476# iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X1 iovss a_5044_476# pad_uq1 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X2 pad_uq6 a_5044_476# iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X3 iovss a_5044_476# pad_uq2 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X4 a_5044_476# iovss iovss rppd l=3.54u w=0.5u
+X5 iovss a_5044_476# pad_uq6 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X6 pad_uq2 a_5044_476# iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X7 pad_uq3 a_5044_476# iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X8 iovss a_5044_476# pad_uq7 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X9 pad_uq0 a_5044_476# iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X10 iovss a_5044_476# pad_uq3 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X11 pad_uq7 a_5044_476# iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X12 iovss a_5044_476# pad_uq0 iovss sg13_hv_nmos ad=2.068p pd=9.74u as=2.596p ps=5.58u w=4.4u l=0.6u
+X13 pad_uq8 a_5044_476# iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=2.068p ps=9.74u w=4.4u l=0.6u
+X14 iovss a_5044_476# pad iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X15 pad_uq4 a_5044_476# iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X16 iovss a_5044_476# pad_uq8 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X17 pad a_5044_476# iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X18 iovss a_5044_476# pad_uq4 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X19 iovss a_5044_476# pad_uq5 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X20 pad_uq1 a_5044_476# iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+.ends
+
+.subckt sg13cmos5l_IOPadAnalog pad padres vdd iovdd iovss iovdd_uq0 sg13cmos5l_DCNDiode_0/guard
++ vss
+Xsg13cmos5l_SecondaryProtection_0 padres pad vss iovdd sg13cmos5l_SecondaryProtection
+Xsg13cmos5l_DCPDiode_0 pad iovdd_uq0 vss pad sg13cmos5l_DCPDiode
+Xsg13cmos5l_Clamp_P20N0D_0 iovdd_uq0 vss pad pad pad pad pad pad pad pad pad pad sg13cmos5l_Clamp_P20N0D
+Xsg13cmos5l_DCNDiode_0 vss pad sg13cmos5l_DCNDiode_0/guard pad sg13cmos5l_DCNDiode
+Xsg13cmos5l_Clamp_N20N0D_0 vss pad pad pad pad pad pad pad pad pad pad sg13cmos5l_DCNDiode_0/guard
++ sg13cmos5l_Clamp_N20N0D
+.ends
+
+.subckt sg13cmos5l_IOPadVss vdd vss iovdd sg13cmos5l_DCNDiode_0/guard
+Xsg13cmos5l_DCPDiode_0 vss iovdd vss vss sg13cmos5l_DCPDiode
+Xsg13cmos5l_DCNDiode_0 vss vss sg13cmos5l_DCNDiode_0/guard vss sg13cmos5l_DCNDiode
+.ends
+
+.subckt sg13cmos5l_Clamp_P8N8D gate iovdd iovss pad pad_uq0 pad_uq1 pad_uq2
+X0 iovdd gate pad iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X1 pad_uq2 gate iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=3.1302p ps=14.26u w=6.66u l=0.6u
+X2 iovdd gate pad_uq0 iovdd sg13_hv_pmos ad=3.1302p pd=14.26u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X3 gate iovdd dpantenna l=0.48u w=0.48u
+X4 pad_uq0 gate iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+X5 pad_uq0 gate iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+X6 iovdd gate pad_uq2 iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X7 pad gate iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+X8 iovdd gate pad iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X9 pad_uq1 gate iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+X10 pad gate iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+X11 pad_uq2 gate iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=3.1302p ps=14.26u w=6.66u l=0.6u
+X12 iovdd gate pad_uq1 iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X13 iovdd gate pad_uq0 iovdd sg13_hv_pmos ad=3.1302p pd=14.26u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X14 iovdd gate pad_uq1 iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+X15 pad_uq1 gate iovdd iovdd sg13_hv_pmos ad=3.9294p pd=7.84u as=2.1312p ps=7.3u w=6.66u l=0.6u
+X16 iovdd gate pad_uq2 iovdd sg13_hv_pmos ad=2.1312p pd=7.3u as=3.9294p ps=7.84u w=6.66u l=0.6u
+.ends
+
+.subckt sg13cmos5l_Clamp_N8N8D gate iovss pad pad_uq0 pad_uq1 pad_uq2 w_n124_n124#
+X0 pad_uq2 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=2.068p ps=9.74u w=4.4u l=0.6u
+X1 iovss gate pad_uq0 iovss sg13_hv_nmos ad=2.068p pd=9.74u as=2.596p ps=5.58u w=4.4u l=0.6u
+X2 iovss gate dantenna l=0.78u w=0.78u
+X3 pad_uq0 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X4 pad gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X5 iovss gate pad iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X6 pad_uq1 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X7 iovss gate pad_uq1 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X8 iovss gate pad_uq2 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+.ends
+
+.subckt sg13g2_SecondaryProtection plus minus core pad
+X0 core plus dpantenna l=0.64u w=4.98u
+X1 core pad minus rppd l=2u w=1u
+X2 minus core dantenna l=3.1u w=0.64u
+.ends
+
+.subckt sg13cmos5l_LevelDown core pad vdd a_1826_n1666# vss iovdd
+Xsg13g2_SecondaryProtection_0 iovdd vss sg13g2_SecondaryProtection_0/core pad sg13g2_SecondaryProtection
+X0 vss sg13g2_SecondaryProtection_0/core a_525_1768# vss sg13_hv_nmos ad=0.247p pd=1.68u as=0.442p ps=3.28u w=1.3u l=0.45u
+X1 a_359_1768# a_525_1768# iovdd iovdd sg13_hv_pmos ad=0.437p pd=2.68u as=0.437p ps=2.68u w=2.3u l=0.45u
+X2 a_525_1768# sg13g2_SecondaryProtection_0/core iovdd iovdd sg13_hv_pmos ad=0.437p pd=2.68u as=0.782p ps=5.28u w=2.3u l=0.45u
+X3 vdd a_89_1790# core vdd sg13_lv_pmos ad=1.615p pd=10.18u as=1.615p ps=10.18u w=4.75u l=0.13u
+X4 a_89_1790# a_359_1768# vss vss sg13_hv_nmos ad=0.5035p pd=3.03u as=0.901p ps=5.98u w=2.65u l=0.45u
+X5 vss a_89_1790# core vss sg13_lv_nmos ad=0.935p pd=6.18u as=0.935p ps=6.18u w=2.75u l=0.13u
+X6 iovdd sg13g2_SecondaryProtection_0/core a_525_1768# iovdd sg13_hv_pmos ad=0.437p pd=2.68u as=0.437p ps=2.68u w=2.3u l=0.45u
+X7 iovdd a_525_1768# a_359_1768# iovdd sg13_hv_pmos ad=0.782p pd=5.28u as=0.437p ps=2.68u w=2.3u l=0.45u
+X8 a_359_1768# a_525_1768# vss vss sg13_hv_nmos ad=0.442p pd=3.28u as=0.247p ps=1.68u w=1.3u l=0.45u
+X9 vdd a_525_1768# a_89_1790# vss sg13_hv_nmos ad=0.901p pd=5.98u as=0.5035p ps=3.03u w=2.65u l=0.45u
+X10 vdd vdd vdd vdd sg13_hv_pmos ad=1.581p pd=9.98u as=0 ps=0 w=4.65u l=0.45u
+.ends
+
+.subckt sg13cmos5l_io_inv_x1 nq i vdd vss
+X0 nq i vss vss sg13_lv_nmos ad=1.3362p pd=8.54u as=1.3362p ps=8.54u w=3.93u l=0.13u
+X1 nq i vdd vdd sg13_lv_pmos ad=1.4994p pd=9.5u as=1.4994p ps=9.5u w=4.41u l=0.13u
+.ends
+
+.subckt sg13cmos5l_LevelUp o i iovdd vdd vss
+X0 a_89_470# i vss vss sg13_hv_nmos ad=0.646p pd=4.48u as=0.361p ps=2.28u w=1.9u l=0.45u
+X1 iovdd a_89_470# a_21_506# iovdd sg13_hv_pmos ad=57f pd=0.68u as=0.102p ps=1.28u w=0.3u l=0.45u
+X2 vdd i a_21_1826# vdd sg13_lv_pmos ad=1.615p pd=10.18u as=1.615p ps=10.18u w=4.75u l=0.13u
+X3 a_89_470# a_21_506# iovdd iovdd sg13_hv_pmos ad=0.102p pd=1.28u as=57f ps=0.68u w=0.3u l=0.45u
+X4 vss i a_21_1826# vss sg13_lv_nmos ad=0.935p pd=6.18u as=0.935p ps=6.18u w=2.75u l=0.13u
+X5 vss a_21_1826# a_21_506# vss sg13_hv_nmos ad=0.361p pd=2.28u as=0.646p ps=4.48u w=1.9u l=0.45u
+X6 o a_89_470# vss vss sg13_hv_nmos ad=0.646p pd=4.48u as=0.646p ps=4.48u w=1.9u l=0.45u
+X7 o a_89_470# iovdd iovdd sg13_hv_pmos ad=1.326p pd=8.48u as=1.326p ps=8.48u w=3.9u l=0.45u
+.ends
+
+.subckt sg13cmos5l_io_nor2_x1 nq i0 i1 vdd vss
+X0 vss i1 nq vss sg13_lv_nmos ad=1.4148p pd=8.58u as=0.7467p ps=4.31u w=3.93u l=0.13u
+X1 nq i0 vss vss sg13_lv_nmos ad=0.7467p pd=4.31u as=1.3362p ps=8.54u w=3.93u l=0.13u
+X2 nq i1 a_115_1276# vdd sg13_lv_pmos ad=1.5876p pd=9.54u as=0.8379p ps=4.79u w=4.41u l=0.13u
+X3 a_115_1276# i0 vdd vdd sg13_lv_pmos ad=0.8379p pd=4.79u as=1.4994p ps=9.5u w=4.41u l=0.13u
+.ends
+
+.subckt sg13cmos5l_io_nand2_x1 nq i0 i1 vdd vss
+X0 nq i1 a_115_242# vss sg13_lv_nmos ad=1.4148p pd=8.58u as=0.7467p ps=4.31u w=3.93u l=0.13u
+X1 a_115_242# i0 vss vss sg13_lv_nmos ad=0.7467p pd=4.31u as=1.3362p ps=8.54u w=3.93u l=0.13u
+X2 vdd i1 nq vdd sg13_lv_pmos ad=1.5876p pd=9.54u as=0.8379p ps=4.79u w=4.41u l=0.13u
+X3 nq i0 vdd vdd sg13_lv_pmos ad=0.8379p pd=4.79u as=1.4994p ps=9.5u w=4.41u l=0.13u
+.ends
+
+.subckt sg13cmos5l_GateDecode ngate pgate core en iovdd vdd vss
+Xsg13cmos5l_io_inv_x1_0 sg13cmos5l_io_inv_x1_0/nq en vdd vss sg13cmos5l_io_inv_x1
+Xsg13cmos5l_LevelUp_0 pgate sg13cmos5l_LevelUp_0/i iovdd vdd vss sg13cmos5l_LevelUp
+Xsg13cmos5l_LevelUp_1 ngate sg13cmos5l_LevelUp_1/i iovdd vdd vss sg13cmos5l_LevelUp
+Xsg13cmos5l_io_nor2_x1_0 sg13cmos5l_LevelUp_1/i core sg13cmos5l_io_inv_x1_0/nq vdd
++ vss sg13cmos5l_io_nor2_x1
+Xsg13cmos5l_io_nand2_x1_0 sg13cmos5l_LevelUp_0/i core en vdd vss sg13cmos5l_io_nand2_x1
+.ends
+
+.subckt sg13cmos5l_IOPadInOut16mA pad p2c vdd iovdd iovss iovdd_uq0 c2p_en c2p sg13cmos5l_DCNDiode_0/guard
++ vss
+Xsg13cmos5l_DCPDiode_0 pad iovdd_uq0 vss pad sg13cmos5l_DCPDiode
+Xsg13cmos5l_Clamp_P8N8D_0 sg13cmos5l_GateDecode_0/pgate iovdd_uq0 vss pad pad pad
++ pad sg13cmos5l_Clamp_P8N8D
+Xsg13cmos5l_Clamp_N8N8D_0 sg13cmos5l_GateDecode_0/ngate vss pad pad pad pad sg13cmos5l_DCNDiode_0/guard
++ sg13cmos5l_Clamp_N8N8D
+Xsg13cmos5l_LevelDown_0 p2c pad vdd vss vss iovdd sg13cmos5l_LevelDown
+Xsg13cmos5l_GateDecode_0 sg13cmos5l_GateDecode_0/ngate sg13cmos5l_GateDecode_0/pgate
++ c2p c2p_en iovdd vdd vss sg13cmos5l_GateDecode
+Xsg13cmos5l_DCNDiode_0 vss pad sg13cmos5l_DCNDiode_0/guard pad sg13cmos5l_DCNDiode
+.ends
+
+.subckt sg13cmos5l_Clamp_N43N43D4R gate iovss pad pad_uq0 pad_uq1 pad_uq2 pad_uq3
++ pad_uq4 pad_uq5 pad_uq6 pad_uq7 pad_uq8 pad_uq9 pad_uq10 pad_uq11 pad_uq12 pad_uq13
++ pad_uq14 pad_uq15 pad_uq16 pad_uq17 pad_uq18 pad_uq19 pad_uq20 w_n124_n124#
+X0 iovss gate pad_uq1 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X1 iovss gate pad_uq19 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X2 iovss gate pad_uq15 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X3 iovss gate pad_uq13 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X4 pad_uq17 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X5 pad_uq15 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X6 pad_uq0 gate iovss iovss sg13_hv_nmos ad=3.256p pd=10.28u as=1.408p ps=5.04u w=4.4u l=0.6u
+X7 pad_uq12 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X8 pad_uq5 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X9 iovss gate pad_uq16 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X10 iovss gate pad_uq12 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X11 iovss gate pad_uq3 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X12 iovss gate pad_uq18 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X13 pad_uq6 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X14 pad gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X15 iovss gate pad_uq5 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X16 iovss gate pad_uq20 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X17 pad_uq14 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X18 pad_uq20 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=2.068p ps=9.74u w=4.4u l=0.6u
+X19 pad_uq10 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X20 iovss gate pad_uq9 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X21 pad_uq16 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X22 iovss gate pad_uq8 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X23 iovss gate pad_uq6 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X24 iovss gate pad_uq14 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X25 pad_uq11 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X26 iovss gate pad_uq2 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X27 iovss gate pad_uq10 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X28 pad_uq13 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X29 pad_uq8 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X30 pad gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X31 iovss gate pad_uq17 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X32 iovss gate pad_uq11 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X33 iovss gate pad_uq13 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X34 iovss gate pad_uq7 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X35 pad_uq1 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X36 pad_uq1 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X37 iovss gate pad_uq4 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X38 iovss gate pad_uq19 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X39 iovss gate pad_uq5 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X40 iovss gate pad_uq15 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X41 pad_uq3 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X42 pad_uq15 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X43 pad_uq14 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X44 pad_uq9 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X45 iovss gate pad_uq18 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X46 pad_uq4 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X47 iovss gate pad_uq3 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X48 iovss gate pad_uq9 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X49 pad_uq6 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X50 pad_uq18 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X51 pad_uq12 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X52 pad_uq8 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X53 iovss gate pad_uq5 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X54 iovss gate pad_uq6 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X55 iovss gate pad iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X56 iovss gate pad_uq1 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X57 pad_uq19 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X58 pad_uq5 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X59 pad_uq9 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X60 iovss gate pad_uq8 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X61 pad_uq11 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X62 iovss gate pad_uq14 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X63 pad_uq2 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X64 iovss gate pad_uq10 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X65 iovss gate pad_uq14 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X66 iovss gate pad_uq17 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X67 pad_uq17 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X68 pad_uq0 gate iovss iovss sg13_hv_nmos ad=3.256p pd=10.28u as=1.408p ps=5.04u w=4.4u l=0.6u
+X69 pad_uq7 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X70 pad_uq18 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X71 pad_uq5 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X72 iovss gate pad_uq4 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X73 pad_uq1 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X74 pad_uq13 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X75 iovss gate pad_uq18 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X76 pad_uq3 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X77 iovss gate pad_uq2 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X78 pad_uq14 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X79 pad_uq6 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X80 iovss gate pad_uq20 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X81 iovss gate pad_uq1 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X82 pad_uq20 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=2.068p ps=9.74u w=4.4u l=0.6u
+X83 pad_uq10 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X84 iovss gate pad_uq9 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X85 pad_uq16 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X86 pad_uq12 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X87 pad_uq19 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X88 pad_uq18 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X89 iovss gate pad_uq10 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X90 pad_uq8 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X91 iovss gate pad_uq16 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X92 iovss gate pad iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X93 iovss gate pad_uq12 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X94 iovss gate pad_uq3 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X95 pad_uq2 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X96 pad gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X97 pad_uq2 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X98 iovss gate pad_uq13 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X99 iovss gate pad_uq11 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X100 iovss gate pad_uq19 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X101 iovss gate pad_uq6 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X102 pad_uq15 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X103 iovss gate pad_uq15 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X104 iovss gate pad_uq2 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X105 iovss gate pad_uq17 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X106 pad_uq10 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X107 pad_uq15 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X108 iovss gate pad_uq19 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X109 pad_uq17 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X110 pad_uq13 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X111 pad_uq7 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X112 iovss gate pad_uq3 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X113 iovss gate pad_uq11 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X114 pad_uq6 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X115 iovss gate dantenna l=0.48u w=0.48u
+X116 iovss gate pad_uq7 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X117 iovss gate pad_uq5 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X118 iovss gate pad_uq1 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X119 iovss gate pad_uq8 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X120 pad_uq11 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X121 iovss gate pad_uq14 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X122 iovss gate pad_uq7 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X123 iovss gate pad_uq16 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X124 pad_uq4 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X125 iovss gate pad_uq10 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X126 pad_uq11 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X127 iovss gate pad_uq12 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X128 iovss gate pad_uq15 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X129 pad_uq0 gate iovss iovss sg13_hv_nmos ad=3.256p pd=10.28u as=1.408p ps=5.04u w=4.4u l=0.6u
+X130 pad_uq1 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X131 pad_uq19 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X132 iovss gate pad_uq4 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X133 pad_uq9 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X134 iovss gate pad_uq6 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X135 iovss gate pad_uq8 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X136 pad_uq3 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X137 iovss gate pad_uq2 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X138 pad_uq7 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X139 iovss gate pad_uq16 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X140 pad_uq20 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=2.068p ps=9.74u w=4.4u l=0.6u
+X141 iovss gate pad_uq9 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X142 pad_uq12 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X143 pad_uq18 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X144 iovss gate pad_uq11 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X145 pad_uq8 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X146 pad_uq0 gate iovss iovss sg13_hv_nmos ad=3.256p pd=10.28u as=1.408p ps=5.04u w=4.4u l=0.6u
+X147 iovss gate pad_uq7 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X148 pad_uq5 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X149 iovss gate pad_uq4 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X150 iovss gate pad iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X151 iovss gate pad_uq18 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X152 iovss gate pad_uq20 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X153 pad_uq14 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X154 pad_uq2 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X155 pad_uq20 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=2.068p ps=9.74u w=4.4u l=0.6u
+X156 pad_uq10 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X157 pad_uq3 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X158 pad_uq4 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X159 pad_uq16 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X160 iovss gate pad_uq12 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X161 iovss gate pad_uq17 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X162 pad_uq16 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X163 pad_uq17 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X164 pad_uq7 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X165 pad_uq19 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X166 iovss gate pad_uq20 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X167 pad_uq13 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X168 pad_uq9 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X169 pad gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X170 iovss gate pad iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+X171 pad_uq4 gate iovss iovss sg13_hv_nmos ad=2.596p pd=5.58u as=1.408p ps=5.04u w=4.4u l=0.6u
+X172 iovss gate pad_uq13 iovss sg13_hv_nmos ad=1.408p pd=5.04u as=2.596p ps=5.58u w=4.4u l=0.6u
+.ends
+
+.subckt sg13cmos5l_RCClampInverter out in iovss supply
+X0 iovss in iovss iovss sg13_hv_nmos ad=1.71p pd=9.38u as=0 ps=0 w=9u l=9.5u
+X1 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X2 iovss in out iovss sg13_hv_nmos ad=1.71p pd=9.38u as=1.71p ps=9.38u w=9u l=0.5u
+X3 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=2.38p ps=14.68u w=7u l=0.5u
+X4 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X5 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X6 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X7 out in iovss iovss sg13_hv_nmos ad=1.71p pd=9.38u as=1.71p ps=9.38u w=9u l=0.5u
+X8 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X9 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X10 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X11 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X12 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X13 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X14 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X15 iovss in iovss iovss sg13_hv_nmos ad=3.06p pd=18.68u as=0 ps=0 w=9u l=9.5u
+X16 out in iovss iovss sg13_hv_nmos ad=1.71p pd=9.38u as=1.71p ps=9.38u w=9u l=0.5u
+X17 iovss in out iovss sg13_hv_nmos ad=3.06p pd=18.68u as=1.71p ps=9.38u w=9u l=0.5u
+X18 iovss in iovss iovss sg13_hv_nmos ad=1.71p pd=9.38u as=0 ps=0 w=9u l=9.5u
+X19 iovss in iovss iovss sg13_hv_nmos ad=3.06p pd=18.68u as=0 ps=0 w=9u l=9.5u
+X20 iovss in iovss iovss sg13_hv_nmos ad=1.71p pd=9.38u as=0 ps=0 w=9u l=9.5u
+X21 iovss in iovss iovss sg13_hv_nmos ad=1.71p pd=9.38u as=0 ps=0 w=9u l=9.5u
+X22 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X23 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X24 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X25 iovss in iovss iovss sg13_hv_nmos ad=1.71p pd=9.38u as=0 ps=0 w=9u l=9.5u
+X26 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X27 iovss in out iovss sg13_hv_nmos ad=1.71p pd=9.38u as=1.71p ps=9.38u w=9u l=0.5u
+X28 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X29 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X30 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X31 iovss in iovss iovss sg13_hv_nmos ad=1.71p pd=9.38u as=0 ps=0 w=9u l=9.5u
+X32 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X33 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X34 out in iovss iovss sg13_hv_nmos ad=1.71p pd=9.38u as=1.71p ps=9.38u w=9u l=0.5u
+X35 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X36 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X37 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X38 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X39 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X40 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X41 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X42 iovss in iovss iovss sg13_hv_nmos ad=1.71p pd=9.38u as=0 ps=0 w=9u l=9.5u
+X43 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X44 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X45 iovss in out iovss sg13_hv_nmos ad=1.71p pd=9.38u as=1.71p ps=9.38u w=9u l=0.5u
+X46 iovss in iovss iovss sg13_hv_nmos ad=1.71p pd=9.38u as=0 ps=0 w=9u l=9.5u
+X47 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X48 supply in out supply sg13_hv_pmos ad=2.38p pd=14.68u as=1.33p ps=7.38u w=7u l=0.5u
+X49 out in iovss iovss sg13_hv_nmos ad=1.71p pd=9.38u as=1.71p ps=9.38u w=9u l=0.5u
+X50 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X51 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X52 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X53 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X54 iovss in iovss iovss sg13_hv_nmos ad=1.71p pd=9.38u as=0 ps=0 w=9u l=9.5u
+X55 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X56 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X57 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X58 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X59 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X60 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X61 out in iovss iovss sg13_hv_nmos ad=1.71p pd=9.38u as=1.71p ps=9.38u w=9u l=0.5u
+X62 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X63 iovss in out iovss sg13_hv_nmos ad=1.71p pd=9.38u as=1.71p ps=9.38u w=9u l=0.5u
+X64 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X65 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X66 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X67 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X68 iovss in iovss iovss sg13_hv_nmos ad=1.71p pd=9.38u as=0 ps=0 w=9u l=9.5u
+X69 out in supply supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X70 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X71 supply in out supply sg13_hv_pmos ad=1.33p pd=7.38u as=1.33p ps=7.38u w=7u l=0.5u
+X72 iovss in out iovss sg13_hv_nmos ad=3.06p pd=18.68u as=1.71p ps=9.38u w=9u l=0.5u
+X73 iovss in iovss iovss sg13_hv_nmos ad=1.71p pd=9.38u as=0 ps=0 w=9u l=9.5u
+X74 iovss in iovss iovss sg13_hv_nmos ad=1.71p pd=9.38u as=0 ps=0 w=9u l=9.5u
+X75 out in iovss iovss sg13_hv_nmos ad=1.71p pd=9.38u as=1.71p ps=9.38u w=9u l=0.5u
+.ends
+
+.subckt sg13cmos5l_RCClampResistor pin1 pin2 sub
+X0 a_2640_4086# a_2970_0# sub rppd l=20u w=1u
+X1 a_3300_4086# a_2970_0# sub rppd l=20u w=1u
+X2 a_4620_4086# a_4950_0# sub rppd l=20u w=1u
+X3 a_5280_4086# a_4950_0# sub rppd l=20u w=1u
+X4 a_6600_4086# a_6930_0# sub rppd l=20u w=1u
+X5 a_7260_4086# a_6930_0# sub rppd l=20u w=1u
+X6 a_2640_4086# a_2310_0# sub rppd l=20u w=1u
+X7 a_4620_4086# a_4290_0# sub rppd l=20u w=1u
+X8 a_660_4086# a_990_0# sub rppd l=20u w=1u
+X9 a_6600_4086# a_6270_0# sub rppd l=20u w=1u
+X10 a_1980_4086# a_1650_0# sub rppd l=20u w=1u
+X11 a_1980_4086# a_2310_0# sub rppd l=20u w=1u
+X12 a_660_4086# a_330_0# sub rppd l=20u w=1u
+X13 a_3960_4086# a_3630_0# sub rppd l=20u w=1u
+X14 a_3960_4086# a_4290_0# sub rppd l=20u w=1u
+X15 a_5940_4086# a_5610_0# sub rppd l=20u w=1u
+X16 a_5940_4086# a_6270_0# sub rppd l=20u w=1u
+X17 a_7920_4086# a_7590_0# sub rppd l=20u w=1u
+X18 a_7920_4086# pin2 sub rppd l=20u w=1u
+X19 a_0_4086# pin1 sub rppd l=20u w=1u
+X20 a_1320_4086# a_1650_0# sub rppd l=20u w=1u
+X21 a_3300_4086# a_3630_0# sub rppd l=20u w=1u
+X22 a_0_4086# a_330_0# sub rppd l=20u w=1u
+X23 a_5280_4086# a_5610_0# sub rppd l=20u w=1u
+X24 a_7260_4086# a_7590_0# sub rppd l=20u w=1u
+X25 a_1320_4086# a_990_0# sub rppd l=20u w=1u
+.ends
+
+.subckt sg13cmos5l_IOPadIOVdd vdd iovdd iovss vss
+Xsg13cmos5l_Clamp_N43N43D4R_0 sg13cmos5l_RCClampInverter_0/out vss iovdd iovdd iovdd
++ iovdd iovdd iovdd iovdd iovdd iovdd iovdd iovdd iovdd iovdd iovdd iovdd iovdd iovdd
++ iovdd iovdd iovdd iovdd iovdd iovdd sg13cmos5l_Clamp_N43N43D4R
+Xsg13cmos5l_RCClampInverter_0 sg13cmos5l_RCClampInverter_0/out sg13cmos5l_RCClampInverter_0/in
++ vss iovdd sg13cmos5l_RCClampInverter
+Xsg13cmos5l_RCClampResistor_0 iovdd sg13cmos5l_RCClampInverter_0/in vss sg13cmos5l_RCClampResistor
+.ends
+
+.subckt sg13cmos5l_IOPadVdd vdd iovdd iovss iovdd_uq0 vss w_n124_1076#
+Xsg13cmos5l_Clamp_N43N43D4R_0 sg13cmos5l_RCClampInverter_0/out vss vdd vdd vdd vdd
++ vdd vdd vdd vdd vdd vdd vdd vdd vdd vdd vdd vdd vdd vdd vdd vdd vdd vdd w_n124_1076#
++ sg13cmos5l_Clamp_N43N43D4R
+Xsg13cmos5l_RCClampInverter_0 sg13cmos5l_RCClampInverter_0/out sg13cmos5l_RCClampInverter_0/in
++ vss vdd sg13cmos5l_RCClampInverter
+Xsg13cmos5l_RCClampResistor_0 vdd sg13cmos5l_RCClampInverter_0/in vss sg13cmos5l_RCClampResistor
+.ends
+
+.subckt sg13cmos5l_tielo L_LO VDD VSS
+X0 L_LO a_223_58# VSS VSS sg13_lv_nmos ad=0.2992p pd=2.44u as=0.60422p ps=3.6u w=0.88u l=0.13u
+X1 VDD a_59_418# a_59_418# VDD sg13_lv_pmos ad=0.62572p pd=3.785u as=0.102p ps=1.28u w=0.3u l=0.13u
+X2 a_223_58# a_59_195# VDD VDD sg13_lv_pmos ad=0.3553p pd=2.77u as=0.62572p ps=3.785u w=1.045u l=0.13u
+X3 VSS a_59_418# a_59_195# VSS sg13_lv_nmos ad=0.60422p pd=3.6u as=0.1309p ps=1.45u w=0.385u l=0.13u
+.ends
+
+.subckt sg13cmos5l_decap_4 VDD VSS
+X0 VDD VSS VDD VDD sg13_lv_pmos ad=0.34p pd=2.68u as=0 ps=0 w=1u l=1u
+X1 VSS VDD VSS VSS sg13_lv_nmos ad=0.1428p pd=1.52u as=0 ps=0 w=0.42u l=1u
+.ends
+
+.subckt sg13cmos5l_tiehi L_HI VDD VSS
+X0 L_HI a_222_366# VDD VDD sg13_lv_pmos ad=0.3927p pd=2.99u as=0.76727p ps=3.885u w=1.155u l=0.13u
+X1 VDD a_23_195# a_23_429# VDD sg13_lv_pmos ad=0.76727p pd=3.885u as=0.2442p ps=2.06u w=0.66u l=0.13u
+X2 a_222_366# a_23_429# VSS VSS sg13_lv_nmos ad=0.27427p pd=2.28u as=0.49637p ps=3.565u w=0.795u l=0.13u
+X3 VSS a_23_195# a_23_195# VSS sg13_lv_nmos ad=0.49637p pd=3.565u as=0.111p ps=1.34u w=0.3u l=0.13u
+.ends
+
+.subckt user_id_programming mask_rev[0] mask_rev[1] mask_rev[2] mask_rev[3] mask_rev[4]
++ mask_rev[5] mask_rev[6] mask_rev[7] mask_rev[8] mask_rev[9] mask_rev[10] mask_rev[11]
++ mask_rev[12] mask_rev[13] mask_rev[14] mask_rev[15] mask_rev[16] mask_rev[17] mask_rev[18]
++ mask_rev[19] mask_rev[20] mask_rev[21] mask_rev[22] mask_rev[23] mask_rev[24] mask_rev[25]
++ mask_rev[26] mask_rev[27] mask_rev[28] mask_rev[29] mask_rev[30] mask_rev[31] VDD
++ VSS
+Xsg13cmos5l_tielo_24 mask_rev[15] VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_tielo_13 mask_rev[26] VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_tielo_25 mask_rev[13] VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_tielo_14 mask_rev[28] VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_decap_4_30 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_tielo_26 mask_rev[11] VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_tielo_15 mask_rev[30] VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_tiehi_30 sg13cmos5l_tiehi_30/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_decap_4_31 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_tielo_27 sg13cmos5l_tielo_27/L_LO VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_tielo_16 mask_rev[31] VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_tiehi_31 sg13cmos5l_tiehi_31/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_tiehi_20 sg13cmos5l_tiehi_20/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_decap_4_10 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_decap_4_21 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_decap_4_32 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_tiehi_21 mask_rev[21] VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_tiehi_10 sg13cmos5l_tiehi_10/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_tielo_28 mask_rev[7] VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_tielo_17 sg13cmos5l_tielo_17/L_LO VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_decap_4_11 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_decap_4_22 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_decap_4_33 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_tielo_29 sg13cmos5l_tielo_29/L_LO VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_tielo_18 mask_rev[27] VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_tiehi_22 sg13cmos5l_tiehi_22/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_tiehi_11 sg13cmos5l_tiehi_11/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_decap_4_12 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_decap_4_23 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_decap_4_34 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_tiehi_23 mask_rev[17] VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_tiehi_12 sg13cmos5l_tiehi_12/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_tielo_19 mask_rev[25] VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_decap_4_13 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_decap_4_24 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_decap_4_35 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_tiehi_24 sg13cmos5l_tiehi_24/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_tiehi_13 sg13cmos5l_tiehi_13/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_decap_4_14 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_decap_4_25 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_decap_4_36 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_tiehi_25 sg13cmos5l_tiehi_25/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_tiehi_14 sg13cmos5l_tiehi_14/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_decap_4_15 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_decap_4_26 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_decap_4_37 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_tiehi_26 sg13cmos5l_tiehi_26/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_tiehi_15 sg13cmos5l_tiehi_15/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_decap_4_16 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_decap_4_27 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_decap_4_38 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_tiehi_27 mask_rev[9] VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_tiehi_16 sg13cmos5l_tiehi_16/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_decap_4_17 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_decap_4_28 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_decap_4_39 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_tiehi_28 sg13cmos5l_tiehi_28/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_tiehi_17 mask_rev[29] VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_decap_4_18 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_decap_4_29 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_tiehi_29 mask_rev[5] VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_tiehi_18 sg13cmos5l_tiehi_18/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_tiehi_19 sg13cmos5l_tiehi_19/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_tiehi_0 sg13cmos5l_tiehi_0/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_tiehi_1 sg13cmos5l_tiehi_1/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_tiehi_2 mask_rev[4] VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_tiehi_3 sg13cmos5l_tiehi_3/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_tielo_0 mask_rev[0] VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_tiehi_4 mask_rev[8] VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_tielo_1 mask_rev[2] VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_tiehi_5 sg13cmos5l_tiehi_5/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_decap_4_0 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_tielo_2 sg13cmos5l_tielo_2/L_LO VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_tiehi_6 sg13cmos5l_tiehi_6/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_decap_4_1 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_tielo_3 mask_rev[6] VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_tiehi_7 sg13cmos5l_tiehi_7/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_decap_4_2 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_tielo_4 sg13cmos5l_tielo_4/L_LO VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_tiehi_8 sg13cmos5l_tiehi_8/L_HI VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_decap_4_3 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_tielo_5 mask_rev[10] VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_tiehi_9 mask_rev[18] VDD VSS sg13cmos5l_tiehi
+Xsg13cmos5l_decap_4_4 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_tielo_6 mask_rev[12] VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_decap_4_5 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_tielo_7 mask_rev[14] VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_decap_4_6 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_tielo_8 mask_rev[16] VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_decap_4_7 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_tielo_30 mask_rev[3] VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_tielo_9 sg13cmos5l_tielo_9/L_LO VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_decap_4_8 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_tielo_31 mask_rev[1] VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_tielo_20 mask_rev[23] VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_decap_4_9 VDD VSS sg13cmos5l_decap_4
+Xsg13cmos5l_tielo_21 sg13cmos5l_tielo_21/L_LO VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_tielo_10 mask_rev[20] VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_tielo_22 mask_rev[19] VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_tielo_11 mask_rev[22] VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_tielo_23 sg13cmos5l_tielo_23/L_LO VDD VSS sg13cmos5l_tielo
+Xsg13cmos5l_tielo_12 mask_rev[24] VDD VSS sg13cmos5l_tielo
+.ends
+
+.subckt user_id_routing mask_rev[0] mask_rev[1] mask_rev[2] mask_rev[3] mask_rev[4]
++ mask_rev[5] mask_rev[6] mask_rev[7] mask_rev[8] mask_rev[9] mask_rev[10] mask_rev[11]
++ mask_rev[12] mask_rev[14] mask_rev[15] mask_rev[16] mask_rev[17] mask_rev[18] mask_rev[19]
++ mask_rev[20] mask_rev[21] mask_rev[22] mask_rev[23] mask_rev[24] mask_rev[25] mask_rev[26]
++ mask_rev[27] mask_rev[28] mask_rev[29] mask_rev[30] mask_rev[31] vdd mask_rev[13]
++ vss
+Xuser_id_programming_0 mask_rev[0] mask_rev[1] mask_rev[2] mask_rev[3] mask_rev[4]
++ mask_rev[5] mask_rev[6] mask_rev[7] mask_rev[8] mask_rev[9] mask_rev[10] mask_rev[11]
++ mask_rev[12] mask_rev[13] mask_rev[14] mask_rev[15] mask_rev[16] mask_rev[17] mask_rev[18]
++ mask_rev[19] mask_rev[20] mask_rev[21] mask_rev[22] mask_rev[23] mask_rev[24] mask_rev[25]
++ mask_rev[26] mask_rev[27] mask_rev[28] mask_rev[29] mask_rev[30] mask_rev[31] vdd
++ vss user_id_programming
+.ends
+
+.subckt sg13cmos5l_IOPadIn pad p2c vdd vss iovdd sg13cmos5l_DCNDiode_0/guard
+Xsg13cmos5l_DCPDiode_0 pad iovdd vss pad sg13cmos5l_DCPDiode
+Xsg13cmos5l_LevelDown_0 p2c pad vdd vss vss iovdd sg13cmos5l_LevelDown
+Xsg13cmos5l_DCNDiode_0 vss pad sg13cmos5l_DCNDiode_0/guard pad sg13cmos5l_DCNDiode
+.ends
+
+.subckt sg13cmos5l_IOPadTriOut16mA pad vdd iovdd iovss iovdd_uq0 c2p_en c2p sg13cmos5l_DCNDiode_0/guard
++ vss
+Xsg13cmos5l_DCPDiode_0 pad iovdd_uq0 vss pad sg13cmos5l_DCPDiode
+Xsg13cmos5l_Clamp_P8N8D_0 sg13cmos5l_GateDecode_0/pgate iovdd_uq0 vss pad pad pad
++ pad sg13cmos5l_Clamp_P8N8D
+Xsg13cmos5l_Clamp_N8N8D_0 sg13cmos5l_GateDecode_0/ngate vss pad pad pad pad sg13cmos5l_DCNDiode_0/guard
++ sg13cmos5l_Clamp_N8N8D
+Xsg13cmos5l_GateDecode_0 sg13cmos5l_GateDecode_0/ngate sg13cmos5l_GateDecode_0/pgate
++ c2p c2p_en iovdd vdd vss sg13cmos5l_GateDecode
+Xsg13cmos5l_DCNDiode_0 vss pad sg13cmos5l_DCNDiode_0/guard pad sg13cmos5l_DCNDiode
+.ends
+
+.subckt sg13cmos5l_IOPadIOVss vdd vss iovdd sg13cmos5l_DCNDiode_0/guard
+Xsg13cmos5l_DCPDiode_0 vss iovdd vss vss sg13cmos5l_DCPDiode
+Xsg13cmos5l_DCNDiode_0 vss vss sg13cmos5l_DCNDiode_0/guard vss sg13cmos5l_DCNDiode
+.ends
+
+.subckt sg13cmos5l_padframe CSB SCK gpio[11] s13_an[1] s14_an[0] s15_an[0] s17_an[1]
++ s18_an[0] s18_an[1] SCK_in clk_in gpio_0_out gpio_1_in gpio_1_oe gpio_2_out gpio_4_in
++ gpio_5_out gpio_5_oe gpio_6_out gpio_7_in gpio_7_oe gpio_9_in gpio_9_out gpio_11_in
++ analog_0_esd analog_2_esd s1_an_0_esd s1_an_1_esd s2_an_0_esd s2_an_1_esd s3_an_1_esd
++ s4_an_0_esd s5_an_0_esd s5_an_2_esd s6_an_1_esd s7_an_0_esd s7_an_1_esd s8_an_0_esd
++ s9_an_1_esd s9_an_2_esd s10_an_0_esd s10_an_2_esd s12_an_1_esd s13_an_0_esd s14_an_2_esd
++ s16_an_1_esd s17_an_0_esd mask_rev[7] mask_rev[8] mask_rev[9] mask_rev[10] mask_rev[11]
++ mask_rev[12] mask_rev[14] mask_rev[15] mask_rev[16] mask_rev[17] mask_rev[18] mask_rev[19]
++ mask_rev[20] mask_rev[21] mask_rev[22] mask_rev[23] mask_rev[24] mask_rev[25] mask_rev[26]
++ mask_rev[30] mask_rev[31] vdd3v3 s17_an[0] s16_an[1] s6_an[0] s12_an[1] s12_an[0]
++ s8_an[0] s9_an[0] s10_an[2] s10_an[1] analog[0] analog[3] SDI s5_an_1_esd s1_an[1]
++ s10_an_1_esd gpio[7] s3_an_0_esd gpio_8_in s13_an_1_esd s14_an_1_esd s6_an_0_esd
++ gpio_5_in s5_an[1] s17_an_1_esd gpio[1] s9_an_0_esd analog_3_esd s18_an_1_esd gpio_2_in
++ mask_rev[13] s11_an_0_esd gpio_10_out gpio[4] s12_an_0_esd s9_an[2] s2_an[0] s7_an[1]
++ s3_an[0] s2_an[1] gpio[10] s14_an_0_esd gpio_2_oe s15_an_0_esd s14_an[1] gpio[8]
++ s16_an_0_esd analog[1] SDO_ena s18_an_0_esd gpio_4_out gpio_8_oe gpio[5] s16_an[0]
++ CSB_in s14_an[2] gpio[6] gpio[0] mask_rev[27] s5_an[0] gpio_6_in vddd gpio_10_oe
++ gpio_3_oe mask_rev[28] gpio_1_out s6_an[1] mask_rev[0] s11_an[0] mask_rev[29] gpio_3_out
++ SDI_in mask_rev[1] gpio_3_in s13_an[0] vdd1v2 mask_rev[2] analog_1_esd s4_an[0]
++ mask_rev[3] gpio_11_out gpio_9_oe gpio_6_oe mask_rev[4] gpio_0_in s10_an[0] gpio_8_out
++ gpio[2] mask_rev[5] SDO s5_an[2] gpio[9] gpio[3] gpio_11_oe clk s3_an[1] gpio_4_oe
++ s9_an[1] mask_rev[6] analog[2] SDO_out gpio_10_in gpio_7_out gpio_0_oe sub s7_an[0]
++ s1_an[0]
+Xpad_s12_an_1 s12_an[1] s12_an_1_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_vss1v2_0 vdd1v2 sub vdd3v3 vdd3v3 sg13cmos5l_IOPadVss
+Xpad_gpio_3 gpio[3] gpio_3_in vddd vdd3v3 sub vdd3v3 gpio_3_oe gpio_3_out vdd3v3 sub
++ sg13cmos5l_IOPadInOut16mA
+Xpad_s6_an_1 s6_an[1] s6_an_1_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_vdd3v3_0 vddd vdd3v3 sub sub sg13cmos5l_IOPadIOVdd
+Xpad_vdd3v3_1 vdd1v2 vdd3v3 sub sub sg13cmos5l_IOPadIOVdd
+Xpad_vss1v2_1 vdd1v2 sub vdd3v3 vdd3v3 sg13cmos5l_IOPadVss
+Xpad_gpio_4 gpio[4] gpio_4_in vddd vdd3v3 sub vdd3v3 gpio_4_oe gpio_4_out vdd3v3 sub
++ sg13cmos5l_IOPadInOut16mA
+Xpad_s15_an_0 s15_an[0] s15_an_0_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_s9_an_0 s9_an[0] s9_an_0_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_vss1v2_2 vdd1v2 sub vdd3v3 vdd3v3 sg13cmos5l_IOPadVss
+Xpad_gpio_5 gpio[5] gpio_5_in vddd vdd3v3 sub vdd3v3 gpio_5_oe gpio_5_out vdd3v3 sub
++ sg13cmos5l_IOPadInOut16mA
+Xpad_vdd3v3_2 vdd1v2 vdd3v3 sub sub sg13cmos5l_IOPadIOVdd
+Xpad_vdd3v3_3 vdd1v2 vdd3v3 sub sub sg13cmos5l_IOPadIOVdd
+Xpad_s9_an_1 s9_an[1] s9_an_1_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_vss1v2_3 vdd1v2 sub vdd3v3 vdd3v3 sg13cmos5l_IOPadVss
+Xpad_gpio_6 gpio[6] gpio_6_in vddd vdd3v3 sub vdd3v3 gpio_6_oe gpio_6_out vdd3v3 sub
++ sg13cmos5l_IOPadInOut16mA
+Xpad_s9_an_2 s9_an[2] s9_an_2_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_gpio_7 gpio[7] gpio_7_in vddd vdd3v3 sub vdd3v3 gpio_7_oe gpio_7_out vdd3v3 sub
++ sg13cmos5l_IOPadInOut16mA
+Xpad_vss1v2_4 vddd sub vdd3v3 vdd3v3 sg13cmos5l_IOPadVss
+Xpad_vdd3v3_4 vdd1v2 vdd3v3 sub sub sg13cmos5l_IOPadIOVdd
+Xpad_s18_an_0 s18_an[0] s18_an_0_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_gpio_8 gpio[8] gpio_8_in vdd1v2 vdd3v3 sub vdd3v3 gpio_8_oe gpio_8_out vdd3v3
++ sub sg13cmos5l_IOPadInOut16mA
+Xpad_s18_an_1 s18_an[1] s18_an_1_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_vdd1v2_0 vdd1v2 vdd3v3 sub vdd3v3 sub vdd3v3 sg13cmos5l_IOPadVdd
+Xpad_gpio_9 gpio[9] gpio_9_in vdd1v2 vdd3v3 sub vdd3v3 gpio_9_oe gpio_9_out vdd3v3
++ sub sg13cmos5l_IOPadInOut16mA
+Xpad_vdd1v2_1 vdd1v2 vdd3v3 sub vdd3v3 sub vdd3v3 sg13cmos5l_IOPadVdd
+Xpad_vdd1v2_2 vdd1v2 vdd3v3 sub vdd3v3 sub vdd3v3 sg13cmos5l_IOPadVdd
+Xpad_s2_an_0 s2_an[0] s2_an_0_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_s2_an_1 s2_an[1] s2_an_1_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_vdd1v2_3 vdd1v2 vdd3v3 sub vdd3v3 sub vdd3v3 sg13cmos5l_IOPadVdd
+Xpad_vddd_0 vddd vdd3v3 sub vdd3v3 sub vdd3v3 sg13cmos5l_IOPadVdd
+Xpad_vdd1v2_4 vdd1v2 vdd3v3 sub vdd3v3 sub vdd3v3 sg13cmos5l_IOPadVdd
+Xpad_s11_an_0 s11_an[0] s11_an_0_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_s5_an_0 s5_an[0] s5_an_0_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_vddd_1 vddd vdd3v3 sub vdd3v3 sub vdd3v3 sg13cmos5l_IOPadVdd
+Xpad_s5_an_1 s5_an[1] s5_an_1_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_s5_an_2 s5_an[2] s5_an_2_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xproject_id mask_rev[0] mask_rev[1] mask_rev[2] mask_rev[3] mask_rev[4] mask_rev[5]
++ mask_rev[6] mask_rev[7] mask_rev[8] mask_rev[9] mask_rev[10] mask_rev[11] mask_rev[12]
++ mask_rev[14] mask_rev[15] mask_rev[16] mask_rev[17] mask_rev[18] mask_rev[19] mask_rev[20]
++ mask_rev[21] mask_rev[22] mask_rev[23] mask_rev[24] mask_rev[25] mask_rev[26] mask_rev[27]
++ mask_rev[28] mask_rev[29] mask_rev[30] mask_rev[31] vddd mask_rev[13] sub user_id_routing
+Xpad_s14_an_0 s14_an[0] s14_an_0_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_s8_an_0 s8_an[0] s8_an_0_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_s14_an_1 s14_an[1] s14_an_1_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_s14_an_2 s14_an[2] s14_an_2_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_s17_an_0 s17_an[0] s17_an_0_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_s17_an_1 s17_an[1] s17_an_1_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_s1_an_0 s1_an[0] s1_an_0_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_s1_an_1 s1_an[1] s1_an_1_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_s10_an_0 s10_an[0] s10_an_0_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_s4_an_0 s4_an[0] s4_an_0_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_s10_an_1 s10_an[1] s10_an_1_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_SDI SDI SDI_in vddd sub vdd3v3 vdd3v3 sg13cmos5l_IOPadIn
+Xpad_gpio_10 gpio[10] gpio_10_in vdd1v2 vdd3v3 sub vdd3v3 gpio_10_oe gpio_10_out vdd3v3
++ sub sg13cmos5l_IOPadInOut16mA
+Xpad_s10_an_2 s10_an[2] s10_an_2_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_gpio_11 gpio[11] gpio_11_in vdd1v2 vdd3v3 sub vdd3v3 gpio_11_oe gpio_11_out vdd3v3
++ sub sg13cmos5l_IOPadInOut16mA
+Xpad_analog_0 analog[0] analog_0_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_s13_an_0 s13_an[0] s13_an_0_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_s7_an_0 s7_an[0] s7_an_0_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_analog_1 analog[1] analog_1_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_s13_an_1 s13_an[1] s13_an_1_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_s7_an_1 s7_an[1] s7_an_1_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_SCK SCK SCK_in vddd sub vdd3v3 vdd3v3 sg13cmos5l_IOPadIn
+Xpad_analog_2 analog[2] analog_2_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_CSB CSB CSB_in vddd sub vdd3v3 vdd3v3 sg13cmos5l_IOPadIn
+Xpad_s16_an_0 s16_an[0] s16_an_0_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_clk clk clk_in vddd sub vdd3v3 vdd3v3 sg13cmos5l_IOPadIn
+Xpad_analog_3 analog[3] analog_3_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_s16_an_1 s16_an[1] s16_an_1_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_SDO SDO vddd vdd3v3 sub vdd3v3 SDO_ena SDO_out vdd3v3 sub sg13cmos5l_IOPadTriOut16mA
+Xpad_vss3v3_0 vdd1v2 sub vdd3v3 vdd3v3 sg13cmos5l_IOPadIOVss
+Xpad_vss3v3_1 vdd1v2 sub vdd3v3 vdd3v3 sg13cmos5l_IOPadIOVss
+Xpad_vss3v3_2 vdd1v2 sub vdd3v3 vdd3v3 sg13cmos5l_IOPadIOVss
+Xpad_s3_an_0 s3_an[0] s3_an_0_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_vss3v3_3 vdd1v2 sub vdd3v3 vdd3v3 sg13cmos5l_IOPadIOVss
+Xpad_gpio_0 gpio[0] gpio_0_in vddd vdd3v3 sub vdd3v3 gpio_0_oe gpio_0_out vdd3v3 sub
++ sg13cmos5l_IOPadInOut16mA
+Xpad_s3_an_1 s3_an[1] s3_an_1_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_gpio_1 gpio[1] gpio_1_in vddd vdd3v3 sub vdd3v3 gpio_1_oe gpio_1_out vdd3v3 sub
++ sg13cmos5l_IOPadInOut16mA
+Xpad_vss3v3_4 vdd1v2 sub vdd3v3 vdd3v3 sg13cmos5l_IOPadIOVss
+Xpad_s12_an_0 s12_an[0] s12_an_0_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_gpio_2 gpio[2] gpio_2_in vddd vdd3v3 sub vdd3v3 gpio_2_oe gpio_2_out vdd3v3 sub
++ sg13cmos5l_IOPadInOut16mA
+Xpad_s6_an_0 s6_an[0] s6_an_0_esd vdd1v2 vdd3v3 sub vdd3v3 vdd3v3 sub sg13cmos5l_IOPadAnalog
+Xpad_vss3v3_5 vdd1v2 sub vdd3v3 vdd3v3 sg13cmos5l_IOPadIOVss
+.ends
 
 * Black-box entry subcircuit for slot16_wrapper abstract view
 .subckt slot16_wrapper vss_1v2 s16_an[0] s16_an[1] s16_an_0_esd s16_an_1_esd vbias
@@ -240,11 +1038,6 @@ X38 a_1098_n4132# G S9_0 B sg13_hv_nmos ad=6.8p pd=21.36u as=3.6p ps=10.72u w=10
 X39 S1_1 G D0_1 B sg13_hv_nmos ad=3.6p pd=10.72u as=6.8p ps=21.36u w=10u l=0.45u
 .ends
 
-.subckt sg13cmos5l_decap_4 VDD VSS
-X0 VDD VSS VDD VDD sg13_lv_pmos ad=0.34p pd=2.68u as=0 ps=0 w=1u l=1u
-X1 VSS VDD VSS VSS sg13_lv_nmos ad=0.1428p pd=1.52u as=0 ps=0 w=0.42u l=1u
-.ends
-
 .subckt sg13cmos5l_inv_4 Y A VDD VSS
 X0 Y A VSS VSS sg13_lv_nmos ad=0.1406p pd=1.12u as=0.2516p ps=2.16u w=0.74u l=0.13u
 X1 Y A VDD VDD sg13_lv_pmos ad=0.2128p pd=1.5u as=0.3808p ps=2.92u w=1.12u l=0.13u
@@ -342,15 +1135,15 @@ Xsg13cmos5l_inv_4_1 sw_lvl_shift_0/in_p sw_lvl_shift_0/in_n dvdd dvss sg13cmos5l
 + m3_250566_516139# analog_switch_med_0/in m3_249390_511986# analog_pswitch_small_2/enable
 + analog_pswitch_small_2/avdd analog_switch_small_1/enable analog_pswitch_small_0/avdd
 + analog_switch_med_3/enable analog_switch_small_0/out analog_switch_med_3/in analog_switch_med_2/in
-+ analog_switch_small_1/dvdd analog_switch_med_1/in analog_switch_small_1/avdd analog_switch_small_1/dvss
-+ analog_switch_small_0/dvdd m3_229182_500988# analog_pswitch_small_3/out analog_pswitch_small_1/out
-+ analog_switch_med_17/in analog_pswitch_small_1/enable m3_229182_501576# analog_pswitch_small_0/dvdd
-+ analog_pswitch_small_0/out analog_switch_small_0/enable m3_189186_502176# analog_pswitch_small_2/dvdd
-+ analog_pswitch_small_2/dvss m3_251154_516139# m3_229182_500400# analog_pswitch_small_3/avdd
-+ analog_switch_med_0/out analog_switch_med_1/out analog_pswitch_small_2/out analog_switch_small_0/dvss
-+ analog_switch_med_18/enable analog_switch_small_1/out analog_pswitch_small_0/enable
-+ analog_pswitch_small_1/avdd m3_249978_514146# analog_switch_med_22/enable analog_pswitch_small_1/dvdd
-+ m3_222018_502176# analog_switch_med_3/dvss analog_switch_med_3/dvdd analog_pswitch_small_1/dvss
++ analog_switch_small_1/dvdd analog_switch_med_1/in analog_switch_small_1/avdd analog_switch_small_0/dvdd
++ m3_229182_500988# analog_pswitch_small_3/out analog_pswitch_small_1/out analog_switch_med_17/in
++ analog_pswitch_small_1/enable m3_229182_501576# analog_pswitch_small_0/dvdd analog_pswitch_small_0/out
++ analog_switch_small_0/enable m3_189186_502176# analog_pswitch_small_2/dvdd analog_pswitch_small_2/dvss
++ m3_251154_516139# m3_229182_500400# analog_pswitch_small_3/avdd analog_switch_med_0/out
++ analog_switch_med_1/out analog_pswitch_small_2/out analog_switch_small_0/dvss analog_switch_med_18/enable
++ analog_switch_small_1/out analog_pswitch_small_0/enable analog_pswitch_small_1/avdd
++ m3_249978_514146# analog_switch_med_22/enable analog_pswitch_small_1/dvdd m3_222018_502176#
++ analog_switch_med_3/dvss analog_switch_med_3/dvdd analog_pswitch_small_1/dvss analog_switch_small_1/dvss
 + analog_switch_med_2/out analog_switch_med_3/avdd analog_switch_med_22/dvdd sub analog_pswitch_small_3/dvdd
 + analog_pswitch_small_3/dvss analog_pswitch_small_0/dvss analog_switch_med_22/dvss
 Xanalog_switch_med_0 analog_switch_med_0/in analog_switch_med_0/enable analog_switch_med_3/avdd
@@ -1489,17 +2282,17 @@ Xfanout8 fanout8/X _26_/Y vddd vssd sg13cmos5l_buf_1
 Xswitchbuffers\[2\] proj_ibias_ena[1] _37_/X vddd vssd sg13cmos5l_buf_4
 XFILLER_9_117 vddd vssd sg13cmos5l_decap_8
 Xtiedowns\[54\] analog_ena[1] vddd vssd sg13cmos5l_antennanp
-XFILLER_3_47 vddd vssd sg13cmos5l_decap_8
 Xdig_in_gen\[12\].dig_in_latch userbuffers\[12\]/A dig_in[12] _14_/A fanout5/X vddd
 + vssd sg13cmos5l_dlhrq_1
+XFILLER_3_47 vddd vssd sg13cmos5l_decap_8
 XFILLER_10_116 vddd vssd sg13cmos5l_decap_8
 XFILLER_12_56 vddd vssd sg13cmos5l_decap_8
 XFILLER_2_101 vddd vssd sg13cmos5l_decap_4
 Xtiedowns\[17\] dig_out_relay[5] vddd vssd sg13cmos5l_antennanp
-X_47_ _47_/X proj_dig_out[8] dig_out_relay[8] _50_/S vddd vssd sg13cmos5l_mux2_1
 XFILLER_9_46 vddd vssd sg13cmos5l_decap_8
-XFILLER_1_0 vddd vssd sg13cmos5l_decap_8
+X_47_ _47_/X proj_dig_out[8] dig_out_relay[8] _50_/S vddd vssd sg13cmos5l_mux2_1
 Xfanout9 fanout9/X fanout9/A vddd vssd sg13cmos5l_buf_1
+XFILLER_1_0 vddd vssd sg13cmos5l_decap_8
 XFILLER_13_147 vddd vssd sg13cmos5l_decap_8
 Xtiedowns\[47\] dig_in[23] vddd vssd sg13cmos5l_antennanp
 XFILLER_5_198 vddd vssd sg13cmos5l_decap_8
@@ -1527,9 +2320,9 @@ XFILLER_13_91 vddd vssd sg13cmos5l_decap_8
 X_44_ _44_/X proj_dig_out[5] dig_out_relay[5] _44_/S vddd vssd sg13cmos5l_mux2_1
 Xtiedowns\[15\] dig_out_relay[3] vddd vssd sg13cmos5l_antennanp
 X_27_ _27_/X analog_ena[0] _37_/B vddd vssd sg13cmos5l_and2_1
-XFILLER_10_81 vddd vssd sg13cmos5l_decap_8
 Xdig_in_gen\[1\].dig_in_latch userbuffers\[1\]/A dig_in[1] fanout12/X fanout6/X vddd
 + vssd sg13cmos5l_dlhrq_1
+XFILLER_10_81 vddd vssd sg13cmos5l_decap_8
 XFILLER_7_82 vddd vssd sg13cmos5l_decap_4
 XFILLER_8_121 vddd vssd sg13cmos5l_decap_8
 XFILLER_12_150 vddd vssd sg13cmos5l_decap_8
@@ -1545,9 +2338,9 @@ XFILLER_10_60 vddd vssd sg13cmos5l_decap_8
 Xuserbuffers\[8\] proj_dig_in[8] userbuffers\[8\]/A vddd vssd sg13cmos5l_buf_8
 Xuserbuffers\[26\] proj_clk clockgate/GCLK vddd vssd sg13cmos5l_buf_8
 XFILLER_12_28 vddd vssd sg13cmos5l_decap_4
-Xoutbuffers\[2\] dig_out[2] _41_/X vddd vssd sg13cmos5l_buf_4
 Xdig_in_gen\[19\].dig_in_latch userbuffers\[19\]/A dig_in[19] fanout10/X _36_/B vddd
 + vssd sg13cmos5l_dlhrq_1
+Xoutbuffers\[2\] dig_out[2] _41_/X vddd vssd sg13cmos5l_buf_4
 Xtiedowns\[38\] dig_in[14] vddd vssd sg13cmos5l_antennanp
 XFILLER_4_191 vddd vssd sg13cmos5l_decap_8
 XFILLER_1_194 vddd vssd sg13cmos5l_decap_8
@@ -1572,11 +2365,11 @@ Xclkbuf_regs_0_clk clkbuf_regs_0_clk/X clk vddd vssd sg13cmos5l_buf_8
 Xdig_in_gen\[22\].dig_in_latch userbuffers\[22\]/A dig_in[22] fanout9/X fanout8/X
 + vddd vssd sg13cmos5l_dlhrq_1
 Xtiedowns\[43\] dig_in[19] vddd vssd sg13cmos5l_antennanp
-X_40_ _40_/X proj_dig_out[1] dig_out_relay[1] _50_/S vddd vssd sg13cmos5l_mux2_1
-XFILLER_8_0 vddd vssd sg13cmos5l_decap_8
-XFILLER_13_84 vddd vssd sg13cmos5l_decap_8
 Xdig_in_gen\[15\].dig_in_latch userbuffers\[15\]/A dig_in[15] fanout9/X fanout5/X
 + vddd vssd sg13cmos5l_dlhrq_1
+XFILLER_8_0 vddd vssd sg13cmos5l_decap_8
+XFILLER_13_84 vddd vssd sg13cmos5l_decap_8
+X_40_ _40_/X proj_dig_out[1] dig_out_relay[1] _50_/S vddd vssd sg13cmos5l_mux2_1
 X_23_ _38_/B proj_addr[0] proj_sel[0] vddd vssd sg13cmos5l_xor2_1
 XFILLER_10_74 vddd vssd sg13cmos5l_decap_8
 XFILLER_7_75 vddd vssd sg13cmos5l_decap_8
@@ -1599,9 +2392,9 @@ Xfanout10 fanout10/X fanout9/A vddd vssd sg13cmos5l_buf_1
 XFILLER_13_42 vddd vssd sg13cmos5l_decap_8
 Xtiedowns\[29\] dig_in[5] vddd vssd sg13cmos5l_antennanp
 X_21_ _25_/D proj_addr[4] proj_sel[4] vddd vssd sg13cmos5l_nand2b_1
-Xswitchbuffers\[7\] proj_1v2_ena _31_/X vddd vssd sg13cmos5l_buf_4
 Xdig_in_gen\[11\].dig_in_latch userbuffers\[11\]/A dig_in[11] _14_/A fanout5/X vddd
 + vssd sg13cmos5l_dlhrq_1
+Xswitchbuffers\[7\] proj_1v2_ena _31_/X vddd vssd sg13cmos5l_buf_4
 Xtiedowns\[11\] proj_dig_out[11] vddd vssd sg13cmos5l_antennanp
 Xtiedowns\[59\] fanout9/X vddd vssd sg13cmos5l_antennanp
 XFILLER_5_119 vddd vssd sg13cmos5l_decap_8
@@ -1626,8 +2419,8 @@ Xclockgate clockgate/GCLK clockgate/CLK _36_/B vddd vssd sg13cmos5l_lgcp_1
 Xoutbuffers\[9\] dig_out[9] _48_/X vddd vssd sg13cmos5l_buf_4
 Xtiedowns\[0\] proj_dig_out[0] vddd vssd sg13cmos5l_antennanp
 Xtiedowns\[64\] proj_sel[3] vddd vssd sg13cmos5l_antennanp
-XFILLER_4_198 vddd vssd sg13cmos5l_decap_8
 XFILLER_4_110 vddd vssd sg13cmos5l_decap_8
+XFILLER_4_198 vddd vssd sg13cmos5l_decap_8
 Xuserbuffers\[15\] proj_dig_in[15] userbuffers\[15\]/A vddd vssd sg13cmos5l_buf_8
 Xfanout13 fanout9/A dig_ena vddd vssd sg13cmos5l_buf_1
 XFILLER_13_56 vddd vssd sg13cmos5l_decap_8
@@ -1674,10 +2467,10 @@ Xdig_in_gen\[21\].dig_in_latch userbuffers\[21\]/A dig_in[21] fanout9/X _36_/B v
 + vssd sg13cmos5l_dlhrq_1
 XFILLER_10_39 vddd vssd sg13cmos5l_decap_8
 Xtiedowns\[18\] dig_out_relay[6] vddd vssd sg13cmos5l_antennanp
-XFILLER_2_0 vddd vssd sg13cmos5l_decap_8
-XFILLER_11_71 vddd vssd sg13cmos5l_decap_8
 Xdig_in_gen\[14\].dig_in_latch userbuffers\[14\]/A dig_in[14] fanout9/X fanout5/X
 + vddd vssd sg13cmos5l_dlhrq_1
+XFILLER_2_0 vddd vssd sg13cmos5l_decap_8
+XFILLER_11_71 vddd vssd sg13cmos5l_decap_8
 XFILLER_11_141 vddd vssd sg13cmos5l_decap_8
 XFILLER_8_50 vddd vssd sg13cmos5l_decap_8
 XFILLER_13_28 vddd vssd sg13cmos5l_decap_8
@@ -1698,14 +2491,14 @@ Xuserbuffers\[11\] proj_dig_in[11] userbuffers\[11\]/A vddd vssd sg13cmos5l_buf_
 Xtiedowns\[23\] dig_out_relay[11] vddd vssd sg13cmos5l_antennanp
 X_38_ _38_/X _38_/A _38_/B _38_/C _38_/D vddd vssd sg13cmos5l_or4_1
 Xtiedowns\[7\] proj_dig_out[7] vddd vssd sg13cmos5l_antennanp
-XFILLER_7_103 vddd vssd sg13cmos5l_decap_8
 Xdig_in_gen\[10\].dig_in_latch userbuffers\[10\]/A dig_in[10] _14_/A fanout5/X vddd
 + vssd sg13cmos5l_dlhrq_1
+XFILLER_7_103 vddd vssd sg13cmos5l_decap_8
 Xswitchbuffers\[1\] proj_ibias_ena[0] _36_/X vddd vssd sg13cmos5l_buf_4
 XFILLER_4_117 vddd vssd sg13cmos5l_decap_8
 XFILLER_5_64 vddd vssd sg13cmos5l_decap_4
-XFILLER_0_186 vddd vssd sg13cmos5l_decap_8
 XFILLER_0_142 vddd vssd sg13cmos5l_decap_8
+XFILLER_0_186 vddd vssd sg13cmos5l_decap_8
 Xtiedowns\[53\] analog_ena[0] vddd vssd sg13cmos5l_antennanp
 XFILLER_2_65 vddd vssd sg13cmos5l_decap_8
 Xtiedowns\[16\] dig_out_relay[4] vddd vssd sg13cmos5l_antennanp
@@ -1750,12 +2543,12 @@ Xtiedowns\[14\] dig_out_relay[2] vddd vssd sg13cmos5l_antennanp
 X_17_ _25_/A proj_addr[2] proj_sel[2] vddd vssd sg13cmos5l_nand2b_1
 XFILLER_10_191 vddd vssd sg13cmos5l_decap_8
 XFILLER_3_198 vddd vssd sg13cmos5l_decap_8
-XFILLER_0_135 vddd vssd sg13cmos5l_decap_8
 XFILLER_0_102 vddd vssd sg13cmos5l_decap_8
+XFILLER_0_135 vddd vssd sg13cmos5l_decap_8
 Xtiedowns\[44\] dig_in[20] vddd vssd sg13cmos5l_antennanp
 XFILLER_2_58 vddd vssd sg13cmos5l_decap_8
-X_50_ _50_/X proj_dig_out[11] dig_out_relay[11] _50_/S vddd vssd sg13cmos5l_mux2_1
 XFILLER_9_0 vddd vssd sg13cmos5l_decap_8
+X_50_ _50_/X proj_dig_out[11] dig_out_relay[11] _50_/S vddd vssd sg13cmos5l_mux2_1
 XFILLER_2_7 vddd vssd sg13cmos5l_decap_8
 XFILLER_11_78 vddd vssd sg13cmos5l_decap_8
 X_33_ _33_/X enable _36_/B vddd vssd sg13cmos5l_and2_1
@@ -1783,9 +2576,9 @@ Xuserbuffers\[18\] proj_dig_in[18] userbuffers\[18\]/A vddd vssd sg13cmos5l_buf_
 XFILLER_6_80 vddd vssd sg13cmos5l_decap_4
 XFILLER_11_25 vddd vssd sg13cmos5l_decap_8
 X_31_ _31_/X power_1v2_ena _37_/B vddd vssd sg13cmos5l_and2_1
-Xswitchbuffers\[8\] proj_3v3_ena _32_/X vddd vssd sg13cmos5l_buf_4
 Xdig_in_gen\[20\].dig_in_latch userbuffers\[20\]/A dig_in[20] fanout9/X _36_/B vddd
 + vssd sg13cmos5l_dlhrq_1
+Xswitchbuffers\[8\] proj_3v3_ena _32_/X vddd vssd sg13cmos5l_buf_4
 X_14_ _38_/A _14_/A vddd vssd sg13cmos5l_inv_1
 Xtiedowns\[12\] dig_out_relay[0] vddd vssd sg13cmos5l_antennanp
 XFILLER_0_60 vddd vssd sg13cmos5l_decap_8
@@ -1830,10 +2623,10 @@ Xtiedowns\[58\] enable vddd vssd sg13cmos5l_antennanp
 XFILLER_13_140 vddd vssd sg13cmos5l_decap_8
 XFILLER_13_195 vddd vssd sg13cmos5l_decap_8
 Xtiedowns\[40\] dig_in[16] vddd vssd sg13cmos5l_antennanp
-XFILLER_5_0 vddd vssd sg13cmos5l_decap_8
-XFILLER_10_198 vddd vssd sg13cmos5l_decap_8
 Xdig_in_gen\[2\].dig_in_latch userbuffers\[2\]/A dig_in[2] fanout12/X fanout6/X vddd
 + vssd sg13cmos5l_dlhrq_1
+XFILLER_5_0 vddd vssd sg13cmos5l_decap_8
+XFILLER_10_198 vddd vssd sg13cmos5l_decap_8
 XFILLER_5_191 vddd vssd sg13cmos5l_decap_8
 XFILLER_0_53 vddd vssd sg13cmos5l_decap_8
 Xfanout3 _37_/B _36_/B vddd vssd sg13cmos5l_buf_1
@@ -21622,12 +22415,12 @@ X_6012_ _6013_/B _6012_/A _6012_/B vddd vssd sg13cmos5l_nor2_1
 + s11_an_0_esd s12_an_0_esd s12_an_1_esd s13_an_0_esd s13_an_1_esd s14_an_0_esd s14_an_1_esd
 + s14_an_2_esd s15_an_0_esd s16_an_0_esd s16_an_1_esd s17_an_0_esd s17_an_1_esd s18_an_0_esd
 + s18_an_1_esd mask_rev[0] mask_rev[1] mask_rev[2] mask_rev[3] mask_rev[4] mask_rev[5]
-+ mask_rev[6] mask_rev[7] mask_rev[8] mask_rev[9] mask_rev[10] mask_rev[11] mask_rev[12]
-+ mask_rev[13] mask_rev[14] mask_rev[15] mask_rev[16] mask_rev[17] mask_rev[18] mask_rev[19]
-+ mask_rev[20] mask_rev[21] mask_rev[22] mask_rev[23] mask_rev[24] mask_rev[25] mask_rev[26]
-+ mask_rev[27] mask_rev[28] mask_rev[29] mask_rev[30] mask_rev[31] vdd1v2_uq0 vdd1v2_uq2
-+ vss3v3
-Xslot16_wrapper_0 vss3v3 s16_an[0] s16_an[1] s16_an_0_esd s16_an_1_esd slot16_wrapper_0/vbias
++ mask_rev[6] mask_rev[7] mask_rev[8] mask_rev[9] mask_rev[20] mask_rev[21] mask_rev[22]
++ mask_rev[23] mask_rev[24] mask_rev[25] mask_rev[26] vdd1v2_uq0 vdd1v2_uq2 mask_rev[27]
++ mask_rev[28] mask_rev[29] mask_rev[10] mask_rev[11] chipalooza_frame_wrapper_0/m1_375748_55800#
++ mask_rev[12] mask_rev[13] mask_rev[30] mask_rev[14] mask_rev[31] mask_rev[15] mask_rev[16]
++ mask_rev[17] mask_rev[18] mask_rev[19] sub
+Xslot16_wrapper_0 sub s16_an[0] s16_an[1] s16_an_0_esd s16_an_1_esd slot16_wrapper_0/vbias
 + slot16_wrapper_0/dig_in[23] slot16_wrapper_0/dig_in[22] slot16_wrapper_0/dig_in[21]
 + slot16_wrapper_0/dig_in[20] slot16_wrapper_0/dig_in[19] slot16_wrapper_0/dig_in[18]
 + slot16_wrapper_0/dig_in[17] slot16_wrapper_0/dig_in[16] slot16_wrapper_0/dig_in[15]
@@ -21642,164 +22435,155 @@ Xslot16_wrapper_0 vss3v3 s16_an[0] s16_an[1] s16_an_0_esd s16_an_1_esd slot16_wr
 + slot16_wrapper_0/dig_out[2] slot16_wrapper_0/dig_out[1] slot16_wrapper_0/dig_out[0]
 + slot16_wrapper_0/ibias0 slot16_wrapper_0/ibias1 slot16_wrapper_0/analog_bus3 slot16_wrapper_0/analog_bus2
 + slot16_wrapper_0/analog_bus1 slot16_wrapper_0/analog_bus0 slot16_wrapper_0/vdd_1v2
-+ vss3v3 slot16_wrapper_0/vdd_3v3 slot16_wrapper_0/enable slot16_wrapper_0/clk slot16_wrapper_0/reset
++ sub slot16_wrapper_0/vdd_3v3 slot16_wrapper_0/enable slot16_wrapper_0/clk slot16_wrapper_0/reset
 + slot16_wrapper
 Xanalog_switch_array_7[0] analog[0] analog_switch_array_7[0]/analog_switch_med_17/enable
-+ analog_switch_small_1/in vss3v3 analog_switch_array_7[0]/analog_switch_med_0/enable
-+ analog_switch_array_7[0]/analog_switch_med_2/enable vss3v3 slot1_wrapper_0/analog_bus1
-+ vss3v3 slot1_wrapper_0/analog_bus3 analog_switch_array_7[0]/analog_switch_med_20/enable
-+ analog_switch_array_7[0]/analog_switch_med_1/enable analog_pswitch_small_1/out vss3v3
++ analog_switch_small_1/in sub analog_switch_array_7[0]/analog_switch_med_0/enable
++ analog_switch_array_7[0]/analog_switch_med_2/enable sub slot1_wrapper_0/analog_bus1
++ sub slot1_wrapper_0/analog_bus3 analog_switch_array_7[0]/analog_switch_med_20/enable
++ analog_switch_array_7[0]/analog_switch_med_1/enable analog_pswitch_small_1/out sub
 + vdd3v3 analog_switch_array_7[0]/analog_pswitch_small_3/enable analog_pswitch_small_0/out
-+ slot1_wrapper_0/analog_bus0 vss3v3 slot18_wrapper_0/analog_bus2 vss3v3 analog_switch_array_7[0]/analog_pswitch_small_2/enable
++ slot1_wrapper_0/analog_bus0 sub slot18_wrapper_0/analog_bus2 sub analog_switch_array_7[0]/analog_pswitch_small_2/enable
 + vdd3v3 analog_switch_array_7[0]/analog_switch_small_1/enable vdd3v3 analog_switch_array_7[0]/analog_switch_med_3/enable
 + slot1_wrapper_0/vbias slot18_wrapper_0/analog_bus0 slot18_wrapper_0/analog_bus1
-+ vdd1v2_uq2 slot18_wrapper_0/analog_bus3 vdd3v3 vss3v3 vdd1v2_uq2 vss3v3 slot18_wrapper_0/ibias0
++ vdd1v2_uq2 slot18_wrapper_0/analog_bus3 vdd3v3 vdd1v2_uq2 sub slot18_wrapper_0/ibias0
 + slot1_wrapper_0/ibias1 slot1_wrapper_0/analog_bus2 analog_switch_array_7[0]/analog_pswitch_small_1/enable
-+ vss3v3 vdd1v2_uq2 slot1_wrapper_0/ibias0 analog_switch_array_7[0]/analog_switch_small_0/enable
-+ vss3v3 vdd1v2_uq2 vss3v3 vss3v3 vss3v3 vdd3v3 analog[2] analog[3] slot18_wrapper_0/ibias1
-+ vss3v3 analog_switch_array_7[0]/analog_switch_med_18/enable slot18_wrapper_0/vbias
-+ analog_switch_array_7[0]/analog_pswitch_small_0/enable vdd3v3 vss3v3 analog_switch_array_7[0]/analog_switch_med_22/enable
-+ vdd1v2_uq2 vss3v3 vss3v3 vdd1v2_uq2 vss3v3 analog[1] vdd3v3 vdd1v2_uq2 vss3v3 vdd1v2_uq2
-+ vss3v3 vss3v3 vss3v3 analog_switch_array
++ sub vdd1v2_uq2 slot1_wrapper_0/ibias0 analog_switch_array_7[0]/analog_switch_small_0/enable
++ sub vdd1v2_uq2 sub sub sub vdd3v3 analog[2] analog[3] slot18_wrapper_0/ibias1 sub
++ analog_switch_array_7[0]/analog_switch_med_18/enable slot18_wrapper_0/vbias analog_switch_array_7[0]/analog_pswitch_small_0/enable
++ vdd3v3 sub analog_switch_array_7[0]/analog_switch_med_22/enable vdd1v2_uq2 sub sub
++ vdd1v2_uq2 sub sub analog[1] vdd3v3 vdd1v2_uq2 sub vdd1v2_uq2 sub sub sub analog_switch_array
 Xanalog_switch_array_7[1] analog[0] analog_switch_array_7[1]/analog_switch_med_17/enable
-+ analog_switch_small_1/in vss3v3 analog_switch_array_7[1]/analog_switch_med_0/enable
-+ analog_switch_array_7[1]/analog_switch_med_2/enable vss3v3 slot2_wrapper_0/analog_bus1
-+ vss3v3 slot2_wrapper_0/analog_bus3 analog_switch_array_7[1]/analog_switch_med_20/enable
-+ analog_switch_array_7[1]/analog_switch_med_1/enable analog_pswitch_small_1/out vss3v3
++ analog_switch_small_1/in sub analog_switch_array_7[1]/analog_switch_med_0/enable
++ analog_switch_array_7[1]/analog_switch_med_2/enable sub slot2_wrapper_0/analog_bus1
++ sub slot2_wrapper_0/analog_bus3 analog_switch_array_7[1]/analog_switch_med_20/enable
++ analog_switch_array_7[1]/analog_switch_med_1/enable analog_pswitch_small_1/out sub
 + vdd3v3 analog_switch_array_7[1]/analog_pswitch_small_3/enable analog_pswitch_small_0/out
-+ slot2_wrapper_0/analog_bus0 vss3v3 slot17_wrapper_0/analog_bus2 vss3v3 analog_switch_array_7[1]/analog_pswitch_small_2/enable
++ slot2_wrapper_0/analog_bus0 sub slot17_wrapper_0/analog_bus2 sub analog_switch_array_7[1]/analog_pswitch_small_2/enable
 + vdd3v3 analog_switch_array_7[1]/analog_switch_small_1/enable vdd3v3 analog_switch_array_7[1]/analog_switch_med_3/enable
 + slot2_wrapper_0/vbias slot17_wrapper_0/analog_bus0 slot17_wrapper_0/analog_bus1
-+ vdd1v2_uq2 slot17_wrapper_0/analog_bus3 vdd3v3 vss3v3 vdd1v2_uq2 vss3v3 slot17_wrapper_0/ibias0
++ vdd1v2_uq2 slot17_wrapper_0/analog_bus3 vdd3v3 vdd1v2_uq2 sub slot17_wrapper_0/ibias0
 + slot2_wrapper_0/ibias1 slot2_wrapper_0/analog_bus2 analog_switch_array_7[1]/analog_pswitch_small_1/enable
-+ vss3v3 vdd1v2_uq2 slot2_wrapper_0/ibias0 analog_switch_array_7[1]/analog_switch_small_0/enable
-+ vss3v3 vdd1v2_uq2 vss3v3 vss3v3 vss3v3 vdd3v3 analog[2] analog[3] slot17_wrapper_0/ibias1
-+ vss3v3 analog_switch_array_7[1]/analog_switch_med_18/enable slot17_wrapper_0/vbias
-+ analog_switch_array_7[1]/analog_pswitch_small_0/enable vdd3v3 vss3v3 analog_switch_array_7[1]/analog_switch_med_22/enable
-+ vdd1v2_uq2 vss3v3 vss3v3 vdd1v2_uq2 vss3v3 analog[1] vdd3v3 vdd1v2_uq2 vss3v3 vdd1v2_uq2
-+ vss3v3 vss3v3 vss3v3 analog_switch_array
++ sub vdd1v2_uq2 slot2_wrapper_0/ibias0 analog_switch_array_7[1]/analog_switch_small_0/enable
++ sub vdd1v2_uq2 sub sub sub vdd3v3 analog[2] analog[3] slot17_wrapper_0/ibias1 sub
++ analog_switch_array_7[1]/analog_switch_med_18/enable slot17_wrapper_0/vbias analog_switch_array_7[1]/analog_pswitch_small_0/enable
++ vdd3v3 sub analog_switch_array_7[1]/analog_switch_med_22/enable vdd1v2_uq2 sub sub
++ vdd1v2_uq2 sub sub analog[1] vdd3v3 vdd1v2_uq2 sub vdd1v2_uq2 sub sub sub analog_switch_array
 Xanalog_switch_array_7[2] analog[0] analog_switch_array_7[2]/analog_switch_med_17/enable
-+ analog_switch_small_1/in vss3v3 analog_switch_array_7[2]/analog_switch_med_0/enable
-+ analog_switch_array_7[2]/analog_switch_med_2/enable vss3v3 slot3_wrapper_0/analog_bus1
-+ vss3v3 slot3_wrapper_0/analog_bus3 analog_switch_array_7[2]/analog_switch_med_20/enable
-+ analog_switch_array_7[2]/analog_switch_med_1/enable analog_pswitch_small_1/out vss3v3
++ analog_switch_small_1/in sub analog_switch_array_7[2]/analog_switch_med_0/enable
++ analog_switch_array_7[2]/analog_switch_med_2/enable sub slot3_wrapper_0/analog_bus1
++ sub slot3_wrapper_0/analog_bus3 analog_switch_array_7[2]/analog_switch_med_20/enable
++ analog_switch_array_7[2]/analog_switch_med_1/enable analog_pswitch_small_1/out sub
 + vdd3v3 analog_switch_array_7[2]/analog_pswitch_small_3/enable analog_pswitch_small_0/out
-+ slot3_wrapper_0/analog_bus0 vss3v3 slot16_wrapper_0/analog_bus2 vss3v3 analog_switch_array_7[2]/analog_pswitch_small_2/enable
++ slot3_wrapper_0/analog_bus0 sub slot16_wrapper_0/analog_bus2 sub analog_switch_array_7[2]/analog_pswitch_small_2/enable
 + vdd3v3 analog_switch_array_7[2]/analog_switch_small_1/enable vdd3v3 analog_switch_array_7[2]/analog_switch_med_3/enable
 + slot3_wrapper_0/vbias slot16_wrapper_0/analog_bus0 slot16_wrapper_0/analog_bus1
-+ vdd1v2_uq2 slot16_wrapper_0/analog_bus3 vdd3v3 vss3v3 vdd1v2_uq2 vss3v3 slot16_wrapper_0/ibias0
++ vdd1v2_uq2 slot16_wrapper_0/analog_bus3 vdd3v3 vdd1v2_uq2 sub slot16_wrapper_0/ibias0
 + slot3_wrapper_0/ibias1 slot3_wrapper_0/analog_bus2 analog_switch_array_7[2]/analog_pswitch_small_1/enable
-+ vss3v3 vdd1v2_uq2 slot3_wrapper_0/ibias0 analog_switch_array_7[2]/analog_switch_small_0/enable
-+ vss3v3 vdd1v2_uq2 vss3v3 vss3v3 vss3v3 vdd3v3 analog[2] analog[3] slot16_wrapper_0/ibias1
-+ vss3v3 analog_switch_array_7[2]/analog_switch_med_18/enable slot16_wrapper_0/vbias
-+ analog_switch_array_7[2]/analog_pswitch_small_0/enable vdd3v3 vss3v3 analog_switch_array_7[2]/analog_switch_med_22/enable
-+ vdd1v2_uq2 vss3v3 vss3v3 vdd1v2_uq2 vss3v3 analog[1] vdd3v3 vdd1v2_uq2 vss3v3 vdd1v2_uq2
-+ vss3v3 vss3v3 vss3v3 analog_switch_array
++ sub vdd1v2_uq2 slot3_wrapper_0/ibias0 analog_switch_array_7[2]/analog_switch_small_0/enable
++ sub vdd1v2_uq2 sub sub sub vdd3v3 analog[2] analog[3] slot16_wrapper_0/ibias1 sub
++ analog_switch_array_7[2]/analog_switch_med_18/enable slot16_wrapper_0/vbias analog_switch_array_7[2]/analog_pswitch_small_0/enable
++ vdd3v3 sub analog_switch_array_7[2]/analog_switch_med_22/enable vdd1v2_uq2 sub sub
++ vdd1v2_uq2 sub sub analog[1] vdd3v3 vdd1v2_uq2 sub vdd1v2_uq2 sub sub sub analog_switch_array
 Xanalog_switch_array_7[3] analog[0] analog_switch_array_7[3]/analog_switch_med_17/enable
-+ analog_switch_small_1/in vss3v3 analog_switch_array_7[3]/analog_switch_med_0/enable
-+ analog_switch_array_7[3]/analog_switch_med_2/enable vss3v3 slot4_wrapper_0/analog_bus1
-+ vss3v3 slot4_wrapper_0/analog_bus3 analog_switch_array_7[3]/analog_switch_med_20/enable
-+ analog_switch_array_7[3]/analog_switch_med_1/enable analog_pswitch_small_1/out vss3v3
++ analog_switch_small_1/in sub analog_switch_array_7[3]/analog_switch_med_0/enable
++ analog_switch_array_7[3]/analog_switch_med_2/enable sub slot4_wrapper_0/analog_bus1
++ sub slot4_wrapper_0/analog_bus3 analog_switch_array_7[3]/analog_switch_med_20/enable
++ analog_switch_array_7[3]/analog_switch_med_1/enable analog_pswitch_small_1/out sub
 + vdd3v3 analog_switch_array_7[3]/analog_pswitch_small_3/enable analog_pswitch_small_0/out
-+ slot4_wrapper_0/analog_bus0 vss3v3 slot15_wrapper_0/analog_bus2 vss3v3 analog_switch_array_7[3]/analog_pswitch_small_2/enable
++ slot4_wrapper_0/analog_bus0 sub slot15_wrapper_0/analog_bus2 sub analog_switch_array_7[3]/analog_pswitch_small_2/enable
 + vdd3v3 analog_switch_array_7[3]/analog_switch_small_1/enable vdd3v3 analog_switch_array_7[3]/analog_switch_med_3/enable
 + slot4_wrapper_0/vbias slot15_wrapper_0/analog_bus0 slot15_wrapper_0/analog_bus1
-+ vdd1v2_uq2 slot15_wrapper_0/analog_bus3 vdd3v3 vss3v3 vdd1v2_uq2 vss3v3 slot15_wrapper_0/ibias0
++ vdd1v2_uq2 slot15_wrapper_0/analog_bus3 vdd3v3 vdd1v2_uq2 sub slot15_wrapper_0/ibias0
 + slot4_wrapper_0/ibias1 slot4_wrapper_0/analog_bus2 analog_switch_array_7[3]/analog_pswitch_small_1/enable
-+ vss3v3 vdd1v2_uq2 slot4_wrapper_0/ibias0 analog_switch_array_7[3]/analog_switch_small_0/enable
-+ vss3v3 vdd1v2_uq2 vss3v3 vss3v3 vss3v3 vdd3v3 analog[2] analog[3] slot15_wrapper_0/ibias1
-+ vss3v3 analog_switch_array_7[3]/analog_switch_med_18/enable slot15_wrapper_0/vbias
-+ analog_switch_array_7[3]/analog_pswitch_small_0/enable vdd3v3 vss3v3 analog_switch_array_7[3]/analog_switch_med_22/enable
-+ vdd1v2_uq2 vss3v3 vss3v3 vdd1v2_uq2 vss3v3 analog[1] vdd3v3 vdd1v2_uq2 vss3v3 vdd1v2_uq2
-+ vss3v3 vss3v3 vss3v3 analog_switch_array
++ sub vdd1v2_uq2 slot4_wrapper_0/ibias0 analog_switch_array_7[3]/analog_switch_small_0/enable
++ sub vdd1v2_uq2 sub sub sub vdd3v3 analog[2] analog[3] slot15_wrapper_0/ibias1 sub
++ analog_switch_array_7[3]/analog_switch_med_18/enable slot15_wrapper_0/vbias analog_switch_array_7[3]/analog_pswitch_small_0/enable
++ vdd3v3 sub analog_switch_array_7[3]/analog_switch_med_22/enable vdd1v2_uq2 sub sub
++ vdd1v2_uq2 sub sub analog[1] vdd3v3 vdd1v2_uq2 sub vdd1v2_uq2 sub sub sub analog_switch_array
 Xanalog_switch_array_7[4] analog[0] analog_switch_array_7[4]/analog_switch_med_17/enable
-+ analog_switch_small_1/in vss3v3 analog_switch_array_7[4]/analog_switch_med_0/enable
-+ analog_switch_array_7[4]/analog_switch_med_2/enable vss3v3 slot5_wrapper_0/analog_bus1
-+ vss3v3 slot5_wrapper_0/analog_bus3 analog_switch_array_7[4]/analog_switch_med_20/enable
-+ analog_switch_array_7[4]/analog_switch_med_1/enable analog_pswitch_small_1/out vss3v3
++ analog_switch_small_1/in sub analog_switch_array_7[4]/analog_switch_med_0/enable
++ analog_switch_array_7[4]/analog_switch_med_2/enable sub slot5_wrapper_0/analog_bus1
++ sub slot5_wrapper_0/analog_bus3 analog_switch_array_7[4]/analog_switch_med_20/enable
++ analog_switch_array_7[4]/analog_switch_med_1/enable analog_pswitch_small_1/out sub
 + vdd3v3 analog_switch_array_7[4]/analog_pswitch_small_3/enable analog_pswitch_small_0/out
-+ slot5_wrapper_0/analog_bus0 vss3v3 slot14_wrapper_0/analog_bus2 vss3v3 analog_switch_array_7[4]/analog_pswitch_small_2/enable
++ slot5_wrapper_0/analog_bus0 sub slot14_wrapper_0/analog_bus2 sub analog_switch_array_7[4]/analog_pswitch_small_2/enable
 + vdd3v3 analog_switch_array_7[4]/analog_switch_small_1/enable vdd3v3 analog_switch_array_7[4]/analog_switch_med_3/enable
 + slot5_wrapper_0/vbias slot14_wrapper_0/analog_bus0 slot14_wrapper_0/analog_bus1
-+ vdd1v2_uq2 slot14_wrapper_0/analog_bus3 vdd3v3 vss3v3 vdd1v2_uq2 vss3v3 slot14_wrapper_0/ibias0
++ vdd1v2_uq2 slot14_wrapper_0/analog_bus3 vdd3v3 vdd1v2_uq2 sub slot14_wrapper_0/ibias0
 + slot5_wrapper_0/ibias1 slot5_wrapper_0/analog_bus2 analog_switch_array_7[4]/analog_pswitch_small_1/enable
-+ vss3v3 vdd1v2_uq2 slot5_wrapper_0/ibias0 analog_switch_array_7[4]/analog_switch_small_0/enable
-+ vss3v3 vdd1v2_uq2 vss3v3 vss3v3 vss3v3 vdd3v3 analog[2] analog[3] slot14_wrapper_0/ibias1
-+ vss3v3 analog_switch_array_7[4]/analog_switch_med_18/enable slot14_wrapper_0/vbias
-+ analog_switch_array_7[4]/analog_pswitch_small_0/enable vdd3v3 vss3v3 analog_switch_array_7[4]/analog_switch_med_22/enable
-+ vdd1v2_uq2 vss3v3 vss3v3 vdd1v2_uq2 vss3v3 analog[1] vdd3v3 vdd1v2_uq2 vss3v3 vdd1v2_uq2
-+ vss3v3 vss3v3 vss3v3 analog_switch_array
++ sub vdd1v2_uq2 slot5_wrapper_0/ibias0 analog_switch_array_7[4]/analog_switch_small_0/enable
++ sub vdd1v2_uq2 sub sub sub vdd3v3 analog[2] analog[3] slot14_wrapper_0/ibias1 sub
++ analog_switch_array_7[4]/analog_switch_med_18/enable slot14_wrapper_0/vbias analog_switch_array_7[4]/analog_pswitch_small_0/enable
++ vdd3v3 sub analog_switch_array_7[4]/analog_switch_med_22/enable vdd1v2_uq2 sub sub
++ vdd1v2_uq2 sub sub analog[1] vdd3v3 vdd1v2_uq2 sub vdd1v2_uq2 sub sub sub analog_switch_array
 Xanalog_switch_array_7[5] analog[0] analog_switch_array_7[5]/analog_switch_med_17/enable
-+ analog_switch_small_1/in vss3v3 analog_switch_array_7[5]/analog_switch_med_0/enable
-+ analog_switch_array_7[5]/analog_switch_med_2/enable vss3v3 slot6_wrapper_0/analog_bus1
-+ vss3v3 slot6_wrapper_0/analog_bus3 analog_switch_array_7[5]/analog_switch_med_20/enable
-+ analog_switch_array_7[5]/analog_switch_med_1/enable analog_pswitch_small_1/out vss3v3
++ analog_switch_small_1/in sub analog_switch_array_7[5]/analog_switch_med_0/enable
++ analog_switch_array_7[5]/analog_switch_med_2/enable sub slot6_wrapper_0/analog_bus1
++ sub slot6_wrapper_0/analog_bus3 analog_switch_array_7[5]/analog_switch_med_20/enable
++ analog_switch_array_7[5]/analog_switch_med_1/enable analog_pswitch_small_1/out sub
 + vdd3v3 analog_switch_array_7[5]/analog_pswitch_small_3/enable analog_pswitch_small_0/out
-+ slot6_wrapper_0/analog_bus0 vss3v3 slot13_wrapper_0/analog_bus2 vss3v3 analog_switch_array_7[5]/analog_pswitch_small_2/enable
++ slot6_wrapper_0/analog_bus0 sub slot13_wrapper_0/analog_bus2 sub analog_switch_array_7[5]/analog_pswitch_small_2/enable
 + vdd3v3 analog_switch_array_7[5]/analog_switch_small_1/enable vdd3v3 analog_switch_array_7[5]/analog_switch_med_3/enable
 + slot6_wrapper_0/vbias slot13_wrapper_0/analog_bus0 slot13_wrapper_0/analog_bus1
-+ vdd1v2_uq2 slot13_wrapper_0/analog_bus3 vdd3v3 vss3v3 vdd1v2_uq2 vss3v3 slot13_wrapper_0/ibias0
++ vdd1v2_uq2 slot13_wrapper_0/analog_bus3 vdd3v3 vdd1v2_uq2 sub slot13_wrapper_0/ibias0
 + slot6_wrapper_0/ibias1 slot6_wrapper_0/analog_bus2 analog_switch_array_7[5]/analog_pswitch_small_1/enable
-+ vss3v3 vdd1v2_uq2 slot6_wrapper_0/ibias0 analog_switch_array_7[5]/analog_switch_small_0/enable
-+ vss3v3 vdd1v2_uq2 vss3v3 vss3v3 vss3v3 vdd3v3 analog[2] analog[3] slot13_wrapper_0/ibias1
-+ vss3v3 analog_switch_array_7[5]/analog_switch_med_18/enable slot13_wrapper_0/vbias
-+ analog_switch_array_7[5]/analog_pswitch_small_0/enable vdd3v3 vss3v3 analog_switch_array_7[5]/analog_switch_med_22/enable
-+ vdd1v2_uq2 vss3v3 vss3v3 vdd1v2_uq2 vss3v3 analog[1] vdd3v3 vdd1v2_uq2 vss3v3 vdd1v2_uq2
-+ vss3v3 vss3v3 vss3v3 analog_switch_array
++ sub vdd1v2_uq2 slot6_wrapper_0/ibias0 analog_switch_array_7[5]/analog_switch_small_0/enable
++ sub vdd1v2_uq2 sub sub sub vdd3v3 analog[2] analog[3] slot13_wrapper_0/ibias1 sub
++ analog_switch_array_7[5]/analog_switch_med_18/enable slot13_wrapper_0/vbias analog_switch_array_7[5]/analog_pswitch_small_0/enable
++ vdd3v3 sub analog_switch_array_7[5]/analog_switch_med_22/enable vdd1v2_uq2 sub sub
++ vdd1v2_uq2 sub sub analog[1] vdd3v3 vdd1v2_uq2 sub vdd1v2_uq2 sub sub sub analog_switch_array
 Xanalog_switch_array_7[6] analog[0] analog_switch_array_7[6]/analog_switch_med_17/enable
-+ analog_switch_small_1/in vss3v3 analog_switch_array_7[6]/analog_switch_med_0/enable
-+ analog_switch_array_7[6]/analog_switch_med_2/enable vss3v3 slot7_wrapper_0/analog_bus1
-+ vss3v3 slot7_wrapper_0/analog_bus3 analog_switch_array_7[6]/analog_switch_med_20/enable
-+ analog_switch_array_7[6]/analog_switch_med_1/enable analog_pswitch_small_1/out vss3v3
++ analog_switch_small_1/in sub analog_switch_array_7[6]/analog_switch_med_0/enable
++ analog_switch_array_7[6]/analog_switch_med_2/enable sub slot7_wrapper_0/analog_bus1
++ sub slot7_wrapper_0/analog_bus3 analog_switch_array_7[6]/analog_switch_med_20/enable
++ analog_switch_array_7[6]/analog_switch_med_1/enable analog_pswitch_small_1/out sub
 + vdd3v3 analog_switch_array_7[6]/analog_pswitch_small_3/enable analog_pswitch_small_0/out
-+ slot7_wrapper_0/analog_bus0 vss3v3 slot12_wrapper_0/analog_bus2 vss3v3 analog_switch_array_7[6]/analog_pswitch_small_2/enable
++ slot7_wrapper_0/analog_bus0 sub slot12_wrapper_0/analog_bus2 sub analog_switch_array_7[6]/analog_pswitch_small_2/enable
 + vdd3v3 analog_switch_array_7[6]/analog_switch_small_1/enable vdd3v3 analog_switch_array_7[6]/analog_switch_med_3/enable
 + slot7_wrapper_0/vbias slot12_wrapper_0/analog_bus0 slot12_wrapper_0/analog_bus1
-+ vdd1v2_uq2 slot12_wrapper_0/analog_bus3 vdd3v3 vss3v3 vdd1v2_uq2 vss3v3 slot12_wrapper_0/ibias0
++ vdd1v2_uq2 slot12_wrapper_0/analog_bus3 vdd3v3 vdd1v2_uq2 sub slot12_wrapper_0/ibias0
 + slot7_wrapper_0/ibias1 slot7_wrapper_0/analog_bus2 analog_switch_array_7[6]/analog_pswitch_small_1/enable
-+ vss3v3 vdd1v2_uq2 slot7_wrapper_0/ibias0 analog_switch_array_7[6]/analog_switch_small_0/enable
-+ vss3v3 vdd1v2_uq2 vss3v3 vss3v3 vss3v3 vdd3v3 analog[2] analog[3] slot12_wrapper_0/ibias1
-+ vss3v3 analog_switch_array_7[6]/analog_switch_med_18/enable slot12_wrapper_0/vbias
-+ analog_switch_array_7[6]/analog_pswitch_small_0/enable vdd3v3 vss3v3 analog_switch_array_7[6]/analog_switch_med_22/enable
-+ vdd1v2_uq2 vss3v3 vss3v3 vdd1v2_uq2 vss3v3 analog[1] vdd3v3 vdd1v2_uq2 vss3v3 vdd1v2_uq2
-+ vss3v3 vss3v3 vss3v3 analog_switch_array
++ sub vdd1v2_uq2 slot7_wrapper_0/ibias0 analog_switch_array_7[6]/analog_switch_small_0/enable
++ sub vdd1v2_uq2 sub sub sub vdd3v3 analog[2] analog[3] slot12_wrapper_0/ibias1 sub
++ analog_switch_array_7[6]/analog_switch_med_18/enable slot12_wrapper_0/vbias analog_switch_array_7[6]/analog_pswitch_small_0/enable
++ vdd3v3 sub analog_switch_array_7[6]/analog_switch_med_22/enable vdd1v2_uq2 sub sub
++ vdd1v2_uq2 sub sub analog[1] vdd3v3 vdd1v2_uq2 sub vdd1v2_uq2 sub sub sub analog_switch_array
 Xanalog_switch_array_7[7] analog[0] analog_switch_array_7[7]/analog_switch_med_17/enable
-+ analog_switch_small_1/in vss3v3 analog_switch_array_7[7]/analog_switch_med_0/enable
-+ analog_switch_array_7[7]/analog_switch_med_2/enable vss3v3 slot8_wrapper_0/analog_bus1
-+ vss3v3 slot8_wrapper_0/analog_bus3 analog_switch_array_7[7]/analog_switch_med_20/enable
-+ analog_switch_array_7[7]/analog_switch_med_1/enable analog_pswitch_small_1/out vss3v3
++ analog_switch_small_1/in sub analog_switch_array_7[7]/analog_switch_med_0/enable
++ analog_switch_array_7[7]/analog_switch_med_2/enable sub slot8_wrapper_0/analog_bus1
++ sub slot8_wrapper_0/analog_bus3 analog_switch_array_7[7]/analog_switch_med_20/enable
++ analog_switch_array_7[7]/analog_switch_med_1/enable analog_pswitch_small_1/out sub
 + vdd3v3 analog_switch_array_7[7]/analog_pswitch_small_3/enable analog_pswitch_small_0/out
-+ slot8_wrapper_0/analog_bus0 vss3v3 slot11_wrapper_0/analog_bus2 vss3v3 analog_switch_array_7[7]/analog_pswitch_small_2/enable
++ slot8_wrapper_0/analog_bus0 sub slot11_wrapper_0/analog_bus2 sub analog_switch_array_7[7]/analog_pswitch_small_2/enable
 + vdd3v3 analog_switch_array_7[7]/analog_switch_small_1/enable vdd3v3 analog_switch_array_7[7]/analog_switch_med_3/enable
 + slot8_wrapper_0/vbias slot11_wrapper_0/analog_bus0 slot11_wrapper_0/analog_bus1
-+ vdd1v2_uq2 slot11_wrapper_0/analog_bus3 vdd3v3 vss3v3 vdd1v2_uq2 vss3v3 slot11_wrapper_0/ibias0
++ vdd1v2_uq2 slot11_wrapper_0/analog_bus3 vdd3v3 vdd1v2_uq2 sub slot11_wrapper_0/ibias0
 + slot8_wrapper_0/ibias1 slot8_wrapper_0/analog_bus2 analog_switch_array_7[7]/analog_pswitch_small_1/enable
-+ vss3v3 vdd1v2_uq2 slot8_wrapper_0/ibias0 analog_switch_array_7[7]/analog_switch_small_0/enable
-+ vss3v3 vdd1v2_uq2 vss3v3 vss3v3 vss3v3 vdd3v3 analog[2] analog[3] slot11_wrapper_0/ibias1
-+ vss3v3 analog_switch_array_7[7]/analog_switch_med_18/enable slot11_wrapper_0/vbias
-+ analog_switch_array_7[7]/analog_pswitch_small_0/enable vdd3v3 vss3v3 analog_switch_array_7[7]/analog_switch_med_22/enable
-+ vdd1v2_uq2 vss3v3 vss3v3 vdd1v2_uq2 vss3v3 analog[1] vdd3v3 vdd1v2_uq2 vss3v3 vdd1v2_uq2
-+ vss3v3 vss3v3 vss3v3 analog_switch_array
++ sub vdd1v2_uq2 slot8_wrapper_0/ibias0 analog_switch_array_7[7]/analog_switch_small_0/enable
++ sub vdd1v2_uq2 sub sub sub vdd3v3 analog[2] analog[3] slot11_wrapper_0/ibias1 sub
++ analog_switch_array_7[7]/analog_switch_med_18/enable slot11_wrapper_0/vbias analog_switch_array_7[7]/analog_pswitch_small_0/enable
++ vdd3v3 sub analog_switch_array_7[7]/analog_switch_med_22/enable vdd1v2_uq2 sub sub
++ vdd1v2_uq2 sub sub analog[1] vdd3v3 vdd1v2_uq2 sub vdd1v2_uq2 sub sub sub analog_switch_array
 Xanalog_switch_array_7[8] analog[0] analog_switch_array_7[8]/analog_switch_med_17/enable
-+ analog_switch_small_1/in vss3v3 analog_switch_array_7[8]/analog_switch_med_0/enable
-+ analog_switch_array_7[8]/analog_switch_med_2/enable vss3v3 slot9_wrapper_0/analog_bus1
-+ vss3v3 slot9_wrapper_0/analog_bus3 analog_switch_array_7[8]/analog_switch_med_20/enable
-+ analog_switch_array_7[8]/analog_switch_med_1/enable analog_pswitch_small_1/out vss3v3
++ analog_switch_small_1/in sub analog_switch_array_7[8]/analog_switch_med_0/enable
++ analog_switch_array_7[8]/analog_switch_med_2/enable sub slot9_wrapper_0/analog_bus1
++ sub slot9_wrapper_0/analog_bus3 analog_switch_array_7[8]/analog_switch_med_20/enable
++ analog_switch_array_7[8]/analog_switch_med_1/enable analog_pswitch_small_1/out sub
 + vdd3v3 analog_switch_array_7[8]/analog_pswitch_small_3/enable analog_pswitch_small_0/out
-+ slot9_wrapper_0/analog_bus0 vss3v3 slot10_wrapper_0/analog_bus2 vss3v3 analog_switch_array_7[8]/analog_pswitch_small_2/enable
++ slot9_wrapper_0/analog_bus0 sub slot10_wrapper_0/analog_bus2 sub analog_switch_array_7[8]/analog_pswitch_small_2/enable
 + vdd3v3 analog_switch_array_7[8]/analog_switch_small_1/enable vdd3v3 analog_switch_array_7[8]/analog_switch_med_3/enable
 + slot9_wrapper_0/vbias slot10_wrapper_0/analog_bus0 slot10_wrapper_0/analog_bus1
-+ vdd1v2_uq2 slot10_wrapper_0/analog_bus3 vdd3v3 vss3v3 vdd1v2_uq2 vss3v3 slot10_wrapper_0/ibias0
++ vdd1v2_uq2 slot10_wrapper_0/analog_bus3 vdd3v3 vdd1v2_uq2 sub slot10_wrapper_0/ibias0
 + slot9_wrapper_0/ibias1 slot9_wrapper_0/analog_bus2 analog_switch_array_7[8]/analog_pswitch_small_1/enable
-+ vss3v3 vdd1v2_uq2 slot9_wrapper_0/ibias0 analog_switch_array_7[8]/analog_switch_small_0/enable
-+ vss3v3 vdd1v2_uq2 vss3v3 vss3v3 vss3v3 vdd3v3 analog[2] analog[3] slot10_wrapper_0/ibias1
-+ vss3v3 analog_switch_array_7[8]/analog_switch_med_18/enable slot10_wrapper_0/vbias
-+ analog_switch_array_7[8]/analog_pswitch_small_0/enable vdd3v3 vss3v3 analog_switch_array_7[8]/analog_switch_med_22/enable
-+ vdd1v2_uq2 vss3v3 vss3v3 vdd1v2_uq2 vss3v3 analog[1] vdd3v3 vdd1v2_uq2 vss3v3 vdd1v2_uq2
-+ vss3v3 vss3v3 vss3v3 analog_switch_array
++ sub vdd1v2_uq2 slot9_wrapper_0/ibias0 analog_switch_array_7[8]/analog_switch_small_0/enable
++ sub vdd1v2_uq2 sub sub sub vdd3v3 analog[2] analog[3] slot10_wrapper_0/ibias1 sub
++ analog_switch_array_7[8]/analog_switch_med_18/enable slot10_wrapper_0/vbias analog_switch_array_7[8]/analog_pswitch_small_0/enable
++ vdd3v3 sub analog_switch_array_7[8]/analog_switch_med_22/enable vdd1v2_uq2 sub sub
++ vdd1v2_uq2 sub sub analog[1] vdd3v3 vdd1v2_uq2 sub vdd1v2_uq2 sub sub sub analog_switch_array
 Xproject_control_area_0 slot10_wrapper_0/dig_in[20] analog_switch_array_7[8]/analog_switch_med_1/enable
 + analog_switch_array_7[8]/analog_switch_med_0/enable slot10_wrapper_0/dig_out[7]
-+ housekeeping_top_0/proj_sel[2] vss3v3 slot10_wrapper_0/dig_in[2] slot10_wrapper_0/dig_in[21]
++ housekeeping_top_0/proj_sel[2] sub slot10_wrapper_0/dig_in[2] slot10_wrapper_0/dig_in[21]
 + housekeeping_top_0/dbus_out[22] slot10_wrapper_0/dig_out[8] housekeeping_top_0/proj_sel[1]
 + slot10_wrapper_0/dig_in[3] slot10_wrapper_0/dig_in[22] slot10_wrapper_0/dig_out[9]
 + housekeeping_top_0/analog_bus_ena[2] slot10_wrapper_0/analog_bus3 slot10_wrapper_0/dig_in[4]
@@ -21810,37 +22594,37 @@ Xproject_control_area_0 slot10_wrapper_0/dig_in[20] analog_switch_array_7[8]/ana
 + housekeeping_top_0/dbus_out[5] slot10_wrapper_0/dig_in[6] housekeeping_top_0/dbus_out[21]
 + housekeeping_top_0/dbus_out[9] project_control_area_0/user_project_control_0/dig_out[8]
 + slot10_wrapper_0/analog_bus0 project_control_area_0/user_project_control_0/dig_out[9]
-+ slot10_wrapper_0/dig_in[7] vss3v3 slot10_wrapper_0/dig_in[8] analog_switch_array_7[8]/analog_pswitch_small_3/enable
++ slot10_wrapper_0/dig_in[7] sub slot10_wrapper_0/dig_in[8] analog_switch_array_7[8]/analog_pswitch_small_3/enable
 + housekeeping_top_0/proj_sel[0] housekeeping_top_0/dbus_out[1] slot10_wrapper_0/dig_in[9]
-+ housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] vss3v3 slot10_wrapper_0/dig_out[10]
++ housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] sub slot10_wrapper_0/dig_out[10]
 + housekeeping_top_0/proj_dig_ena slot10_wrapper_0/dig_out[11] housekeeping_top_0/dbus_out[10]
 + vdd1v2_uq2 vdd1v2_uq2 project_control_area_0/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
 + housekeeping_top_0/dbus_out[23] slot10_wrapper_0/ibias1 project_control_area_0/user_project_control_0/dig_out[10]
 + slot10_wrapper_0/vdd_3v3 housekeeping_top_0/dbus_out[6] slot10_wrapper_0/ibias0
-+ slot10_wrapper_0/dig_in[10] vss3v3 housekeeping_top_0/proj_vbias_ena slot10_wrapper_0/dig_in[11]
-+ vdd3v3 slot10_wrapper_0/enable vss3v3 vss3v3 slot10_wrapper_0/dig_in[12] slot10_wrapper_0/dig_in[13]
-+ housekeeping_top_0/proj_3v3_ena vss3v3 slot10_wrapper_0/vbias slot10_wrapper_0/dig_in[14]
-+ housekeeping_top_0/analog_bus_ena[3] housekeeping_top_0/proj_ibias_ena[0] vss3v3
-+ slot10_wrapper_0/dig_in[15] housekeeping_top_0/dbus_out[20] vdd1v2_uq2 housekeeping_top_0/dbus_out[19]
-+ slot10_wrapper_0/dig_in[16] vss3v3 housekeeping_top_0/proj_sel[4] project_control_area_0/user_project_control_0/dig_out[6]
-+ vss3v3 housekeeping_top_0/reset housekeeping_top_0/dbus_out[12] slot10_wrapper_0/dig_in[17]
++ slot10_wrapper_0/dig_in[10] sub housekeeping_top_0/proj_vbias_ena slot10_wrapper_0/dig_in[11]
++ vdd3v3 slot10_wrapper_0/enable sub sub slot10_wrapper_0/dig_in[12] slot10_wrapper_0/dig_in[13]
++ housekeeping_top_0/proj_3v3_ena sub slot10_wrapper_0/vbias slot10_wrapper_0/dig_in[14]
++ housekeeping_top_0/analog_bus_ena[3] housekeeping_top_0/proj_ibias_ena[0] sub slot10_wrapper_0/dig_in[15]
++ housekeeping_top_0/dbus_out[20] vdd1v2_uq2 housekeeping_top_0/dbus_out[19] slot10_wrapper_0/dig_in[16]
++ sub housekeeping_top_0/proj_sel[4] project_control_area_0/user_project_control_0/dig_out[6]
++ sub housekeeping_top_0/reset housekeeping_top_0/dbus_out[12] slot10_wrapper_0/dig_in[17]
 + housekeeping_top_0/analog_bus_ena[0] housekeeping_top_0/proj_1v2_ena slot10_wrapper_0/dig_in[18]
-+ housekeeping_top_0/proj_ena slot10_wrapper_0/dig_in[19] vdd1v2_uq2 vss3v3 vdd3v3
-+ housekeeping_top_0/dbus_out[14] analog_switch_array_7[8]/analog_pswitch_small_2/enable
-+ vss3v3 housekeeping_top_0/dbus_out[16] housekeeping_top_0/dbus_out[18] slot10_wrapper_0/dig_out[0]
-+ housekeeping_top_0/clk_out slot10_wrapper_0/reset slot10_wrapper_0/dig_out[1] project_control_area_0/user_project_control_0/dig_out[2]
++ housekeeping_top_0/proj_ena slot10_wrapper_0/dig_in[19] vdd1v2_uq2 sub vdd3v3 housekeeping_top_0/dbus_out[14]
++ analog_switch_array_7[8]/analog_pswitch_small_2/enable sub housekeeping_top_0/dbus_out[16]
++ housekeeping_top_0/dbus_out[18] slot10_wrapper_0/dig_out[0] housekeeping_top_0/clk_out
++ slot10_wrapper_0/reset slot10_wrapper_0/dig_out[1] project_control_area_0/user_project_control_0/dig_out[2]
 + housekeeping_top_0/dbus_out[0] slot10_wrapper_0/dig_out[2] project_control_area_0/user_project_control_0/dig_out[7]
 + project_control_area_0/user_project_control_0/dig_out[0] slot10_wrapper_0/clk project_control_area_0/user_project_control_0/dig_out[1]
 + housekeeping_top_0/dbus_out[7] slot10_wrapper_0/dig_out[3] housekeeping_top_0/dbus_out[8]
-+ housekeeping_top_0/dbus_out[11] vss3v3 slot10_wrapper_0/dig_out[4] housekeeping_top_0/dbus_out[3]
++ housekeeping_top_0/dbus_out[11] sub slot10_wrapper_0/dig_out[4] housekeeping_top_0/dbus_out[3]
 + analog_switch_array_7[8]/analog_switch_small_1/enable housekeeping_top_0/proj_sel[3]
-+ slot10_wrapper_0/dig_out[5] vss3v3 housekeeping_top_0/dbus_out[4] slot10_wrapper_0/dig_in[0]
-+ housekeeping_top_0/dbus_out[15] vss3v3 analog_switch_array_7[8]/analog_switch_med_3/enable
-+ housekeeping_top_0/dbus_out[13] slot10_wrapper_0/dig_out[6] vss3v3 slot10_wrapper_0/vdd_1v2
-+ vss3v3 vss3v3 slot10_wrapper_0/dig_in[1] project_control_area
++ slot10_wrapper_0/dig_out[5] sub housekeeping_top_0/dbus_out[4] slot10_wrapper_0/dig_in[0]
++ housekeeping_top_0/dbus_out[15] sub analog_switch_array_7[8]/analog_switch_med_3/enable
++ housekeeping_top_0/dbus_out[13] slot10_wrapper_0/dig_out[6] sub slot10_wrapper_0/vdd_1v2
++ sub sub slot10_wrapper_0/dig_in[1] project_control_area
 Xproject_control_area_1 slot9_wrapper_0/dig_in[20] analog_switch_array_7[8]/analog_switch_med_18/enable
 + analog_switch_array_7[8]/analog_switch_med_17/enable slot9_wrapper_0/dig_out[7]
-+ housekeeping_top_0/proj_sel[2] vss3v3 slot9_wrapper_0/dig_in[2] slot9_wrapper_0/dig_in[21]
++ housekeeping_top_0/proj_sel[2] sub slot9_wrapper_0/dig_in[2] slot9_wrapper_0/dig_in[21]
 + housekeeping_top_0/dbus_out[22] slot9_wrapper_0/dig_out[8] housekeeping_top_0/proj_sel[1]
 + slot9_wrapper_0/dig_in[3] slot9_wrapper_0/dig_in[22] slot9_wrapper_0/dig_out[9]
 + housekeeping_top_0/analog_bus_ena[2] slot9_wrapper_0/analog_bus3 slot9_wrapper_0/dig_in[4]
@@ -21851,35 +22635,35 @@ Xproject_control_area_1 slot9_wrapper_0/dig_in[20] analog_switch_array_7[8]/anal
 + housekeeping_top_0/dbus_out[5] slot9_wrapper_0/dig_in[6] housekeeping_top_0/dbus_out[21]
 + housekeeping_top_0/dbus_out[9] project_control_area_1/user_project_control_0/dig_out[8]
 + slot9_wrapper_0/analog_bus0 project_control_area_1/user_project_control_0/dig_out[9]
-+ slot9_wrapper_0/dig_in[7] vss3v3 slot9_wrapper_0/dig_in[8] analog_switch_array_7[8]/analog_pswitch_small_0/enable
++ slot9_wrapper_0/dig_in[7] sub slot9_wrapper_0/dig_in[8] analog_switch_array_7[8]/analog_pswitch_small_0/enable
 + housekeeping_top_0/proj_sel[0] housekeeping_top_0/dbus_out[1] slot9_wrapper_0/dig_in[9]
 + housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] vdd1v2_uq2 slot9_wrapper_0/dig_out[10]
 + housekeeping_top_0/proj_dig_ena slot9_wrapper_0/dig_out[11] housekeeping_top_0/dbus_out[10]
-+ vss3v3 vdd1v2_uq2 project_control_area_1/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
++ sub vdd1v2_uq2 project_control_area_1/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
 + housekeeping_top_0/dbus_out[23] slot9_wrapper_0/ibias1 project_control_area_1/user_project_control_0/dig_out[10]
 + slot9_wrapper_0/vdd_3v3 housekeeping_top_0/dbus_out[6] slot9_wrapper_0/ibias0 slot9_wrapper_0/dig_in[10]
-+ vss3v3 housekeeping_top_0/proj_vbias_ena slot9_wrapper_0/dig_in[11] vdd3v3 slot9_wrapper_0/enable
-+ vss3v3 vss3v3 slot9_wrapper_0/dig_in[12] slot9_wrapper_0/dig_in[13] housekeeping_top_0/proj_3v3_ena
-+ vss3v3 slot9_wrapper_0/vbias slot9_wrapper_0/dig_in[14] housekeeping_top_0/analog_bus_ena[3]
-+ housekeeping_top_0/proj_ibias_ena[0] vss3v3 slot9_wrapper_0/dig_in[15] housekeeping_top_0/dbus_out[20]
-+ vdd1v2_uq2 housekeeping_top_0/dbus_out[19] slot9_wrapper_0/dig_in[16] vss3v3 housekeeping_top_0/proj_sel[4]
-+ project_control_area_1/user_project_control_0/dig_out[6] vss3v3 housekeeping_top_0/reset
++ sub housekeeping_top_0/proj_vbias_ena slot9_wrapper_0/dig_in[11] vdd3v3 slot9_wrapper_0/enable
++ sub sub slot9_wrapper_0/dig_in[12] slot9_wrapper_0/dig_in[13] housekeeping_top_0/proj_3v3_ena
++ sub slot9_wrapper_0/vbias slot9_wrapper_0/dig_in[14] housekeeping_top_0/analog_bus_ena[3]
++ housekeeping_top_0/proj_ibias_ena[0] sub slot9_wrapper_0/dig_in[15] housekeeping_top_0/dbus_out[20]
++ vdd1v2_uq2 housekeeping_top_0/dbus_out[19] slot9_wrapper_0/dig_in[16] sub housekeeping_top_0/proj_sel[4]
++ project_control_area_1/user_project_control_0/dig_out[6] sub housekeeping_top_0/reset
 + housekeeping_top_0/dbus_out[12] slot9_wrapper_0/dig_in[17] housekeeping_top_0/analog_bus_ena[0]
 + housekeeping_top_0/proj_1v2_ena slot9_wrapper_0/dig_in[18] housekeeping_top_0/proj_ena
-+ slot9_wrapper_0/dig_in[19] vdd1v2_uq2 vss3v3 vdd3v3 housekeeping_top_0/dbus_out[14]
-+ analog_switch_array_7[8]/analog_pswitch_small_1/enable vss3v3 housekeeping_top_0/dbus_out[16]
++ slot9_wrapper_0/dig_in[19] vdd1v2_uq2 sub vdd3v3 housekeeping_top_0/dbus_out[14]
++ analog_switch_array_7[8]/analog_pswitch_small_1/enable sub housekeeping_top_0/dbus_out[16]
 + housekeeping_top_0/dbus_out[18] slot9_wrapper_0/dig_out[0] housekeeping_top_0/clk_out
 + slot9_wrapper_0/reset slot9_wrapper_0/dig_out[1] project_control_area_1/user_project_control_0/dig_out[2]
 + housekeeping_top_0/dbus_out[0] slot9_wrapper_0/dig_out[2] project_control_area_1/user_project_control_0/dig_out[7]
 + project_control_area_1/user_project_control_0/dig_out[0] slot9_wrapper_0/clk project_control_area_1/user_project_control_0/dig_out[1]
 + housekeeping_top_0/dbus_out[7] slot9_wrapper_0/dig_out[3] housekeeping_top_0/dbus_out[8]
-+ housekeeping_top_0/dbus_out[11] vss3v3 slot9_wrapper_0/dig_out[4] housekeeping_top_0/dbus_out[3]
++ housekeeping_top_0/dbus_out[11] sub slot9_wrapper_0/dig_out[4] housekeeping_top_0/dbus_out[3]
 + analog_switch_array_7[8]/analog_switch_small_0/enable housekeeping_top_0/proj_sel[3]
-+ slot9_wrapper_0/dig_out[5] vss3v3 housekeeping_top_0/dbus_out[4] slot9_wrapper_0/dig_in[0]
-+ housekeeping_top_0/dbus_out[15] vss3v3 analog_switch_array_7[8]/analog_switch_med_22/enable
-+ housekeeping_top_0/dbus_out[13] slot9_wrapper_0/dig_out[6] vss3v3 slot9_wrapper_0/vdd_1v2
-+ vss3v3 vss3v3 slot9_wrapper_0/dig_in[1] project_control_area
-Xslot3_wrapper_0 vss3v3 s3_an[0] s3_an[1] s3_an_0_esd slot3_wrapper_0/vbias slot3_wrapper_0/dig_in[23]
++ slot9_wrapper_0/dig_out[5] sub housekeeping_top_0/dbus_out[4] slot9_wrapper_0/dig_in[0]
++ housekeeping_top_0/dbus_out[15] sub analog_switch_array_7[8]/analog_switch_med_22/enable
++ housekeeping_top_0/dbus_out[13] slot9_wrapper_0/dig_out[6] sub slot9_wrapper_0/vdd_1v2
++ sub sub slot9_wrapper_0/dig_in[1] project_control_area
+Xslot3_wrapper_0 sub s3_an[0] s3_an[1] s3_an_0_esd slot3_wrapper_0/vbias slot3_wrapper_0/dig_in[23]
 + slot3_wrapper_0/dig_in[22] slot3_wrapper_0/dig_in[21] slot3_wrapper_0/dig_in[20]
 + slot3_wrapper_0/dig_in[19] slot3_wrapper_0/dig_in[18] slot3_wrapper_0/dig_in[17]
 + slot3_wrapper_0/dig_in[16] slot3_wrapper_0/dig_in[15] slot3_wrapper_0/dig_in[14]
@@ -21892,10 +22676,10 @@ Xslot3_wrapper_0 vss3v3 s3_an[0] s3_an[1] s3_an_0_esd slot3_wrapper_0/vbias slot
 + slot3_wrapper_0/dig_out[4] slot3_wrapper_0/dig_out[3] slot3_wrapper_0/dig_out[2]
 + slot3_wrapper_0/dig_out[1] slot3_wrapper_0/dig_out[0] slot3_wrapper_0/ibias0 slot3_wrapper_0/ibias1
 + slot3_wrapper_0/analog_bus3 slot3_wrapper_0/analog_bus2 slot3_wrapper_0/analog_bus1
-+ slot3_wrapper_0/analog_bus0 vss3v3 slot3_wrapper_0/vdd_1v2 slot3_wrapper_0/vdd_3v3
++ slot3_wrapper_0/analog_bus0 sub slot3_wrapper_0/vdd_1v2 slot3_wrapper_0/vdd_3v3
 + slot3_wrapper_0/enable slot3_wrapper_0/clk slot3_wrapper_0/reset slot3_wrapper
 Xsg13cmos5l_ocd_ip__por_0 vdd1v2_uq2 vdd1v2_uq2 sg13cmos5l_ocd_ip__por_0/por_unbuf
-+ housekeeping_top_0/porb sg13cmos5l_ocd_ip__por_0/por vss3v3 sg13cmos5l_ocd_ip__por
++ housekeeping_top_0/porb sg13cmos5l_ocd_ip__por_0/por sub sg13cmos5l_ocd_ip__por
 Xproject_control_area_2 slot11_wrapper_0/dig_in[20] analog_switch_array_7[7]/analog_switch_med_1/enable
 + analog_switch_array_7[7]/analog_switch_med_0/enable slot11_wrapper_0/dig_out[7]
 + housekeeping_top_0/proj_sel[2] project_control_area_0/user_project_control_0/dig_out[0]
@@ -21926,7 +22710,7 @@ Xproject_control_area_2 slot11_wrapper_0/dig_in[20] analog_switch_array_7[7]/ana
 + project_control_area_0/user_project_control_0/dig_out[5] slot11_wrapper_0/dig_in[15]
 + housekeeping_top_0/dbus_out[20] vdd1v2_uq2 housekeeping_top_0/dbus_out[19] slot11_wrapper_0/dig_in[16]
 + project_control_area_0/user_project_control_0/dig_out[6] housekeeping_top_0/proj_sel[4]
-+ project_control_area_2/user_project_control_0/dig_out[6] vss3v3 housekeeping_top_0/reset
++ project_control_area_2/user_project_control_0/dig_out[6] sub housekeeping_top_0/reset
 + housekeeping_top_0/dbus_out[12] slot11_wrapper_0/dig_in[17] housekeeping_top_0/analog_bus_ena[0]
 + housekeeping_top_0/proj_1v2_ena slot11_wrapper_0/dig_in[18] housekeeping_top_0/proj_ena
 + slot11_wrapper_0/dig_in[19] vdd1v2_uq2 project_control_area_0/user_project_control_0/dig_out[9]
@@ -21941,8 +22725,8 @@ Xproject_control_area_2 slot11_wrapper_0/dig_in[20] analog_switch_array_7[7]/ana
 + slot11_wrapper_0/dig_out[4] housekeeping_top_0/dbus_out[3] analog_switch_array_7[7]/analog_switch_small_1/enable
 + housekeeping_top_0/proj_sel[3] slot11_wrapper_0/dig_out[5] project_control_area_0/user_project_control_0/dig_out[8]
 + housekeeping_top_0/dbus_out[4] slot11_wrapper_0/dig_in[0] housekeeping_top_0/dbus_out[15]
-+ vss3v3 analog_switch_array_7[7]/analog_switch_med_3/enable housekeeping_top_0/dbus_out[13]
-+ slot11_wrapper_0/dig_out[6] vss3v3 slot11_wrapper_0/vdd_1v2 vss3v3 vss3v3 slot11_wrapper_0/dig_in[1]
++ sub analog_switch_array_7[7]/analog_switch_med_3/enable housekeeping_top_0/dbus_out[13]
++ slot11_wrapper_0/dig_out[6] sub slot11_wrapper_0/vdd_1v2 sub sub slot11_wrapper_0/dig_in[1]
 + project_control_area
 Xproject_control_area_3 slot8_wrapper_0/dig_in[20] analog_switch_array_7[7]/analog_switch_med_18/enable
 + analog_switch_array_7[7]/analog_switch_med_17/enable slot8_wrapper_0/dig_out[7]
@@ -21960,9 +22744,9 @@ Xproject_control_area_3 slot8_wrapper_0/dig_in[20] analog_switch_array_7[7]/anal
 + slot8_wrapper_0/dig_in[7] project_control_area_1/user_project_control_0/dig_out[11]
 + slot8_wrapper_0/dig_in[8] analog_switch_array_7[7]/analog_pswitch_small_0/enable
 + housekeeping_top_0/proj_sel[0] housekeeping_top_0/dbus_out[1] slot8_wrapper_0/dig_in[9]
-+ housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] vss3v3 slot8_wrapper_0/dig_out[10]
++ housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] sub slot8_wrapper_0/dig_out[10]
 + housekeeping_top_0/proj_dig_ena slot8_wrapper_0/dig_out[11] housekeeping_top_0/dbus_out[10]
-+ vss3v3 vdd1v2_uq2 project_control_area_3/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
++ sub vdd1v2_uq2 project_control_area_3/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
 + housekeeping_top_0/dbus_out[23] slot8_wrapper_0/ibias1 project_control_area_3/user_project_control_0/dig_out[10]
 + slot8_wrapper_0/vdd_3v3 housekeeping_top_0/dbus_out[6] slot8_wrapper_0/ibias0 slot8_wrapper_0/dig_in[10]
 + project_control_area_1/user_project_control_0/dig_out[2] housekeeping_top_0/proj_vbias_ena
@@ -21974,7 +22758,7 @@ Xproject_control_area_3 slot8_wrapper_0/dig_in[20] analog_switch_array_7[7]/anal
 + slot8_wrapper_0/dig_in[15] housekeeping_top_0/dbus_out[20] vdd1v2_uq2 housekeeping_top_0/dbus_out[19]
 + slot8_wrapper_0/dig_in[16] project_control_area_1/user_project_control_0/dig_out[6]
 + housekeeping_top_0/proj_sel[4] project_control_area_3/user_project_control_0/dig_out[6]
-+ vss3v3 housekeeping_top_0/reset housekeeping_top_0/dbus_out[12] slot8_wrapper_0/dig_in[17]
++ sub housekeeping_top_0/reset housekeeping_top_0/dbus_out[12] slot8_wrapper_0/dig_in[17]
 + housekeeping_top_0/analog_bus_ena[0] housekeeping_top_0/proj_1v2_ena slot8_wrapper_0/dig_in[18]
 + housekeeping_top_0/proj_ena slot8_wrapper_0/dig_in[19] vdd1v2_uq2 project_control_area_1/user_project_control_0/dig_out[9]
 + vdd3v3 housekeeping_top_0/dbus_out[14] analog_switch_array_7[7]/analog_pswitch_small_1/enable
@@ -21988,10 +22772,10 @@ Xproject_control_area_3 slot8_wrapper_0/dig_in[20] analog_switch_array_7[7]/anal
 + slot8_wrapper_0/dig_out[4] housekeeping_top_0/dbus_out[3] analog_switch_array_7[7]/analog_switch_small_0/enable
 + housekeeping_top_0/proj_sel[3] slot8_wrapper_0/dig_out[5] project_control_area_1/user_project_control_0/dig_out[8]
 + housekeeping_top_0/dbus_out[4] slot8_wrapper_0/dig_in[0] housekeeping_top_0/dbus_out[15]
-+ vss3v3 analog_switch_array_7[7]/analog_switch_med_22/enable housekeeping_top_0/dbus_out[13]
-+ slot8_wrapper_0/dig_out[6] vss3v3 slot8_wrapper_0/vdd_1v2 vss3v3 vss3v3 slot8_wrapper_0/dig_in[1]
++ sub analog_switch_array_7[7]/analog_switch_med_22/enable housekeeping_top_0/dbus_out[13]
++ slot8_wrapper_0/dig_out[6] sub slot8_wrapper_0/vdd_1v2 sub sub slot8_wrapper_0/dig_in[1]
 + project_control_area
-Xslot7_wrapper_0 vss3v3 s7_an[0] s7_an[1] s7_an_0_esd slot7_wrapper_0/vbias slot7_wrapper_0/dig_in[23]
+Xslot7_wrapper_0 sub s7_an[0] s7_an[1] s7_an_0_esd slot7_wrapper_0/vbias slot7_wrapper_0/dig_in[23]
 + slot7_wrapper_0/dig_in[22] slot7_wrapper_0/dig_in[21] slot7_wrapper_0/dig_in[20]
 + slot7_wrapper_0/dig_in[19] slot7_wrapper_0/dig_in[18] slot7_wrapper_0/dig_in[17]
 + slot7_wrapper_0/dig_in[16] slot7_wrapper_0/dig_in[15] slot7_wrapper_0/dig_in[14]
@@ -22004,7 +22788,7 @@ Xslot7_wrapper_0 vss3v3 s7_an[0] s7_an[1] s7_an_0_esd slot7_wrapper_0/vbias slot
 + slot7_wrapper_0/dig_out[4] slot7_wrapper_0/dig_out[3] slot7_wrapper_0/dig_out[2]
 + slot7_wrapper_0/dig_out[1] slot7_wrapper_0/dig_out[0] slot7_wrapper_0/ibias0 slot7_wrapper_0/ibias1
 + slot7_wrapper_0/analog_bus3 slot7_wrapper_0/analog_bus2 slot7_wrapper_0/analog_bus1
-+ slot7_wrapper_0/analog_bus0 slot7_wrapper_0/vdd_1v2 vss3v3 slot7_wrapper_0/vdd_3v3
++ slot7_wrapper_0/analog_bus0 slot7_wrapper_0/vdd_1v2 sub slot7_wrapper_0/vdd_3v3
 + slot7_wrapper_0/enable slot7_wrapper_0/clk slot7_wrapper_0/reset slot7_wrapper
 Xproject_control_area_4 slot12_wrapper_0/dig_in[20] analog_switch_array_7[6]/analog_switch_med_1/enable
 + analog_switch_array_7[6]/analog_switch_med_0/enable slot12_wrapper_0/dig_out[7]
@@ -22022,9 +22806,9 @@ Xproject_control_area_4 slot12_wrapper_0/dig_in[20] analog_switch_array_7[6]/ana
 + slot12_wrapper_0/dig_in[7] project_control_area_2/user_project_control_0/dig_out[11]
 + slot12_wrapper_0/dig_in[8] analog_switch_array_7[6]/analog_pswitch_small_3/enable
 + housekeeping_top_0/proj_sel[0] housekeeping_top_0/dbus_out[1] slot12_wrapper_0/dig_in[9]
-+ housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] vss3v3 slot12_wrapper_0/dig_out[10]
++ housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] sub slot12_wrapper_0/dig_out[10]
 + housekeeping_top_0/proj_dig_ena slot12_wrapper_0/dig_out[11] housekeeping_top_0/dbus_out[10]
-+ vss3v3 vdd1v2_uq2 project_control_area_4/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
++ sub vdd1v2_uq2 project_control_area_4/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
 + housekeeping_top_0/dbus_out[23] slot12_wrapper_0/ibias1 project_control_area_4/user_project_control_0/dig_out[10]
 + slot12_wrapper_0/vdd_3v3 housekeeping_top_0/dbus_out[6] slot12_wrapper_0/ibias0
 + slot12_wrapper_0/dig_in[10] project_control_area_2/user_project_control_0/dig_out[2]
@@ -22036,7 +22820,7 @@ Xproject_control_area_4 slot12_wrapper_0/dig_in[20] analog_switch_array_7[6]/ana
 + project_control_area_2/user_project_control_0/dig_out[5] slot12_wrapper_0/dig_in[15]
 + housekeeping_top_0/dbus_out[20] vdd1v2_uq2 housekeeping_top_0/dbus_out[19] slot12_wrapper_0/dig_in[16]
 + project_control_area_2/user_project_control_0/dig_out[6] housekeeping_top_0/proj_sel[4]
-+ project_control_area_4/user_project_control_0/dig_out[6] vss3v3 housekeeping_top_0/reset
++ project_control_area_4/user_project_control_0/dig_out[6] sub housekeeping_top_0/reset
 + housekeeping_top_0/dbus_out[12] slot12_wrapper_0/dig_in[17] housekeeping_top_0/analog_bus_ena[0]
 + housekeeping_top_0/proj_1v2_ena slot12_wrapper_0/dig_in[18] housekeeping_top_0/proj_ena
 + slot12_wrapper_0/dig_in[19] vdd1v2_uq2 project_control_area_2/user_project_control_0/dig_out[9]
@@ -22051,8 +22835,8 @@ Xproject_control_area_4 slot12_wrapper_0/dig_in[20] analog_switch_array_7[6]/ana
 + slot12_wrapper_0/dig_out[4] housekeeping_top_0/dbus_out[3] analog_switch_array_7[6]/analog_switch_small_1/enable
 + housekeeping_top_0/proj_sel[3] slot12_wrapper_0/dig_out[5] project_control_area_2/user_project_control_0/dig_out[8]
 + housekeeping_top_0/dbus_out[4] slot12_wrapper_0/dig_in[0] housekeeping_top_0/dbus_out[15]
-+ vss3v3 analog_switch_array_7[6]/analog_switch_med_3/enable housekeeping_top_0/dbus_out[13]
-+ slot12_wrapper_0/dig_out[6] vss3v3 slot12_wrapper_0/vdd_1v2 vdd1v2_uq2 vss3v3 slot12_wrapper_0/dig_in[1]
++ sub analog_switch_array_7[6]/analog_switch_med_3/enable housekeeping_top_0/dbus_out[13]
++ slot12_wrapper_0/dig_out[6] sub slot12_wrapper_0/vdd_1v2 vdd1v2_uq2 sub slot12_wrapper_0/dig_in[1]
 + project_control_area
 Xproject_control_area_5 slot7_wrapper_0/dig_in[20] analog_switch_array_7[6]/analog_switch_med_18/enable
 + analog_switch_array_7[6]/analog_switch_med_17/enable slot7_wrapper_0/dig_out[7]
@@ -22072,7 +22856,7 @@ Xproject_control_area_5 slot7_wrapper_0/dig_in[20] analog_switch_array_7[6]/anal
 + housekeeping_top_0/proj_sel[0] housekeeping_top_0/dbus_out[1] slot7_wrapper_0/dig_in[9]
 + housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] vdd1v2_uq2 slot7_wrapper_0/dig_out[10]
 + housekeeping_top_0/proj_dig_ena slot7_wrapper_0/dig_out[11] housekeeping_top_0/dbus_out[10]
-+ vdd1v2_uq2 vss3v3 project_control_area_5/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
++ vdd1v2_uq2 sub project_control_area_5/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
 + housekeeping_top_0/dbus_out[23] slot7_wrapper_0/ibias1 project_control_area_5/user_project_control_0/dig_out[10]
 + slot7_wrapper_0/vdd_3v3 housekeeping_top_0/dbus_out[6] slot7_wrapper_0/ibias0 slot7_wrapper_0/dig_in[10]
 + project_control_area_3/user_project_control_0/dig_out[2] housekeeping_top_0/proj_vbias_ena
@@ -22084,7 +22868,7 @@ Xproject_control_area_5 slot7_wrapper_0/dig_in[20] analog_switch_array_7[6]/anal
 + slot7_wrapper_0/dig_in[15] housekeeping_top_0/dbus_out[20] vdd1v2_uq2 housekeeping_top_0/dbus_out[19]
 + slot7_wrapper_0/dig_in[16] project_control_area_3/user_project_control_0/dig_out[6]
 + housekeeping_top_0/proj_sel[4] project_control_area_5/user_project_control_0/dig_out[6]
-+ vss3v3 housekeeping_top_0/reset housekeeping_top_0/dbus_out[12] slot7_wrapper_0/dig_in[17]
++ sub housekeeping_top_0/reset housekeeping_top_0/dbus_out[12] slot7_wrapper_0/dig_in[17]
 + housekeeping_top_0/analog_bus_ena[0] housekeeping_top_0/proj_1v2_ena slot7_wrapper_0/dig_in[18]
 + housekeeping_top_0/proj_ena slot7_wrapper_0/dig_in[19] vdd1v2_uq2 project_control_area_3/user_project_control_0/dig_out[9]
 + vdd3v3 housekeeping_top_0/dbus_out[14] analog_switch_array_7[6]/analog_pswitch_small_1/enable
@@ -22098,10 +22882,10 @@ Xproject_control_area_5 slot7_wrapper_0/dig_in[20] analog_switch_array_7[6]/anal
 + slot7_wrapper_0/dig_out[4] housekeeping_top_0/dbus_out[3] analog_switch_array_7[6]/analog_switch_small_0/enable
 + housekeeping_top_0/proj_sel[3] slot7_wrapper_0/dig_out[5] project_control_area_3/user_project_control_0/dig_out[8]
 + housekeeping_top_0/dbus_out[4] slot7_wrapper_0/dig_in[0] housekeeping_top_0/dbus_out[15]
-+ vss3v3 analog_switch_array_7[6]/analog_switch_med_22/enable housekeeping_top_0/dbus_out[13]
-+ slot7_wrapper_0/dig_out[6] vss3v3 slot7_wrapper_0/vdd_1v2 vdd1v2_uq2 vss3v3 slot7_wrapper_0/dig_in[1]
++ sub analog_switch_array_7[6]/analog_switch_med_22/enable housekeeping_top_0/dbus_out[13]
++ slot7_wrapper_0/dig_out[6] sub slot7_wrapper_0/vdd_1v2 vdd1v2_uq2 sub slot7_wrapper_0/dig_in[1]
 + project_control_area
-Xslot11_wrapper_0 vss3v3 s11_an[0] s11_an_0_esd slot11_wrapper_0/vbias slot11_wrapper_0/dig_in[23]
+Xslot11_wrapper_0 sub s11_an[0] s11_an_0_esd slot11_wrapper_0/vbias slot11_wrapper_0/dig_in[23]
 + slot11_wrapper_0/dig_in[22] slot11_wrapper_0/dig_in[21] slot11_wrapper_0/dig_in[20]
 + slot11_wrapper_0/dig_in[19] slot11_wrapper_0/dig_in[18] slot11_wrapper_0/dig_in[17]
 + slot11_wrapper_0/dig_in[16] slot11_wrapper_0/dig_in[15] slot11_wrapper_0/dig_in[14]
@@ -22116,7 +22900,7 @@ Xslot11_wrapper_0 vss3v3 s11_an[0] s11_an_0_esd slot11_wrapper_0/vbias slot11_wr
 + slot11_wrapper_0/dig_out[1] slot11_wrapper_0/dig_out[0] slot11_wrapper_0/ibias0
 + slot11_wrapper_0/ibias1 slot11_wrapper_0/analog_bus3 slot11_wrapper_0/analog_bus2
 + slot11_wrapper_0/analog_bus1 slot11_wrapper_0/analog_bus0 slot11_wrapper_0/vdd_1v2
-+ vss3v3 slot11_wrapper_0/vdd_3v3 slot11_wrapper_0/enable slot11_wrapper_0/clk slot11_wrapper_0/reset
++ sub slot11_wrapper_0/vdd_3v3 slot11_wrapper_0/enable slot11_wrapper_0/clk slot11_wrapper_0/reset
 + slot11_wrapper
 Xproject_control_area_6 slot13_wrapper_0/dig_in[20] analog_switch_array_7[5]/analog_switch_med_1/enable
 + analog_switch_array_7[5]/analog_switch_med_0/enable slot13_wrapper_0/dig_out[7]
@@ -22136,7 +22920,7 @@ Xproject_control_area_6 slot13_wrapper_0/dig_in[20] analog_switch_array_7[5]/ana
 + housekeeping_top_0/proj_sel[0] housekeeping_top_0/dbus_out[1] slot13_wrapper_0/dig_in[9]
 + housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] vdd1v2_uq2 slot13_wrapper_0/dig_out[10]
 + housekeeping_top_0/proj_dig_ena slot13_wrapper_0/dig_out[11] housekeeping_top_0/dbus_out[10]
-+ vss3v3 vdd1v2_uq2 project_control_area_6/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
++ sub vdd1v2_uq2 project_control_area_6/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
 + housekeeping_top_0/dbus_out[23] slot13_wrapper_0/ibias1 project_control_area_6/user_project_control_0/dig_out[10]
 + slot13_wrapper_0/vdd_3v3 housekeeping_top_0/dbus_out[6] slot13_wrapper_0/ibias0
 + slot13_wrapper_0/dig_in[10] project_control_area_4/user_project_control_0/dig_out[2]
@@ -22148,7 +22932,7 @@ Xproject_control_area_6 slot13_wrapper_0/dig_in[20] analog_switch_array_7[5]/ana
 + project_control_area_4/user_project_control_0/dig_out[5] slot13_wrapper_0/dig_in[15]
 + housekeeping_top_0/dbus_out[20] vdd1v2_uq2 housekeeping_top_0/dbus_out[19] slot13_wrapper_0/dig_in[16]
 + project_control_area_4/user_project_control_0/dig_out[6] housekeeping_top_0/proj_sel[4]
-+ project_control_area_6/user_project_control_0/dig_out[6] vss3v3 housekeeping_top_0/reset
++ project_control_area_6/user_project_control_0/dig_out[6] sub housekeeping_top_0/reset
 + housekeeping_top_0/dbus_out[12] slot13_wrapper_0/dig_in[17] housekeeping_top_0/analog_bus_ena[0]
 + housekeeping_top_0/proj_1v2_ena slot13_wrapper_0/dig_in[18] housekeeping_top_0/proj_ena
 + slot13_wrapper_0/dig_in[19] vdd1v2_uq2 project_control_area_4/user_project_control_0/dig_out[9]
@@ -22163,8 +22947,8 @@ Xproject_control_area_6 slot13_wrapper_0/dig_in[20] analog_switch_array_7[5]/ana
 + slot13_wrapper_0/dig_out[4] housekeeping_top_0/dbus_out[3] analog_switch_array_7[5]/analog_switch_small_1/enable
 + housekeeping_top_0/proj_sel[3] slot13_wrapper_0/dig_out[5] project_control_area_4/user_project_control_0/dig_out[8]
 + housekeeping_top_0/dbus_out[4] slot13_wrapper_0/dig_in[0] housekeeping_top_0/dbus_out[15]
-+ vss3v3 analog_switch_array_7[5]/analog_switch_med_3/enable housekeeping_top_0/dbus_out[13]
-+ slot13_wrapper_0/dig_out[6] vss3v3 slot13_wrapper_0/vdd_1v2 vdd1v2_uq2 vss3v3 slot13_wrapper_0/dig_in[1]
++ sub analog_switch_array_7[5]/analog_switch_med_3/enable housekeeping_top_0/dbus_out[13]
++ slot13_wrapper_0/dig_out[6] sub slot13_wrapper_0/vdd_1v2 vdd1v2_uq2 sub slot13_wrapper_0/dig_in[1]
 + project_control_area
 Xproject_control_area_7 slot6_wrapper_0/dig_in[20] analog_switch_array_7[5]/analog_switch_med_18/enable
 + analog_switch_array_7[5]/analog_switch_med_17/enable slot6_wrapper_0/dig_out[7]
@@ -22182,9 +22966,9 @@ Xproject_control_area_7 slot6_wrapper_0/dig_in[20] analog_switch_array_7[5]/anal
 + slot6_wrapper_0/dig_in[7] project_control_area_5/user_project_control_0/dig_out[11]
 + slot6_wrapper_0/dig_in[8] analog_switch_array_7[5]/analog_pswitch_small_0/enable
 + housekeeping_top_0/proj_sel[0] housekeeping_top_0/dbus_out[1] slot6_wrapper_0/dig_in[9]
-+ housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] vss3v3 slot6_wrapper_0/dig_out[10]
++ housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] sub slot6_wrapper_0/dig_out[10]
 + housekeeping_top_0/proj_dig_ena slot6_wrapper_0/dig_out[11] housekeeping_top_0/dbus_out[10]
-+ vdd1v2_uq2 vss3v3 project_control_area_7/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
++ vdd1v2_uq2 sub project_control_area_7/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
 + housekeeping_top_0/dbus_out[23] slot6_wrapper_0/ibias1 project_control_area_7/user_project_control_0/dig_out[10]
 + slot6_wrapper_0/vdd_3v3 housekeeping_top_0/dbus_out[6] slot6_wrapper_0/ibias0 slot6_wrapper_0/dig_in[10]
 + project_control_area_5/user_project_control_0/dig_out[2] housekeeping_top_0/proj_vbias_ena
@@ -22196,7 +22980,7 @@ Xproject_control_area_7 slot6_wrapper_0/dig_in[20] analog_switch_array_7[5]/anal
 + slot6_wrapper_0/dig_in[15] housekeeping_top_0/dbus_out[20] vdd1v2_uq2 housekeeping_top_0/dbus_out[19]
 + slot6_wrapper_0/dig_in[16] project_control_area_5/user_project_control_0/dig_out[6]
 + housekeeping_top_0/proj_sel[4] project_control_area_7/user_project_control_0/dig_out[6]
-+ vss3v3 housekeeping_top_0/reset housekeeping_top_0/dbus_out[12] slot6_wrapper_0/dig_in[17]
++ sub housekeeping_top_0/reset housekeeping_top_0/dbus_out[12] slot6_wrapper_0/dig_in[17]
 + housekeeping_top_0/analog_bus_ena[0] housekeeping_top_0/proj_1v2_ena slot6_wrapper_0/dig_in[18]
 + housekeeping_top_0/proj_ena slot6_wrapper_0/dig_in[19] vdd1v2_uq2 project_control_area_5/user_project_control_0/dig_out[9]
 + vdd3v3 housekeeping_top_0/dbus_out[14] analog_switch_array_7[5]/analog_pswitch_small_1/enable
@@ -22210,10 +22994,10 @@ Xproject_control_area_7 slot6_wrapper_0/dig_in[20] analog_switch_array_7[5]/anal
 + slot6_wrapper_0/dig_out[4] housekeeping_top_0/dbus_out[3] analog_switch_array_7[5]/analog_switch_small_0/enable
 + housekeeping_top_0/proj_sel[3] slot6_wrapper_0/dig_out[5] project_control_area_5/user_project_control_0/dig_out[8]
 + housekeeping_top_0/dbus_out[4] slot6_wrapper_0/dig_in[0] housekeeping_top_0/dbus_out[15]
-+ vss3v3 analog_switch_array_7[5]/analog_switch_med_22/enable housekeeping_top_0/dbus_out[13]
-+ slot6_wrapper_0/dig_out[6] vss3v3 slot6_wrapper_0/vdd_1v2 vdd1v2_uq2 vss3v3 slot6_wrapper_0/dig_in[1]
++ sub analog_switch_array_7[5]/analog_switch_med_22/enable housekeeping_top_0/dbus_out[13]
++ slot6_wrapper_0/dig_out[6] sub slot6_wrapper_0/vdd_1v2 vdd1v2_uq2 sub slot6_wrapper_0/dig_in[1]
 + project_control_area
-Xslot15_wrapper_0 vss3v3 s15_an[0] s15_an_0_esd slot15_wrapper_0/vbias slot15_wrapper_0/dig_in[23]
+Xslot15_wrapper_0 sub s15_an[0] s15_an_0_esd slot15_wrapper_0/vbias slot15_wrapper_0/dig_in[23]
 + slot15_wrapper_0/dig_in[22] slot15_wrapper_0/dig_in[21] slot15_wrapper_0/dig_in[20]
 + slot15_wrapper_0/dig_in[19] slot15_wrapper_0/dig_in[18] slot15_wrapper_0/dig_in[17]
 + slot15_wrapper_0/dig_in[16] slot15_wrapper_0/dig_in[15] slot15_wrapper_0/dig_in[14]
@@ -22227,23 +23011,22 @@ Xslot15_wrapper_0 vss3v3 s15_an[0] s15_an_0_esd slot15_wrapper_0/vbias slot15_wr
 + slot15_wrapper_0/dig_out[4] slot15_wrapper_0/dig_out[3] slot15_wrapper_0/dig_out[2]
 + slot15_wrapper_0/dig_out[1] slot15_wrapper_0/dig_out[0] slot15_wrapper_0/ibias0
 + slot15_wrapper_0/ibias1 slot15_wrapper_0/analog_bus3 slot15_wrapper_0/analog_bus2
-+ slot15_wrapper_0/analog_bus1 slot15_wrapper_0/analog_bus0 vss3v3 slot15_wrapper_0/vdd_1v2
++ slot15_wrapper_0/analog_bus1 slot15_wrapper_0/analog_bus0 sub slot15_wrapper_0/vdd_1v2
 + slot15_wrapper_0/vdd_3v3 slot15_wrapper_0/enable slot15_wrapper_0/clk slot15_wrapper_0/reset
 + slot15_wrapper
 XRM_IHPSG13_1P_1024x8_c2_bm_bist_0 housekeeping_top_0/sram_addr[9] housekeeping_top_0/sram_addr[8]
 + housekeeping_top_0/sram_addr[7] housekeeping_top_0/sram_addr[6] housekeeping_top_0/sram_addr[5]
 + housekeeping_top_0/sram_addr[4] housekeeping_top_0/sram_addr[3] housekeeping_top_0/sram_addr[2]
-+ housekeeping_top_0/sram_addr[1] housekeeping_top_0/sram_addr[0] vss3v3 vss3v3 vss3v3
-+ vss3v3 vss3v3 vss3v3 vss3v3 vss3v3 vss3v3 vss3v3 vss3v3 vss3v3 vss3v3 vss3v3 vss3v3
-+ vss3v3 vss3v3 vss3v3 vss3v3 vss3v3 vss3v3 vss3v3 vss3v3 vss3v3 vss3v3 vss3v3 vss3v3
-+ vss3v3 vss3v3 vss3v3 vss3v3 vddd vddd vddd vddd vddd vddd vddd vddd housekeeping_top_0/sram_clk
++ housekeeping_top_0/sram_addr[1] housekeeping_top_0/sram_addr[0] sub sub sub sub
++ sub sub sub sub sub sub sub sub sub sub sub sub sub sub sub sub sub sub sub sub
++ sub sub sub sub sub sub sub vddd vddd vddd vddd vddd vddd vddd vddd housekeeping_top_0/sram_clk
 + housekeeping_top_0/sram_idata[7] housekeeping_top_0/sram_idata[6] housekeeping_top_0/sram_idata[5]
 + housekeeping_top_0/sram_idata[4] housekeeping_top_0/sram_idata[3] housekeeping_top_0/sram_idata[2]
 + housekeeping_top_0/sram_idata[1] housekeeping_top_0/sram_idata[0] vddd housekeeping_top_0/sram_odata[7]
 + housekeeping_top_0/sram_odata[6] housekeeping_top_0/sram_odata[5] housekeeping_top_0/sram_odata[4]
 + housekeeping_top_0/sram_odata[3] housekeeping_top_0/sram_odata[2] housekeeping_top_0/sram_odata[1]
 + housekeeping_top_0/sram_odata[0] housekeeping_top_0/porb housekeeping_top_0/sram_read
-+ housekeeping_top_0/sram_write vddd vddd vss3v3 RM_IHPSG13_1P_1024x8_c2_bm_bist
++ housekeeping_top_0/sram_write vddd vddd sub RM_IHPSG13_1P_1024x8_c2_bm_bist
 Xproject_control_area_8 slot14_wrapper_0/dig_in[20] analog_switch_array_7[4]/analog_switch_med_1/enable
 + analog_switch_array_7[4]/analog_switch_med_0/enable slot14_wrapper_0/dig_out[7]
 + housekeeping_top_0/proj_sel[2] project_control_area_6/user_project_control_0/dig_out[0]
@@ -22260,7 +23043,7 @@ Xproject_control_area_8 slot14_wrapper_0/dig_in[20] analog_switch_array_7[4]/ana
 + slot14_wrapper_0/dig_in[7] project_control_area_6/user_project_control_0/dig_out[11]
 + slot14_wrapper_0/dig_in[8] analog_switch_array_7[4]/analog_pswitch_small_3/enable
 + housekeeping_top_0/proj_sel[0] housekeeping_top_0/dbus_out[1] slot14_wrapper_0/dig_in[9]
-+ housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] vss3v3 slot14_wrapper_0/dig_out[10]
++ housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] sub slot14_wrapper_0/dig_out[10]
 + housekeeping_top_0/proj_dig_ena slot14_wrapper_0/dig_out[11] housekeeping_top_0/dbus_out[10]
 + vdd1v2_uq2 vdd1v2_uq2 project_control_area_8/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
 + housekeeping_top_0/dbus_out[23] slot14_wrapper_0/ibias1 project_control_area_8/user_project_control_0/dig_out[10]
@@ -22274,7 +23057,7 @@ Xproject_control_area_8 slot14_wrapper_0/dig_in[20] analog_switch_array_7[4]/ana
 + project_control_area_6/user_project_control_0/dig_out[5] slot14_wrapper_0/dig_in[15]
 + housekeeping_top_0/dbus_out[20] vdd1v2_uq2 housekeeping_top_0/dbus_out[19] slot14_wrapper_0/dig_in[16]
 + project_control_area_6/user_project_control_0/dig_out[6] housekeeping_top_0/proj_sel[4]
-+ project_control_area_8/user_project_control_0/dig_out[6] vss3v3 housekeeping_top_0/reset
++ project_control_area_8/user_project_control_0/dig_out[6] sub housekeeping_top_0/reset
 + housekeeping_top_0/dbus_out[12] slot14_wrapper_0/dig_in[17] housekeeping_top_0/analog_bus_ena[0]
 + housekeeping_top_0/proj_1v2_ena slot14_wrapper_0/dig_in[18] housekeeping_top_0/proj_ena
 + slot14_wrapper_0/dig_in[19] vdd1v2_uq2 project_control_area_6/user_project_control_0/dig_out[9]
@@ -22289,8 +23072,8 @@ Xproject_control_area_8 slot14_wrapper_0/dig_in[20] analog_switch_array_7[4]/ana
 + slot14_wrapper_0/dig_out[4] housekeeping_top_0/dbus_out[3] analog_switch_array_7[4]/analog_switch_small_1/enable
 + housekeeping_top_0/proj_sel[3] slot14_wrapper_0/dig_out[5] project_control_area_6/user_project_control_0/dig_out[8]
 + housekeeping_top_0/dbus_out[4] slot14_wrapper_0/dig_in[0] housekeeping_top_0/dbus_out[15]
-+ vss3v3 analog_switch_array_7[4]/analog_switch_med_3/enable housekeeping_top_0/dbus_out[13]
-+ slot14_wrapper_0/dig_out[6] vss3v3 slot14_wrapper_0/vdd_1v2 vdd1v2_uq2 vss3v3 slot14_wrapper_0/dig_in[1]
++ sub analog_switch_array_7[4]/analog_switch_med_3/enable housekeeping_top_0/dbus_out[13]
++ slot14_wrapper_0/dig_out[6] sub slot14_wrapper_0/vdd_1v2 vdd1v2_uq2 sub slot14_wrapper_0/dig_in[1]
 + project_control_area
 Xsg13cmos5l_ocd_ip__biasgen2_0 housekeeping_top_0/biasgen_ena analog_switch_small_0/in
 + housekeeping_top_0/biasgen_ref_vbg analog_pswitch_small_1/out housekeeping_top_0/idac2_value[4]
@@ -22305,8 +23088,7 @@ Xsg13cmos5l_ocd_ip__biasgen2_0 housekeeping_top_0/biasgen_ena analog_switch_smal
 + housekeeping_top_0/bandgap_sink1[2] housekeeping_top_0/voltgen_sink1[0] housekeeping_top_0/voltgen_sink1[1]
 + housekeeping_top_0/voltgen_sink1[2] housekeeping_top_0/voltgen_sink2[0] housekeeping_top_0/voltgen_sink2[1]
 + housekeeping_top_0/voltgen_sink2[2] sg13cmos5l_ocd_ip__voltgen_v3_0/ibias1u_2 sg13cmos5l_ocd_ip__classab_buffer_0/bias
-+ sg13cmos5l_ocd_ip__bandgap_v3_0/ibias2_1u vdd3v3 vdd3v3 vss3v3 vss3v3 vdd1v2_uq2
-+ sg13cmos5l_ocd_ip__biasgen2
++ sg13cmos5l_ocd_ip__bandgap_v3_0/ibias2_1u vdd3v3 vdd3v3 sub sub vdd1v2_uq2 sg13cmos5l_ocd_ip__biasgen2
 Xproject_control_area_9 slot5_wrapper_0/dig_in[20] analog_switch_array_7[4]/analog_switch_med_18/enable
 + analog_switch_array_7[4]/analog_switch_med_17/enable slot5_wrapper_0/dig_out[7]
 + housekeeping_top_0/proj_sel[2] project_control_area_7/user_project_control_0/dig_out[0]
@@ -22325,7 +23107,7 @@ Xproject_control_area_9 slot5_wrapper_0/dig_in[20] analog_switch_array_7[4]/anal
 + housekeeping_top_0/proj_sel[0] housekeeping_top_0/dbus_out[1] slot5_wrapper_0/dig_in[9]
 + housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] vdd1v2_uq2 slot5_wrapper_0/dig_out[10]
 + housekeeping_top_0/proj_dig_ena slot5_wrapper_0/dig_out[11] housekeeping_top_0/dbus_out[10]
-+ vss3v3 vss3v3 project_control_area_9/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
++ sub sub project_control_area_9/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
 + housekeeping_top_0/dbus_out[23] slot5_wrapper_0/ibias1 project_control_area_9/user_project_control_0/dig_out[10]
 + slot5_wrapper_0/vdd_3v3 housekeeping_top_0/dbus_out[6] slot5_wrapper_0/ibias0 slot5_wrapper_0/dig_in[10]
 + project_control_area_7/user_project_control_0/dig_out[2] housekeeping_top_0/proj_vbias_ena
@@ -22337,7 +23119,7 @@ Xproject_control_area_9 slot5_wrapper_0/dig_in[20] analog_switch_array_7[4]/anal
 + slot5_wrapper_0/dig_in[15] housekeeping_top_0/dbus_out[20] vdd1v2_uq2 housekeeping_top_0/dbus_out[19]
 + slot5_wrapper_0/dig_in[16] project_control_area_7/user_project_control_0/dig_out[6]
 + housekeeping_top_0/proj_sel[4] project_control_area_9/user_project_control_0/dig_out[6]
-+ vss3v3 housekeeping_top_0/reset housekeeping_top_0/dbus_out[12] slot5_wrapper_0/dig_in[17]
++ sub housekeeping_top_0/reset housekeeping_top_0/dbus_out[12] slot5_wrapper_0/dig_in[17]
 + housekeeping_top_0/analog_bus_ena[0] housekeeping_top_0/proj_1v2_ena slot5_wrapper_0/dig_in[18]
 + housekeeping_top_0/proj_ena slot5_wrapper_0/dig_in[19] vdd1v2_uq2 project_control_area_7/user_project_control_0/dig_out[9]
 + vdd3v3 housekeeping_top_0/dbus_out[14] analog_switch_array_7[4]/analog_pswitch_small_1/enable
@@ -22351,8 +23133,8 @@ Xproject_control_area_9 slot5_wrapper_0/dig_in[20] analog_switch_array_7[4]/anal
 + slot5_wrapper_0/dig_out[4] housekeeping_top_0/dbus_out[3] analog_switch_array_7[4]/analog_switch_small_0/enable
 + housekeeping_top_0/proj_sel[3] slot5_wrapper_0/dig_out[5] project_control_area_7/user_project_control_0/dig_out[8]
 + housekeeping_top_0/dbus_out[4] slot5_wrapper_0/dig_in[0] housekeeping_top_0/dbus_out[15]
-+ vss3v3 analog_switch_array_7[4]/analog_switch_med_22/enable housekeeping_top_0/dbus_out[13]
-+ slot5_wrapper_0/dig_out[6] vss3v3 slot5_wrapper_0/vdd_1v2 vdd1v2_uq2 vss3v3 slot5_wrapper_0/dig_in[1]
++ sub analog_switch_array_7[4]/analog_switch_med_22/enable housekeeping_top_0/dbus_out[13]
++ slot5_wrapper_0/dig_out[6] sub slot5_wrapper_0/vdd_1v2 vdd1v2_uq2 sub slot5_wrapper_0/dig_in[1]
 + project_control_area
 Xslot2_wrapper_0 s2_an[0] s2_an[1] s2_an_0_esd s2_an_1_esd slot2_wrapper_0/vbias slot2_wrapper_0/dig_in[23]
 + slot2_wrapper_0/dig_in[22] slot2_wrapper_0/dig_in[21] slot2_wrapper_0/dig_in[20]
@@ -22367,7 +23149,7 @@ Xslot2_wrapper_0 s2_an[0] s2_an[1] s2_an_0_esd s2_an_1_esd slot2_wrapper_0/vbias
 + slot2_wrapper_0/dig_out[4] slot2_wrapper_0/dig_out[3] slot2_wrapper_0/dig_out[2]
 + slot2_wrapper_0/dig_out[1] slot2_wrapper_0/dig_out[0] slot2_wrapper_0/ibias0 slot2_wrapper_0/ibias1
 + slot2_wrapper_0/analog_bus3 slot2_wrapper_0/analog_bus2 slot2_wrapper_0/analog_bus1
-+ slot2_wrapper_0/analog_bus0 vss3v3 slot2_wrapper_0/vdd_1v2 vss3v3 slot2_wrapper_0/vdd_3v3
++ slot2_wrapper_0/analog_bus0 sub slot2_wrapper_0/vdd_1v2 sub slot2_wrapper_0/vdd_3v3
 + slot2_wrapper_0/enable slot2_wrapper_0/clk slot2_wrapper_0/reset slot2_wrapper
 Xslot6_wrapper_0 s6_an[0] s6_an[1] s6_an_0_esd s6_an_1_esd slot6_wrapper_0/vbias slot6_wrapper_0/dig_in[23]
 + slot6_wrapper_0/dig_in[22] slot6_wrapper_0/dig_in[21] slot6_wrapper_0/dig_in[20]
@@ -22382,12 +23164,12 @@ Xslot6_wrapper_0 s6_an[0] s6_an[1] s6_an_0_esd s6_an_1_esd slot6_wrapper_0/vbias
 + slot6_wrapper_0/dig_out[4] slot6_wrapper_0/dig_out[3] slot6_wrapper_0/dig_out[2]
 + slot6_wrapper_0/dig_out[1] slot6_wrapper_0/dig_out[0] slot6_wrapper_0/ibias0 slot6_wrapper_0/ibias1
 + slot6_wrapper_0/analog_bus3 slot6_wrapper_0/analog_bus2 slot6_wrapper_0/analog_bus1
-+ slot6_wrapper_0/analog_bus0 vss3v3 slot6_wrapper_0/vdd_1v2 vss3v3 slot6_wrapper_0/vdd_3v3
++ slot6_wrapper_0/analog_bus0 sub slot6_wrapper_0/vdd_1v2 sub slot6_wrapper_0/vdd_3v3
 + slot6_wrapper_0/enable slot6_wrapper_0/clk slot6_wrapper_0/reset slot6_wrapper
-Xanalog_pswitch_small_1 analog[1] analog_pswitch_small_1/out vss3v3 analog_switch_small_1/enable
-+ vdd3v3 vdd1v2_uq2 vss3v3 analog_pswitch_small
-Xanalog_pswitch_small_0 analog[2] analog_pswitch_small_0/out vss3v3 analog_switch_small_1/enable
-+ vdd3v3 vdd1v2_uq2 vss3v3 analog_pswitch_small
+Xanalog_pswitch_small_1 analog[1] analog_pswitch_small_1/out sub analog_switch_small_1/enable
++ vdd3v3 vdd1v2_uq2 sub analog_pswitch_small
+Xanalog_pswitch_small_0 analog[2] analog_pswitch_small_0/out sub analog_switch_small_1/enable
++ vdd3v3 vdd1v2_uq2 sub analog_pswitch_small
 Xslot10_wrapper_0 s10_an[0] s10_an[1] s10_an[2] s10_an_0_esd s10_an_1_esd s10_an_2_esd
 + slot10_wrapper_0/vbias slot10_wrapper_0/dig_in[23] slot10_wrapper_0/dig_in[22] slot10_wrapper_0/dig_in[21]
 + slot10_wrapper_0/dig_in[20] slot10_wrapper_0/dig_in[19] slot10_wrapper_0/dig_in[18]
@@ -22402,8 +23184,8 @@ Xslot10_wrapper_0 s10_an[0] s10_an[1] s10_an[2] s10_an_0_esd s10_an_1_esd s10_an
 + slot10_wrapper_0/dig_out[5] slot10_wrapper_0/dig_out[4] slot10_wrapper_0/dig_out[3]
 + slot10_wrapper_0/dig_out[2] slot10_wrapper_0/dig_out[1] slot10_wrapper_0/dig_out[0]
 + slot10_wrapper_0/ibias0 slot10_wrapper_0/ibias1 slot10_wrapper_0/analog_bus3 slot10_wrapper_0/analog_bus2
-+ slot10_wrapper_0/analog_bus1 slot10_wrapper_0/analog_bus0 vss3v3 slot10_wrapper_0/vdd_1v2
-+ vss3v3 slot10_wrapper_0/vdd_3v3 slot10_wrapper_0/enable slot10_wrapper_0/clk slot10_wrapper_0/reset
++ slot10_wrapper_0/analog_bus1 slot10_wrapper_0/analog_bus0 sub slot10_wrapper_0/vdd_1v2
++ sub slot10_wrapper_0/vdd_3v3 slot10_wrapper_0/enable slot10_wrapper_0/clk slot10_wrapper_0/reset
 + slot10_wrapper
 Xslot14_wrapper_0 s14_an[0] s14_an[1] s14_an[2] s14_an_0_esd s14_an_1_esd s14_an_2_esd
 + slot14_wrapper_0/vbias slot14_wrapper_0/dig_in[23] slot14_wrapper_0/dig_in[22] slot14_wrapper_0/dig_in[21]
@@ -22419,8 +23201,8 @@ Xslot14_wrapper_0 s14_an[0] s14_an[1] s14_an[2] s14_an_0_esd s14_an_1_esd s14_an
 + slot14_wrapper_0/dig_out[5] slot14_wrapper_0/dig_out[4] slot14_wrapper_0/dig_out[3]
 + slot14_wrapper_0/dig_out[2] slot14_wrapper_0/dig_out[1] slot14_wrapper_0/dig_out[0]
 + slot14_wrapper_0/ibias0 slot14_wrapper_0/ibias1 slot14_wrapper_0/analog_bus3 slot14_wrapper_0/analog_bus2
-+ slot14_wrapper_0/analog_bus1 slot14_wrapper_0/analog_bus0 vss3v3 slot14_wrapper_0/vdd_1v2
-+ vss3v3 slot14_wrapper_0/vdd_3v3 slot14_wrapper_0/enable slot14_wrapper_0/clk slot14_wrapper_0/reset
++ slot14_wrapper_0/analog_bus1 slot14_wrapper_0/analog_bus0 sub slot14_wrapper_0/vdd_1v2
++ sub slot14_wrapper_0/vdd_3v3 slot14_wrapper_0/enable slot14_wrapper_0/clk slot14_wrapper_0/reset
 + slot14_wrapper
 Xslot18_wrapper_0 s18_an[0] s18_an[1] s18_an_0_esd s18_an_1_esd slot18_wrapper_0/vbias
 + slot18_wrapper_0/dig_in[23] slot18_wrapper_0/dig_in[22] slot18_wrapper_0/dig_in[21]
@@ -22436,8 +23218,8 @@ Xslot18_wrapper_0 s18_an[0] s18_an[1] s18_an_0_esd s18_an_1_esd slot18_wrapper_0
 + slot18_wrapper_0/dig_out[5] slot18_wrapper_0/dig_out[4] slot18_wrapper_0/dig_out[3]
 + slot18_wrapper_0/dig_out[2] slot18_wrapper_0/dig_out[1] slot18_wrapper_0/dig_out[0]
 + slot18_wrapper_0/ibias0 slot18_wrapper_0/ibias1 slot18_wrapper_0/analog_bus3 slot18_wrapper_0/analog_bus2
-+ slot18_wrapper_0/analog_bus1 slot18_wrapper_0/analog_bus0 vss3v3 slot18_wrapper_0/vdd_1v2
-+ vss3v3 slot18_wrapper_0/vdd_3v3 slot18_wrapper_0/enable slot18_wrapper_0/clk slot18_wrapper_0/reset
++ slot18_wrapper_0/analog_bus1 slot18_wrapper_0/analog_bus0 sub slot18_wrapper_0/vdd_1v2
++ sub slot18_wrapper_0/vdd_3v3 slot18_wrapper_0/enable slot18_wrapper_0/clk slot18_wrapper_0/reset
 + slot18_wrapper
 Xslot1_wrapper_0 s1_an[0] s1_an[1] s1_an_0_esd slot1_wrapper_0/vbias slot1_wrapper_0/dig_in[23]
 + slot1_wrapper_0/dig_in[22] slot1_wrapper_0/dig_in[21] slot1_wrapper_0/dig_in[20]
@@ -22452,7 +23234,7 @@ Xslot1_wrapper_0 s1_an[0] s1_an[1] s1_an_0_esd slot1_wrapper_0/vbias slot1_wrapp
 + slot1_wrapper_0/dig_out[4] slot1_wrapper_0/dig_out[3] slot1_wrapper_0/dig_out[2]
 + slot1_wrapper_0/dig_out[1] slot1_wrapper_0/dig_out[0] slot1_wrapper_0/ibias0 slot1_wrapper_0/ibias1
 + slot1_wrapper_0/analog_bus3 slot1_wrapper_0/analog_bus2 slot1_wrapper_0/analog_bus1
-+ slot1_wrapper_0/analog_bus0 vss3v3 slot1_wrapper_0/vdd_1v2 vss3v3 slot1_wrapper_0/vdd_3v3
++ slot1_wrapper_0/analog_bus0 sub slot1_wrapper_0/vdd_1v2 sub slot1_wrapper_0/vdd_3v3
 + slot1_wrapper_0/enable slot1_wrapper_0/clk slot1_wrapper_0/reset slot1_wrapper
 Xslot5_wrapper_0 s5_an[0] s5_an[1] s5_an[2] s5_an_0_esd s5_an_1_esd slot5_wrapper_0/vbias
 + slot5_wrapper_0/dig_in[23] slot5_wrapper_0/dig_in[22] slot5_wrapper_0/dig_in[21]
@@ -22468,8 +23250,8 @@ Xslot5_wrapper_0 s5_an[0] s5_an[1] s5_an[2] s5_an_0_esd s5_an_1_esd slot5_wrappe
 + slot5_wrapper_0/dig_out[3] slot5_wrapper_0/dig_out[2] slot5_wrapper_0/dig_out[1]
 + slot5_wrapper_0/dig_out[0] slot5_wrapper_0/ibias0 slot5_wrapper_0/ibias1 slot5_wrapper_0/analog_bus3
 + slot5_wrapper_0/analog_bus2 slot5_wrapper_0/analog_bus1 slot5_wrapper_0/analog_bus0
-+ vss3v3 slot5_wrapper_0/vdd_1v2 vss3v3 slot5_wrapper_0/vdd_3v3 slot5_wrapper_0/enable
-+ slot5_wrapper_0/clk slot5_wrapper_0/reset slot5_wrapper
++ sub slot5_wrapper_0/vdd_1v2 sub slot5_wrapper_0/vdd_3v3 slot5_wrapper_0/enable slot5_wrapper_0/clk
++ slot5_wrapper_0/reset slot5_wrapper
 Xslot9_wrapper_0 s9_an[0] s9_an[1] s9_an[2] s9_an_0_esd s9_an_1_esd slot9_wrapper_0/vbias
 + slot9_wrapper_0/dig_in[23] slot9_wrapper_0/dig_in[22] slot9_wrapper_0/dig_in[21]
 + slot9_wrapper_0/dig_in[20] slot9_wrapper_0/dig_in[19] slot9_wrapper_0/dig_in[18]
@@ -22484,13 +23266,13 @@ Xslot9_wrapper_0 s9_an[0] s9_an[1] s9_an[2] s9_an_0_esd s9_an_1_esd slot9_wrappe
 + slot9_wrapper_0/dig_out[3] slot9_wrapper_0/dig_out[2] slot9_wrapper_0/dig_out[1]
 + slot9_wrapper_0/dig_out[0] slot9_wrapper_0/ibias0 slot9_wrapper_0/ibias1 slot9_wrapper_0/analog_bus3
 + slot9_wrapper_0/analog_bus2 slot9_wrapper_0/analog_bus1 slot9_wrapper_0/analog_bus0
-+ vss3v3 slot9_wrapper_0/vdd_1v2 vss3v3 slot9_wrapper_0/vdd_3v3 slot9_wrapper_0/enable
-+ slot9_wrapper_0/clk slot9_wrapper_0/reset slot9_wrapper
++ sub slot9_wrapper_0/vdd_1v2 sub slot9_wrapper_0/vdd_3v3 slot9_wrapper_0/enable slot9_wrapper_0/clk
++ slot9_wrapper_0/reset slot9_wrapper
 Xsg13cmos5l_ocd_ip__voltgen_v3_0 vdd1v2_uq2 housekeeping_top_0/voltgen_value[2] housekeeping_top_0/voltgen_value[1]
 + housekeeping_top_0/voltgen_value[0] analog_switch_small_0/in sg13cmos5l_ocd_ip__voltgen_v3_0/ibias1u_1
 + housekeeping_top_0/voltgen_ena[0] housekeeping_top_0/voltgen_ena[2] housekeeping_top_0/voltgen_ena[1]
 + sg13cmos5l_ocd_ip__voltgen_v3_0/ibias1u_2 housekeeping_top_0/voltgen_high sg13cmos5l_ocd_ip__classab_buffer_0/ena
-+ sg13cmos5l_ocd_ip__classab_buffer_0/inp analog_switch_small_1/in vss3v3 vss3v3 vdd3v3
++ sg13cmos5l_ocd_ip__classab_buffer_0/inp analog_switch_small_1/in sub sub vdd3v3
 + sg13cmos5l_ocd_ip__voltgen_v3
 Xproject_control_area_10 slot15_wrapper_0/dig_in[20] analog_switch_array_7[3]/analog_switch_med_1/enable
 + analog_switch_array_7[3]/analog_switch_med_0/enable slot15_wrapper_0/dig_out[7]
@@ -22523,7 +23305,7 @@ Xproject_control_area_10 slot15_wrapper_0/dig_in[20] analog_switch_array_7[3]/an
 + slot15_wrapper_0/dig_in[15] housekeeping_top_0/dbus_out[20] vdd1v2_uq2 housekeeping_top_0/dbus_out[19]
 + slot15_wrapper_0/dig_in[16] project_control_area_8/user_project_control_0/dig_out[6]
 + housekeeping_top_0/proj_sel[4] project_control_area_10/user_project_control_0/dig_out[6]
-+ vss3v3 housekeeping_top_0/reset housekeeping_top_0/dbus_out[12] slot15_wrapper_0/dig_in[17]
++ sub housekeeping_top_0/reset housekeeping_top_0/dbus_out[12] slot15_wrapper_0/dig_in[17]
 + housekeeping_top_0/analog_bus_ena[0] housekeeping_top_0/proj_1v2_ena slot15_wrapper_0/dig_in[18]
 + housekeeping_top_0/proj_ena slot15_wrapper_0/dig_in[19] vdd1v2_uq2 project_control_area_8/user_project_control_0/dig_out[9]
 + vdd3v3 housekeeping_top_0/dbus_out[14] analog_switch_array_7[3]/analog_pswitch_small_2/enable
@@ -22537,8 +23319,8 @@ Xproject_control_area_10 slot15_wrapper_0/dig_in[20] analog_switch_array_7[3]/an
 + slot15_wrapper_0/dig_out[4] housekeeping_top_0/dbus_out[3] analog_switch_array_7[3]/analog_switch_small_1/enable
 + housekeeping_top_0/proj_sel[3] slot15_wrapper_0/dig_out[5] project_control_area_8/user_project_control_0/dig_out[8]
 + housekeeping_top_0/dbus_out[4] slot15_wrapper_0/dig_in[0] housekeeping_top_0/dbus_out[15]
-+ vss3v3 analog_switch_array_7[3]/analog_switch_med_3/enable housekeeping_top_0/dbus_out[13]
-+ slot15_wrapper_0/dig_out[6] vss3v3 slot15_wrapper_0/vdd_1v2 vdd1v2_uq2 vss3v3 slot15_wrapper_0/dig_in[1]
++ sub analog_switch_array_7[3]/analog_switch_med_3/enable housekeeping_top_0/dbus_out[13]
++ slot15_wrapper_0/dig_out[6] sub slot15_wrapper_0/vdd_1v2 vdd1v2_uq2 sub slot15_wrapper_0/dig_in[1]
 + project_control_area
 Xslot13_wrapper_0 s13_an[0] s13_an[1] s13_an_0_esd s13_an_1_esd slot13_wrapper_0/vbias
 + slot13_wrapper_0/dig_in[23] slot13_wrapper_0/dig_in[22] slot13_wrapper_0/dig_in[21]
@@ -22554,8 +23336,8 @@ Xslot13_wrapper_0 s13_an[0] s13_an[1] s13_an_0_esd s13_an_1_esd slot13_wrapper_0
 + slot13_wrapper_0/dig_out[5] slot13_wrapper_0/dig_out[4] slot13_wrapper_0/dig_out[3]
 + slot13_wrapper_0/dig_out[2] slot13_wrapper_0/dig_out[1] slot13_wrapper_0/dig_out[0]
 + slot13_wrapper_0/ibias0 slot13_wrapper_0/ibias1 slot13_wrapper_0/analog_bus3 slot13_wrapper_0/analog_bus2
-+ slot13_wrapper_0/analog_bus1 slot13_wrapper_0/analog_bus0 vss3v3 slot13_wrapper_0/vdd_1v2
-+ vss3v3 slot13_wrapper_0/vdd_3v3 slot13_wrapper_0/enable slot13_wrapper_0/clk slot13_wrapper_0/reset
++ slot13_wrapper_0/analog_bus1 slot13_wrapper_0/analog_bus0 sub slot13_wrapper_0/vdd_1v2
++ sub slot13_wrapper_0/vdd_3v3 slot13_wrapper_0/enable slot13_wrapper_0/clk slot13_wrapper_0/reset
 + slot13_wrapper
 Xproject_control_area_11 slot4_wrapper_0/dig_in[20] analog_switch_array_7[3]/analog_switch_med_18/enable
 + analog_switch_array_7[3]/analog_switch_med_17/enable slot4_wrapper_0/dig_out[7]
@@ -22573,9 +23355,9 @@ Xproject_control_area_11 slot4_wrapper_0/dig_in[20] analog_switch_array_7[3]/ana
 + slot4_wrapper_0/dig_in[7] project_control_area_9/user_project_control_0/dig_out[11]
 + slot4_wrapper_0/dig_in[8] analog_switch_array_7[3]/analog_pswitch_small_0/enable
 + housekeeping_top_0/proj_sel[0] housekeeping_top_0/dbus_out[1] slot4_wrapper_0/dig_in[9]
-+ housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] vss3v3 slot4_wrapper_0/dig_out[10]
++ housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] sub slot4_wrapper_0/dig_out[10]
 + housekeeping_top_0/proj_dig_ena slot4_wrapper_0/dig_out[11] housekeeping_top_0/dbus_out[10]
-+ vss3v3 vss3v3 project_control_area_11/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
++ sub sub project_control_area_11/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
 + housekeeping_top_0/dbus_out[23] slot4_wrapper_0/ibias1 project_control_area_11/user_project_control_0/dig_out[10]
 + slot4_wrapper_0/vdd_3v3 housekeeping_top_0/dbus_out[6] slot4_wrapper_0/ibias0 slot4_wrapper_0/dig_in[10]
 + project_control_area_9/user_project_control_0/dig_out[2] housekeeping_top_0/proj_vbias_ena
@@ -22587,7 +23369,7 @@ Xproject_control_area_11 slot4_wrapper_0/dig_in[20] analog_switch_array_7[3]/ana
 + slot4_wrapper_0/dig_in[15] housekeeping_top_0/dbus_out[20] vdd1v2_uq2 housekeeping_top_0/dbus_out[19]
 + slot4_wrapper_0/dig_in[16] project_control_area_9/user_project_control_0/dig_out[6]
 + housekeeping_top_0/proj_sel[4] project_control_area_11/user_project_control_0/dig_out[6]
-+ vss3v3 housekeeping_top_0/reset housekeeping_top_0/dbus_out[12] slot4_wrapper_0/dig_in[17]
++ sub housekeeping_top_0/reset housekeeping_top_0/dbus_out[12] slot4_wrapper_0/dig_in[17]
 + housekeeping_top_0/analog_bus_ena[0] housekeeping_top_0/proj_1v2_ena slot4_wrapper_0/dig_in[18]
 + housekeeping_top_0/proj_ena slot4_wrapper_0/dig_in[19] vdd1v2_uq2 project_control_area_9/user_project_control_0/dig_out[9]
 + vdd3v3 housekeeping_top_0/dbus_out[14] analog_switch_array_7[3]/analog_pswitch_small_1/enable
@@ -22601,8 +23383,8 @@ Xproject_control_area_11 slot4_wrapper_0/dig_in[20] analog_switch_array_7[3]/ana
 + slot4_wrapper_0/dig_out[4] housekeeping_top_0/dbus_out[3] analog_switch_array_7[3]/analog_switch_small_0/enable
 + housekeeping_top_0/proj_sel[3] slot4_wrapper_0/dig_out[5] project_control_area_9/user_project_control_0/dig_out[8]
 + housekeeping_top_0/dbus_out[4] slot4_wrapper_0/dig_in[0] housekeeping_top_0/dbus_out[15]
-+ vss3v3 analog_switch_array_7[3]/analog_switch_med_22/enable housekeeping_top_0/dbus_out[13]
-+ slot4_wrapper_0/dig_out[6] vss3v3 slot4_wrapper_0/vdd_1v2 vdd1v2_uq2 vss3v3 slot4_wrapper_0/dig_in[1]
++ sub analog_switch_array_7[3]/analog_switch_med_22/enable housekeeping_top_0/dbus_out[13]
++ slot4_wrapper_0/dig_out[6] sub slot4_wrapper_0/vdd_1v2 vdd1v2_uq2 sub slot4_wrapper_0/dig_in[1]
 + project_control_area
 Xproject_control_area_12 slot16_wrapper_0/dig_in[20] analog_switch_array_7[2]/analog_switch_med_1/enable
 + analog_switch_array_7[2]/analog_switch_med_0/enable slot16_wrapper_0/dig_out[7]
@@ -22620,9 +23402,9 @@ Xproject_control_area_12 slot16_wrapper_0/dig_in[20] analog_switch_array_7[2]/an
 + slot16_wrapper_0/dig_in[7] project_control_area_10/user_project_control_0/dig_out[11]
 + slot16_wrapper_0/dig_in[8] analog_switch_array_7[2]/analog_pswitch_small_3/enable
 + housekeeping_top_0/proj_sel[0] housekeeping_top_0/dbus_out[1] slot16_wrapper_0/dig_in[9]
-+ housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] vss3v3 slot16_wrapper_0/dig_out[10]
++ housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] sub slot16_wrapper_0/dig_out[10]
 + housekeeping_top_0/proj_dig_ena slot16_wrapper_0/dig_out[11] housekeeping_top_0/dbus_out[10]
-+ vss3v3 vss3v3 project_control_area_12/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
++ sub sub project_control_area_12/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
 + housekeeping_top_0/dbus_out[23] slot16_wrapper_0/ibias1 project_control_area_12/user_project_control_0/dig_out[10]
 + slot16_wrapper_0/vdd_3v3 housekeeping_top_0/dbus_out[6] slot16_wrapper_0/ibias0
 + slot16_wrapper_0/dig_in[10] project_control_area_10/user_project_control_0/dig_out[2]
@@ -22634,7 +23416,7 @@ Xproject_control_area_12 slot16_wrapper_0/dig_in[20] analog_switch_array_7[2]/an
 + project_control_area_10/user_project_control_0/dig_out[5] slot16_wrapper_0/dig_in[15]
 + housekeeping_top_0/dbus_out[20] vdd1v2_uq2 housekeeping_top_0/dbus_out[19] slot16_wrapper_0/dig_in[16]
 + project_control_area_10/user_project_control_0/dig_out[6] housekeeping_top_0/proj_sel[4]
-+ project_control_area_12/user_project_control_0/dig_out[6] vss3v3 housekeeping_top_0/reset
++ project_control_area_12/user_project_control_0/dig_out[6] sub housekeeping_top_0/reset
 + housekeeping_top_0/dbus_out[12] slot16_wrapper_0/dig_in[17] housekeeping_top_0/analog_bus_ena[0]
 + housekeeping_top_0/proj_1v2_ena slot16_wrapper_0/dig_in[18] housekeeping_top_0/proj_ena
 + slot16_wrapper_0/dig_in[19] vdd1v2_uq2 project_control_area_10/user_project_control_0/dig_out[9]
@@ -22650,7 +23432,7 @@ Xproject_control_area_12 slot16_wrapper_0/dig_in[20] analog_switch_array_7[2]/an
 + housekeeping_top_0/proj_sel[3] slot16_wrapper_0/dig_out[5] project_control_area_10/user_project_control_0/dig_out[8]
 + housekeeping_top_0/dbus_out[4] slot16_wrapper_0/dig_in[0] housekeeping_top_0/dbus_out[15]
 + vdd1v2_uq2 analog_switch_array_7[2]/analog_switch_med_3/enable housekeeping_top_0/dbus_out[13]
-+ slot16_wrapper_0/dig_out[6] vss3v3 slot16_wrapper_0/vdd_1v2 vss3v3 vss3v3 slot16_wrapper_0/dig_in[1]
++ slot16_wrapper_0/dig_out[6] sub slot16_wrapper_0/vdd_1v2 sub sub slot16_wrapper_0/dig_in[1]
 + project_control_area
 Xslot17_wrapper_0 s17_an[0] s17_an[1] s17_an_0_esd s17_an_1_esd slot17_wrapper_0/vbias
 + slot17_wrapper_0/dig_in[23] slot17_wrapper_0/dig_in[22] slot17_wrapper_0/dig_in[21]
@@ -22666,11 +23448,11 @@ Xslot17_wrapper_0 s17_an[0] s17_an[1] s17_an_0_esd s17_an_1_esd slot17_wrapper_0
 + slot17_wrapper_0/dig_out[5] slot17_wrapper_0/dig_out[4] slot17_wrapper_0/dig_out[3]
 + slot17_wrapper_0/dig_out[2] slot17_wrapper_0/dig_out[1] slot17_wrapper_0/dig_out[0]
 + slot17_wrapper_0/ibias0 slot17_wrapper_0/ibias1 slot17_wrapper_0/analog_bus3 slot17_wrapper_0/analog_bus2
-+ slot17_wrapper_0/analog_bus1 slot17_wrapper_0/analog_bus0 vss3v3 slot17_wrapper_0/vdd_1v2
-+ vss3v3 slot17_wrapper_0/vdd_3v3 slot17_wrapper_0/enable slot17_wrapper_0/clk slot17_wrapper_0/reset
++ slot17_wrapper_0/analog_bus1 slot17_wrapper_0/analog_bus0 sub slot17_wrapper_0/vdd_1v2
++ sub slot17_wrapper_0/vdd_3v3 slot17_wrapper_0/enable slot17_wrapper_0/clk slot17_wrapper_0/reset
 + slot17_wrapper
-Xanalog_switch_small_0 analog_switch_small_0/in analog[3] vss3v3 analog_switch_small_1/enable
-+ vdd3v3 vdd1v2_uq2 vss3v3 analog_switch_small
+Xanalog_switch_small_0 analog_switch_small_0/in analog[3] sub analog_switch_small_1/enable
++ vdd3v3 vdd1v2_uq2 sub analog_switch_small
 Xproject_control_area_13 slot3_wrapper_0/dig_in[20] analog_switch_array_7[2]/analog_switch_med_18/enable
 + analog_switch_array_7[2]/analog_switch_med_17/enable slot3_wrapper_0/dig_out[7]
 + housekeeping_top_0/proj_sel[2] project_control_area_11/user_project_control_0/dig_out[0]
@@ -22689,7 +23471,7 @@ Xproject_control_area_13 slot3_wrapper_0/dig_in[20] analog_switch_array_7[2]/ana
 + housekeeping_top_0/proj_sel[0] housekeeping_top_0/dbus_out[1] slot3_wrapper_0/dig_in[9]
 + housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] vdd1v2_uq2 slot3_wrapper_0/dig_out[10]
 + housekeeping_top_0/proj_dig_ena slot3_wrapper_0/dig_out[11] housekeeping_top_0/dbus_out[10]
-+ vdd1v2_uq2 vss3v3 project_control_area_13/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
++ vdd1v2_uq2 sub project_control_area_13/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
 + housekeeping_top_0/dbus_out[23] slot3_wrapper_0/ibias1 project_control_area_13/user_project_control_0/dig_out[10]
 + slot3_wrapper_0/vdd_3v3 housekeeping_top_0/dbus_out[6] slot3_wrapper_0/ibias0 slot3_wrapper_0/dig_in[10]
 + project_control_area_11/user_project_control_0/dig_out[2] housekeeping_top_0/proj_vbias_ena
@@ -22701,7 +23483,7 @@ Xproject_control_area_13 slot3_wrapper_0/dig_in[20] analog_switch_array_7[2]/ana
 + slot3_wrapper_0/dig_in[15] housekeeping_top_0/dbus_out[20] vdd1v2_uq2 housekeeping_top_0/dbus_out[19]
 + slot3_wrapper_0/dig_in[16] project_control_area_11/user_project_control_0/dig_out[6]
 + housekeeping_top_0/proj_sel[4] project_control_area_13/user_project_control_0/dig_out[6]
-+ vss3v3 housekeeping_top_0/reset housekeeping_top_0/dbus_out[12] slot3_wrapper_0/dig_in[17]
++ sub housekeeping_top_0/reset housekeeping_top_0/dbus_out[12] slot3_wrapper_0/dig_in[17]
 + housekeeping_top_0/analog_bus_ena[0] housekeeping_top_0/proj_1v2_ena slot3_wrapper_0/dig_in[18]
 + housekeeping_top_0/proj_ena slot3_wrapper_0/dig_in[19] vdd1v2_uq2 project_control_area_11/user_project_control_0/dig_out[9]
 + vdd3v3 housekeeping_top_0/dbus_out[14] analog_switch_array_7[2]/analog_pswitch_small_1/enable
@@ -22715,12 +23497,12 @@ Xproject_control_area_13 slot3_wrapper_0/dig_in[20] analog_switch_array_7[2]/ana
 + slot3_wrapper_0/dig_out[4] housekeeping_top_0/dbus_out[3] analog_switch_array_7[2]/analog_switch_small_0/enable
 + housekeeping_top_0/proj_sel[3] slot3_wrapper_0/dig_out[5] project_control_area_11/user_project_control_0/dig_out[8]
 + housekeeping_top_0/dbus_out[4] slot3_wrapper_0/dig_in[0] housekeeping_top_0/dbus_out[15]
-+ vss3v3 analog_switch_array_7[2]/analog_switch_med_22/enable housekeeping_top_0/dbus_out[13]
-+ slot3_wrapper_0/dig_out[6] vss3v3 slot3_wrapper_0/vdd_1v2 vss3v3 vss3v3 slot3_wrapper_0/dig_in[1]
++ sub analog_switch_array_7[2]/analog_switch_med_22/enable housekeeping_top_0/dbus_out[13]
++ slot3_wrapper_0/dig_out[6] sub slot3_wrapper_0/vdd_1v2 sub sub slot3_wrapper_0/dig_in[1]
 + project_control_area
-Xanalog_switch_small_1 analog_switch_small_1/in analog[0] vss3v3 analog_switch_small_1/enable
-+ vdd3v3 vdd1v2_uq2 vss3v3 analog_switch_small
-Xslot4_wrapper_0 s4_an[0] vss3v3 s4_an_0_esd slot4_wrapper_0/vbias slot4_wrapper_0/dig_in[23]
+Xanalog_switch_small_1 analog_switch_small_1/in analog[0] sub analog_switch_small_1/enable
++ vdd3v3 vdd1v2_uq2 sub analog_switch_small
+Xslot4_wrapper_0 s4_an[0] sub s4_an_0_esd slot4_wrapper_0/vbias slot4_wrapper_0/dig_in[23]
 + slot4_wrapper_0/dig_in[22] slot4_wrapper_0/dig_in[21] slot4_wrapper_0/dig_in[20]
 + slot4_wrapper_0/dig_in[19] slot4_wrapper_0/dig_in[18] slot4_wrapper_0/dig_in[17]
 + slot4_wrapper_0/dig_in[16] slot4_wrapper_0/dig_in[15] slot4_wrapper_0/dig_in[14]
@@ -22733,7 +23515,7 @@ Xslot4_wrapper_0 s4_an[0] vss3v3 s4_an_0_esd slot4_wrapper_0/vbias slot4_wrapper
 + slot4_wrapper_0/dig_out[4] slot4_wrapper_0/dig_out[3] slot4_wrapper_0/dig_out[2]
 + slot4_wrapper_0/dig_out[1] slot4_wrapper_0/dig_out[0] slot4_wrapper_0/ibias0 slot4_wrapper_0/ibias1
 + slot4_wrapper_0/analog_bus3 slot4_wrapper_0/analog_bus2 slot4_wrapper_0/analog_bus1
-+ slot4_wrapper_0/analog_bus0 slot4_wrapper_0/vdd_1v2 vss3v3 slot4_wrapper_0/vdd_3v3
++ slot4_wrapper_0/analog_bus0 slot4_wrapper_0/vdd_1v2 sub slot4_wrapper_0/vdd_3v3
 + slot4_wrapper_0/enable slot4_wrapper_0/clk slot4_wrapper_0/reset slot4_wrapper
 Xproject_control_area_14 slot17_wrapper_0/dig_in[20] analog_switch_array_7[1]/analog_switch_med_1/enable
 + analog_switch_array_7[1]/analog_switch_med_0/enable slot17_wrapper_0/dig_out[7]
@@ -22753,7 +23535,7 @@ Xproject_control_area_14 slot17_wrapper_0/dig_in[20] analog_switch_array_7[1]/an
 + housekeeping_top_0/proj_sel[0] housekeeping_top_0/dbus_out[1] slot17_wrapper_0/dig_in[9]
 + housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] vdd1v2_uq2 slot17_wrapper_0/dig_out[10]
 + housekeeping_top_0/proj_dig_ena slot17_wrapper_0/dig_out[11] housekeeping_top_0/dbus_out[10]
-+ vss3v3 vss3v3 project_control_area_14/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
++ sub sub project_control_area_14/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
 + housekeeping_top_0/dbus_out[23] slot17_wrapper_0/ibias1 project_control_area_14/user_project_control_0/dig_out[10]
 + slot17_wrapper_0/vdd_3v3 housekeeping_top_0/dbus_out[6] slot17_wrapper_0/ibias0
 + slot17_wrapper_0/dig_in[10] project_control_area_12/user_project_control_0/dig_out[2]
@@ -22765,7 +23547,7 @@ Xproject_control_area_14 slot17_wrapper_0/dig_in[20] analog_switch_array_7[1]/an
 + project_control_area_12/user_project_control_0/dig_out[5] slot17_wrapper_0/dig_in[15]
 + housekeeping_top_0/dbus_out[20] vdd1v2_uq2 housekeeping_top_0/dbus_out[19] slot17_wrapper_0/dig_in[16]
 + project_control_area_12/user_project_control_0/dig_out[6] housekeeping_top_0/proj_sel[4]
-+ project_control_area_14/user_project_control_0/dig_out[6] vss3v3 housekeeping_top_0/reset
++ project_control_area_14/user_project_control_0/dig_out[6] sub housekeeping_top_0/reset
 + housekeeping_top_0/dbus_out[12] slot17_wrapper_0/dig_in[17] housekeeping_top_0/analog_bus_ena[0]
 + housekeeping_top_0/proj_1v2_ena slot17_wrapper_0/dig_in[18] housekeeping_top_0/proj_ena
 + slot17_wrapper_0/dig_in[19] vdd1v2_uq2 project_control_area_12/user_project_control_0/dig_out[9]
@@ -22781,7 +23563,7 @@ Xproject_control_area_14 slot17_wrapper_0/dig_in[20] analog_switch_array_7[1]/an
 + housekeeping_top_0/proj_sel[3] slot17_wrapper_0/dig_out[5] project_control_area_12/user_project_control_0/dig_out[8]
 + housekeeping_top_0/dbus_out[4] slot17_wrapper_0/dig_in[0] housekeeping_top_0/dbus_out[15]
 + vdd1v2_uq2 analog_switch_array_7[1]/analog_switch_med_3/enable housekeeping_top_0/dbus_out[13]
-+ slot17_wrapper_0/dig_out[6] vss3v3 slot17_wrapper_0/vdd_1v2 vss3v3 vss3v3 slot17_wrapper_0/dig_in[1]
++ slot17_wrapper_0/dig_out[6] sub slot17_wrapper_0/vdd_1v2 sub sub slot17_wrapper_0/dig_in[1]
 + project_control_area
 Xproject_control_area_15 slot2_wrapper_0/dig_in[20] analog_switch_array_7[1]/analog_switch_med_18/enable
 + analog_switch_array_7[1]/analog_switch_med_17/enable slot2_wrapper_0/dig_out[7]
@@ -22799,9 +23581,9 @@ Xproject_control_area_15 slot2_wrapper_0/dig_in[20] analog_switch_array_7[1]/ana
 + slot2_wrapper_0/dig_in[7] project_control_area_13/user_project_control_0/dig_out[11]
 + slot2_wrapper_0/dig_in[8] analog_switch_array_7[1]/analog_pswitch_small_0/enable
 + housekeeping_top_0/proj_sel[0] housekeeping_top_0/dbus_out[1] slot2_wrapper_0/dig_in[9]
-+ housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] vss3v3 slot2_wrapper_0/dig_out[10]
++ housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] sub slot2_wrapper_0/dig_out[10]
 + housekeeping_top_0/proj_dig_ena slot2_wrapper_0/dig_out[11] housekeeping_top_0/dbus_out[10]
-+ vdd1v2_uq2 vss3v3 project_control_area_15/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
++ vdd1v2_uq2 sub project_control_area_15/user_project_control_0/dig_out[5] housekeeping_top_0/proj_ibias_ena[1]
 + housekeeping_top_0/dbus_out[23] slot2_wrapper_0/ibias1 project_control_area_15/user_project_control_0/dig_out[10]
 + slot2_wrapper_0/vdd_3v3 housekeeping_top_0/dbus_out[6] slot2_wrapper_0/ibias0 slot2_wrapper_0/dig_in[10]
 + project_control_area_13/user_project_control_0/dig_out[2] housekeeping_top_0/proj_vbias_ena
@@ -22813,7 +23595,7 @@ Xproject_control_area_15 slot2_wrapper_0/dig_in[20] analog_switch_array_7[1]/ana
 + slot2_wrapper_0/dig_in[15] housekeeping_top_0/dbus_out[20] vdd1v2_uq2 housekeeping_top_0/dbus_out[19]
 + slot2_wrapper_0/dig_in[16] project_control_area_13/user_project_control_0/dig_out[6]
 + housekeeping_top_0/proj_sel[4] project_control_area_15/user_project_control_0/dig_out[6]
-+ vss3v3 housekeeping_top_0/reset housekeeping_top_0/dbus_out[12] slot2_wrapper_0/dig_in[17]
++ sub housekeeping_top_0/reset housekeeping_top_0/dbus_out[12] slot2_wrapper_0/dig_in[17]
 + housekeeping_top_0/analog_bus_ena[0] housekeeping_top_0/proj_1v2_ena slot2_wrapper_0/dig_in[18]
 + housekeeping_top_0/proj_ena slot2_wrapper_0/dig_in[19] vdd1v2_uq2 project_control_area_13/user_project_control_0/dig_out[9]
 + vdd3v3 housekeeping_top_0/dbus_out[14] analog_switch_array_7[1]/analog_pswitch_small_1/enable
@@ -22827,10 +23609,10 @@ Xproject_control_area_15 slot2_wrapper_0/dig_in[20] analog_switch_array_7[1]/ana
 + slot2_wrapper_0/dig_out[4] housekeeping_top_0/dbus_out[3] analog_switch_array_7[1]/analog_switch_small_0/enable
 + housekeeping_top_0/proj_sel[3] slot2_wrapper_0/dig_out[5] project_control_area_13/user_project_control_0/dig_out[8]
 + housekeeping_top_0/dbus_out[4] slot2_wrapper_0/dig_in[0] housekeeping_top_0/dbus_out[15]
-+ vss3v3 analog_switch_array_7[1]/analog_switch_med_22/enable housekeeping_top_0/dbus_out[13]
-+ slot2_wrapper_0/dig_out[6] vss3v3 slot2_wrapper_0/vdd_1v2 vss3v3 vss3v3 slot2_wrapper_0/dig_in[1]
++ sub analog_switch_array_7[1]/analog_switch_med_22/enable housekeeping_top_0/dbus_out[13]
++ slot2_wrapper_0/dig_out[6] sub slot2_wrapper_0/vdd_1v2 sub sub slot2_wrapper_0/dig_in[1]
 + project_control_area
-Xslot8_wrapper_0 vss3v3 s8_an[0] s8_an_0_esd slot8_wrapper_0/vbias slot8_wrapper_0/dig_in[23]
+Xslot8_wrapper_0 sub s8_an[0] s8_an_0_esd slot8_wrapper_0/vbias slot8_wrapper_0/dig_in[23]
 + slot8_wrapper_0/dig_in[22] slot8_wrapper_0/dig_in[21] slot8_wrapper_0/dig_in[20]
 + slot8_wrapper_0/dig_in[19] slot8_wrapper_0/dig_in[18] slot8_wrapper_0/dig_in[17]
 + slot8_wrapper_0/dig_in[16] slot8_wrapper_0/dig_in[15] slot8_wrapper_0/dig_in[14]
@@ -22843,7 +23625,7 @@ Xslot8_wrapper_0 vss3v3 s8_an[0] s8_an_0_esd slot8_wrapper_0/vbias slot8_wrapper
 + slot8_wrapper_0/dig_out[4] slot8_wrapper_0/dig_out[3] slot8_wrapper_0/dig_out[2]
 + slot8_wrapper_0/dig_out[1] slot8_wrapper_0/dig_out[0] slot8_wrapper_0/ibias0 slot8_wrapper_0/ibias1
 + slot8_wrapper_0/analog_bus3 slot8_wrapper_0/analog_bus2 slot8_wrapper_0/analog_bus1
-+ slot8_wrapper_0/analog_bus0 vss3v3 slot8_wrapper_0/vdd_1v2 slot8_wrapper_0/vdd_3v3
++ slot8_wrapper_0/analog_bus0 sub slot8_wrapper_0/vdd_1v2 slot8_wrapper_0/vdd_3v3
 + slot8_wrapper_0/enable slot8_wrapper_0/clk slot8_wrapper_0/reset slot8_wrapper
 Xproject_control_area_16 slot18_wrapper_0/dig_in[20] analog_switch_array_7[0]/analog_switch_med_1/enable
 + analog_switch_array_7[0]/analog_switch_med_0/enable slot18_wrapper_0/dig_out[7]
@@ -22860,9 +23642,9 @@ Xproject_control_area_16 slot18_wrapper_0/dig_in[20] analog_switch_array_7[0]/an
 + slot18_wrapper_0/dig_in[7] project_control_area_14/user_project_control_0/dig_out[11]
 + slot18_wrapper_0/dig_in[8] analog_switch_array_7[0]/analog_pswitch_small_3/enable
 + housekeeping_top_0/proj_sel[0] housekeeping_top_0/dbus_out[1] slot18_wrapper_0/dig_in[9]
-+ housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] vss3v3 slot18_wrapper_0/dig_out[10]
++ housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] sub slot18_wrapper_0/dig_out[10]
 + housekeeping_top_0/proj_dig_ena slot18_wrapper_0/dig_out[11] housekeeping_top_0/dbus_out[10]
-+ vdd1v2_uq2 vss3v3 housekeeping_top_0/dbus_in_left[5] housekeeping_top_0/proj_ibias_ena[1]
++ vdd1v2_uq2 sub housekeeping_top_0/dbus_in_left[5] housekeeping_top_0/proj_ibias_ena[1]
 + housekeeping_top_0/dbus_out[23] slot18_wrapper_0/ibias1 housekeeping_top_0/dbus_in_left[10]
 + slot18_wrapper_0/vdd_3v3 housekeeping_top_0/dbus_out[6] slot18_wrapper_0/ibias0
 + slot18_wrapper_0/dig_in[10] project_control_area_14/user_project_control_0/dig_out[2]
@@ -22874,7 +23656,7 @@ Xproject_control_area_16 slot18_wrapper_0/dig_in[20] analog_switch_array_7[0]/an
 + project_control_area_14/user_project_control_0/dig_out[5] slot18_wrapper_0/dig_in[15]
 + housekeeping_top_0/dbus_out[20] vdd1v2_uq2 housekeeping_top_0/dbus_out[19] slot18_wrapper_0/dig_in[16]
 + project_control_area_14/user_project_control_0/dig_out[6] housekeeping_top_0/proj_sel[4]
-+ housekeeping_top_0/dbus_in_left[6] vss3v3 housekeeping_top_0/reset housekeeping_top_0/dbus_out[12]
++ housekeeping_top_0/dbus_in_left[6] sub housekeeping_top_0/reset housekeeping_top_0/dbus_out[12]
 + slot18_wrapper_0/dig_in[17] housekeeping_top_0/analog_bus_ena[0] housekeeping_top_0/proj_1v2_ena
 + slot18_wrapper_0/dig_in[18] housekeeping_top_0/proj_ena slot18_wrapper_0/dig_in[19]
 + vdd1v2_uq2 project_control_area_14/user_project_control_0/dig_out[9] vdd3v3 housekeeping_top_0/dbus_out[14]
@@ -22889,7 +23671,7 @@ Xproject_control_area_16 slot18_wrapper_0/dig_in[20] analog_switch_array_7[0]/an
 + housekeeping_top_0/proj_sel[3] slot18_wrapper_0/dig_out[5] project_control_area_14/user_project_control_0/dig_out[8]
 + housekeeping_top_0/dbus_out[4] slot18_wrapper_0/dig_in[0] housekeeping_top_0/dbus_out[15]
 + vdd1v2_uq2 analog_switch_array_7[0]/analog_switch_med_3/enable housekeeping_top_0/dbus_out[13]
-+ slot18_wrapper_0/dig_out[6] vss3v3 slot18_wrapper_0/vdd_1v2 vss3v3 vss3v3 slot18_wrapper_0/dig_in[1]
++ slot18_wrapper_0/dig_out[6] sub slot18_wrapper_0/vdd_1v2 sub sub slot18_wrapper_0/dig_in[1]
 + project_control_area
 Xproject_control_area_17 slot1_wrapper_0/dig_in[20] analog_switch_array_7[0]/analog_switch_med_18/enable
 + analog_switch_array_7[0]/analog_switch_med_17/enable slot1_wrapper_0/dig_out[7]
@@ -22908,7 +23690,7 @@ Xproject_control_area_17 slot1_wrapper_0/dig_in[20] analog_switch_array_7[0]/ana
 + housekeeping_top_0/proj_sel[0] housekeeping_top_0/dbus_out[1] slot1_wrapper_0/dig_in[9]
 + housekeeping_top_0/dbus_out[17] housekeeping_top_0/dbus_out[2] vdd1v2_uq2 slot1_wrapper_0/dig_out[10]
 + housekeeping_top_0/proj_dig_ena slot1_wrapper_0/dig_out[11] housekeeping_top_0/dbus_out[10]
-+ vss3v3 vss3v3 housekeeping_top_0/dbus_in_right[5] housekeeping_top_0/proj_ibias_ena[1]
++ sub sub housekeeping_top_0/dbus_in_right[5] housekeeping_top_0/proj_ibias_ena[1]
 + housekeeping_top_0/dbus_out[23] slot1_wrapper_0/ibias1 housekeeping_top_0/dbus_in_right[10]
 + slot1_wrapper_0/vdd_3v3 housekeeping_top_0/dbus_out[6] slot1_wrapper_0/ibias0 slot1_wrapper_0/dig_in[10]
 + project_control_area_15/user_project_control_0/dig_out[2] housekeeping_top_0/proj_vbias_ena
@@ -22919,7 +23701,7 @@ Xproject_control_area_17 slot1_wrapper_0/dig_in[20] analog_switch_array_7[0]/ana
 + housekeeping_top_0/proj_ibias_ena[0] project_control_area_15/user_project_control_0/dig_out[5]
 + slot1_wrapper_0/dig_in[15] housekeeping_top_0/dbus_out[20] vdd1v2_uq2 housekeeping_top_0/dbus_out[19]
 + slot1_wrapper_0/dig_in[16] project_control_area_15/user_project_control_0/dig_out[6]
-+ housekeeping_top_0/proj_sel[4] housekeeping_top_0/dbus_in_right[6] vss3v3 housekeeping_top_0/reset
++ housekeeping_top_0/proj_sel[4] housekeeping_top_0/dbus_in_right[6] sub housekeeping_top_0/reset
 + housekeeping_top_0/dbus_out[12] slot1_wrapper_0/dig_in[17] housekeeping_top_0/analog_bus_ena[0]
 + housekeeping_top_0/proj_1v2_ena slot1_wrapper_0/dig_in[18] housekeeping_top_0/proj_ena
 + slot1_wrapper_0/dig_in[19] vdd1v2_uq2 project_control_area_15/user_project_control_0/dig_out[9]
@@ -22934,12 +23716,11 @@ Xproject_control_area_17 slot1_wrapper_0/dig_in[20] analog_switch_array_7[0]/ana
 + slot1_wrapper_0/dig_out[4] housekeeping_top_0/dbus_out[3] analog_switch_array_7[0]/analog_switch_small_0/enable
 + housekeeping_top_0/proj_sel[3] slot1_wrapper_0/dig_out[5] project_control_area_15/user_project_control_0/dig_out[8]
 + housekeeping_top_0/dbus_out[4] slot1_wrapper_0/dig_in[0] housekeeping_top_0/dbus_out[15]
-+ vss3v3 analog_switch_array_7[0]/analog_switch_med_22/enable housekeeping_top_0/dbus_out[13]
-+ slot1_wrapper_0/dig_out[6] vss3v3 slot1_wrapper_0/vdd_1v2 vss3v3 vss3v3 slot1_wrapper_0/dig_in[1]
++ sub analog_switch_array_7[0]/analog_switch_med_22/enable housekeeping_top_0/dbus_out[13]
++ slot1_wrapper_0/dig_out[6] sub slot1_wrapper_0/vdd_1v2 sub sub slot1_wrapper_0/dig_in[1]
 + project_control_area
 Xsg13cmos5l_ocd_ip__classab_buffer_0 sg13cmos5l_ocd_ip__classab_buffer_0/inp sg13cmos5l_ocd_ip__classab_buffer_0/ena
-+ sg13cmos5l_ocd_ip__classab_buffer_0/bias analog_switch_small_1/in vss3v3 vdd3v3
-+ sg13cmos5l_ocd_ip__classab_buffer
++ sg13cmos5l_ocd_ip__classab_buffer_0/bias analog_switch_small_1/in sub vdd3v3 sg13cmos5l_ocd_ip__classab_buffer
 Xsg13cmos5l_ocd_ip__bandgap_v3_0 analog_switch_small_0/in sg13cmos5l_ocd_ip__bandgap_v3_0/ibias1_250n
 + housekeeping_top_0/bandgap_trim[15] housekeeping_top_0/bandgap_trim[14] housekeeping_top_0/bandgap_trim[13]
 + housekeeping_top_0/bandgap_trim[12] housekeeping_top_0/bandgap_trim[11] housekeeping_top_0/bandgap_trim[10]
@@ -22947,8 +23728,8 @@ Xsg13cmos5l_ocd_ip__bandgap_v3_0 analog_switch_small_0/in sg13cmos5l_ocd_ip__ban
 + housekeeping_top_0/bandgap_trim[6] housekeeping_top_0/bandgap_trim[5] housekeeping_top_0/bandgap_trim[4]
 + housekeeping_top_0/bandgap_trim[3] housekeeping_top_0/bandgap_trim[2] housekeeping_top_0/bandgap_trim[1]
 + housekeeping_top_0/bandgap_trim[0] housekeeping_top_0/bandgap_ena sg13cmos5l_ocd_ip__bandgap_v3_0/ibias2_1u
-+ vdd1v2_uq2 vdd3v3 vss3v3 vss3v3 sg13cmos5l_ocd_ip__bandgap_v3
-Xslot12_wrapper_0 vss3v3 s12_an[0] s12_an[1] s12_an_0_esd s12_an_1_esd slot12_wrapper_0/vbias
++ vdd1v2_uq2 vdd3v3 sub sub sg13cmos5l_ocd_ip__bandgap_v3
+Xslot12_wrapper_0 sub s12_an[0] s12_an[1] s12_an_0_esd s12_an_1_esd slot12_wrapper_0/vbias
 + slot12_wrapper_0/dig_in[23] slot12_wrapper_0/dig_in[22] slot12_wrapper_0/dig_in[21]
 + slot12_wrapper_0/dig_in[20] slot12_wrapper_0/dig_in[19] slot12_wrapper_0/dig_in[18]
 + slot12_wrapper_0/dig_in[17] slot12_wrapper_0/dig_in[16] slot12_wrapper_0/dig_in[15]
@@ -22962,7 +23743,7 @@ Xslot12_wrapper_0 vss3v3 s12_an[0] s12_an[1] s12_an_0_esd s12_an_1_esd slot12_wr
 + slot12_wrapper_0/dig_out[5] slot12_wrapper_0/dig_out[4] slot12_wrapper_0/dig_out[3]
 + slot12_wrapper_0/dig_out[2] slot12_wrapper_0/dig_out[1] slot12_wrapper_0/dig_out[0]
 + slot12_wrapper_0/ibias0 slot12_wrapper_0/ibias1 slot12_wrapper_0/analog_bus3 slot12_wrapper_0/analog_bus2
-+ slot12_wrapper_0/analog_bus1 slot12_wrapper_0/analog_bus0 vss3v3 slot12_wrapper_0/vdd_1v2
++ slot12_wrapper_0/analog_bus1 slot12_wrapper_0/analog_bus0 sub slot12_wrapper_0/vdd_1v2
 + slot12_wrapper_0/vdd_3v3 slot12_wrapper_0/enable slot12_wrapper_0/clk slot12_wrapper_0/reset
 + slot12_wrapper
 Xhousekeeping_top_0 CSB_in SCK_in SDI_in SDO_out housekeeping_top_0/analog_bus_ena[0]
@@ -23025,6 +23806,104 @@ Xhousekeeping_top_0 CSB_in SCK_in SDI_in SDO_out housekeeping_top_0/analog_bus_e
 + housekeeping_top_0/voltgen_sink2[1] housekeeping_top_0/voltgen_sink2[2] housekeeping_top_0/voltgen_source[0]
 + housekeeping_top_0/voltgen_source[1] housekeeping_top_0/voltgen_source[2] housekeeping_top_0/voltgen_source[3]
 + housekeeping_top_0/voltgen_source[4] housekeeping_top_0/voltgen_value[0] housekeeping_top_0/voltgen_value[1]
-+ housekeeping_top_0/voltgen_value[2] vddd vss3v3 housekeeping_top
++ housekeeping_top_0/voltgen_value[2] vddd sub housekeeping_top
+.ends
+
+.subckt sg13cmos5l_ocd_chipalooza SDO SDI CSB SCK clk vddd gpio[0] gpio[1] gpio[2]
++ gpio[3] gpio[4] gpio[5] gpio[6] gpio[7] vdd3v3 s1_an[0] s1_an[1] s2_an[0] s2_an[1]
++ s3_an[0] s3_an[1] s4_an[0] s5_an[0] s5_an[1] s5_an[2] s6_an[0] s6_an[1] s7_an[0]
++ s7_an[1] s8_an[0] s9_an[0] s9_an[1] s9_an[2] gpio[8] gpio[9] gpio[10] gpio[11] analog[0]
++ analog[1] analog[2] analog[3] s10_an[0] s10_an[1] s10_an[2] s11_an[0] s12_an[0]
++ s12_an[1] s13_an[0] s13_an[1] s14_an[0] s14_an[1] s14_an[2] s15_an[0] s16_an[0]
++ s16_an[1] s17_an[0] s17_an[1] s18_an[0] s18_an[1] vdd1v2 vss3v3
+Xsg13cmos5l_padframe_0 CSB SCK gpio[11] s13_an[1] s14_an[0] s15_an[0] s17_an[1] s18_an[0]
++ s18_an[1] sg13cmos5l_padframe_0/SCK_in sg13cmos5l_padframe_0/clk_in sg13cmos5l_padframe_0/gpio_0_out
++ sg13cmos5l_padframe_0/gpio_1_in sg13cmos5l_padframe_0/gpio_1_oe sg13cmos5l_padframe_0/gpio_2_out
++ sg13cmos5l_padframe_0/gpio_4_in sg13cmos5l_padframe_0/gpio_5_out sg13cmos5l_padframe_0/gpio_5_oe
++ sg13cmos5l_padframe_0/gpio_6_out sg13cmos5l_padframe_0/gpio_7_in sg13cmos5l_padframe_0/gpio_7_oe
++ sg13cmos5l_padframe_0/gpio_9_in sg13cmos5l_padframe_0/gpio_9_out sg13cmos5l_padframe_0/gpio_11_in
++ sg13cmos5l_padframe_0/analog_0_esd sg13cmos5l_padframe_0/analog_2_esd sg13cmos5l_padframe_0/s1_an_0_esd
++ sg13cmos5l_padframe_0/s1_an_1_esd sg13cmos5l_padframe_0/s2_an_0_esd sg13cmos5l_padframe_0/s2_an_1_esd
++ sg13cmos5l_padframe_0/s3_an_1_esd sg13cmos5l_padframe_0/s4_an_0_esd sg13cmos5l_padframe_0/s5_an_0_esd
++ sg13cmos5l_padframe_0/s5_an_2_esd sg13cmos5l_padframe_0/s6_an_1_esd sg13cmos5l_padframe_0/s7_an_0_esd
++ sg13cmos5l_padframe_0/s7_an_1_esd sg13cmos5l_padframe_0/s8_an_0_esd sg13cmos5l_padframe_0/s9_an_1_esd
++ sg13cmos5l_padframe_0/s9_an_2_esd sg13cmos5l_padframe_0/s10_an_0_esd sg13cmos5l_padframe_0/s10_an_2_esd
++ sg13cmos5l_padframe_0/s12_an_1_esd sg13cmos5l_padframe_0/s13_an_0_esd sg13cmos5l_padframe_0/s14_an_2_esd
++ sg13cmos5l_padframe_0/s16_an_1_esd sg13cmos5l_padframe_0/s17_an_0_esd sg13cmos5l_padframe_0/mask_rev[7]
++ sg13cmos5l_padframe_0/mask_rev[8] sg13cmos5l_padframe_0/mask_rev[9] sg13cmos5l_padframe_0/mask_rev[10]
++ sg13cmos5l_padframe_0/mask_rev[11] sg13cmos5l_padframe_0/mask_rev[12] sg13cmos5l_padframe_0/mask_rev[14]
++ sg13cmos5l_padframe_0/mask_rev[15] sg13cmos5l_padframe_0/mask_rev[16] sg13cmos5l_padframe_0/mask_rev[17]
++ sg13cmos5l_padframe_0/mask_rev[18] sg13cmos5l_padframe_0/mask_rev[19] sg13cmos5l_padframe_0/mask_rev[20]
++ sg13cmos5l_padframe_0/mask_rev[21] sg13cmos5l_padframe_0/mask_rev[22] sg13cmos5l_padframe_0/mask_rev[23]
++ sg13cmos5l_padframe_0/mask_rev[24] sg13cmos5l_padframe_0/mask_rev[25] sg13cmos5l_padframe_0/mask_rev[26]
++ sg13cmos5l_padframe_0/mask_rev[30] sg13cmos5l_padframe_0/mask_rev[31] vdd3v3 s17_an[0]
++ s16_an[1] s6_an[0] s12_an[1] s12_an[0] s8_an[0] s9_an[0] s10_an[2] s10_an[1] analog[0]
++ analog[3] SDI sg13cmos5l_padframe_0/s5_an_1_esd s1_an[1] sg13cmos5l_padframe_0/s10_an_1_esd
++ gpio[7] sg13cmos5l_padframe_0/s3_an_0_esd sg13cmos5l_padframe_0/gpio_8_in sg13cmos5l_padframe_0/s13_an_1_esd
++ sg13cmos5l_padframe_0/s14_an_1_esd sg13cmos5l_padframe_0/s6_an_0_esd sg13cmos5l_padframe_0/gpio_5_in
++ s5_an[1] sg13cmos5l_padframe_0/s17_an_1_esd gpio[1] sg13cmos5l_padframe_0/s9_an_0_esd
++ sg13cmos5l_padframe_0/analog_3_esd sg13cmos5l_padframe_0/s18_an_1_esd sg13cmos5l_padframe_0/gpio_2_in
++ sg13cmos5l_padframe_0/mask_rev[13] sg13cmos5l_padframe_0/s11_an_0_esd sg13cmos5l_padframe_0/gpio_10_out
++ gpio[4] sg13cmos5l_padframe_0/s12_an_0_esd s9_an[2] s2_an[0] s7_an[1] s3_an[0] s2_an[1]
++ gpio[10] sg13cmos5l_padframe_0/s14_an_0_esd sg13cmos5l_padframe_0/gpio_2_oe sg13cmos5l_padframe_0/s15_an_0_esd
++ s14_an[1] gpio[8] sg13cmos5l_padframe_0/s16_an_0_esd analog[1] sg13cmos5l_padframe_0/SDO_ena
++ sg13cmos5l_padframe_0/s18_an_0_esd sg13cmos5l_padframe_0/gpio_4_out sg13cmos5l_padframe_0/gpio_8_oe
++ gpio[5] s16_an[0] sg13cmos5l_padframe_0/CSB_in s14_an[2] gpio[6] gpio[0] sg13cmos5l_padframe_0/mask_rev[27]
++ s5_an[0] sg13cmos5l_padframe_0/gpio_6_in vddd sg13cmos5l_padframe_0/gpio_10_oe sg13cmos5l_padframe_0/gpio_3_oe
++ sg13cmos5l_padframe_0/mask_rev[28] sg13cmos5l_padframe_0/gpio_1_out s6_an[1] sg13cmos5l_padframe_0/mask_rev[0]
++ s11_an[0] sg13cmos5l_padframe_0/mask_rev[29] sg13cmos5l_padframe_0/gpio_3_out sg13cmos5l_padframe_0/SDI_in
++ sg13cmos5l_padframe_0/mask_rev[1] sg13cmos5l_padframe_0/gpio_3_in s13_an[0] vdd1v2
++ sg13cmos5l_padframe_0/mask_rev[2] sg13cmos5l_padframe_0/analog_1_esd s4_an[0] sg13cmos5l_padframe_0/mask_rev[3]
++ sg13cmos5l_padframe_0/gpio_11_out sg13cmos5l_padframe_0/gpio_9_oe sg13cmos5l_padframe_0/gpio_6_oe
++ sg13cmos5l_padframe_0/mask_rev[4] sg13cmos5l_padframe_0/gpio_0_in s10_an[0] sg13cmos5l_padframe_0/gpio_8_out
++ gpio[2] sg13cmos5l_padframe_0/mask_rev[5] SDO s5_an[2] gpio[9] gpio[3] sg13cmos5l_padframe_0/gpio_11_oe
++ clk s3_an[1] sg13cmos5l_padframe_0/gpio_4_oe s9_an[1] sg13cmos5l_padframe_0/mask_rev[6]
++ analog[2] sg13cmos5l_padframe_0/SDO_out sg13cmos5l_padframe_0/gpio_10_in sg13cmos5l_padframe_0/gpio_7_out
++ sg13cmos5l_padframe_0/gpio_0_oe vss3v3 s7_an[0] s1_an[0] sg13cmos5l_padframe
+Xchipalooza_frame_wrapper_0 vddd vdd3v3 vdd1v2 s1_an[0] s1_an[1] s2_an[0] s2_an[1]
++ s3_an[0] s3_an[1] s4_an[0] s5_an[0] s5_an[1] s5_an[2] s6_an[0] s6_an[1] s7_an[0]
++ s7_an[1] s8_an[0] s9_an[0] s9_an[1] s9_an[2] analog[0] analog[1] analog[2] analog[3]
++ s10_an[0] s10_an[1] s10_an[2] s11_an[0] s12_an[0] s12_an[1] s13_an[0] s13_an[1]
++ s14_an[0] s14_an[1] s14_an[2] s15_an[0] s16_an[0] s16_an[1] s17_an[0] s17_an[1]
++ s18_an[0] s18_an[1] sg13cmos5l_padframe_0/SDO_out sg13cmos5l_padframe_0/SDO_ena
++ sg13cmos5l_padframe_0/SDI_in sg13cmos5l_padframe_0/CSB_in sg13cmos5l_padframe_0/SCK_in
++ sg13cmos5l_padframe_0/clk_in sg13cmos5l_padframe_0/gpio_0_in sg13cmos5l_padframe_0/gpio_0_out
++ sg13cmos5l_padframe_0/gpio_0_oe sg13cmos5l_padframe_0/gpio_1_in sg13cmos5l_padframe_0/gpio_1_out
++ sg13cmos5l_padframe_0/gpio_1_oe sg13cmos5l_padframe_0/gpio_2_in sg13cmos5l_padframe_0/gpio_2_out
++ sg13cmos5l_padframe_0/gpio_2_oe sg13cmos5l_padframe_0/gpio_3_in sg13cmos5l_padframe_0/gpio_3_out
++ sg13cmos5l_padframe_0/gpio_3_oe sg13cmos5l_padframe_0/gpio_4_in sg13cmos5l_padframe_0/gpio_4_out
++ sg13cmos5l_padframe_0/gpio_4_oe sg13cmos5l_padframe_0/gpio_5_in sg13cmos5l_padframe_0/gpio_5_out
++ sg13cmos5l_padframe_0/gpio_5_oe sg13cmos5l_padframe_0/gpio_6_in sg13cmos5l_padframe_0/gpio_6_out
++ sg13cmos5l_padframe_0/gpio_6_oe sg13cmos5l_padframe_0/gpio_7_in sg13cmos5l_padframe_0/gpio_7_out
++ sg13cmos5l_padframe_0/gpio_7_oe sg13cmos5l_padframe_0/gpio_8_in sg13cmos5l_padframe_0/gpio_8_out
++ sg13cmos5l_padframe_0/gpio_8_oe sg13cmos5l_padframe_0/gpio_9_in sg13cmos5l_padframe_0/gpio_9_out
++ sg13cmos5l_padframe_0/gpio_9_oe sg13cmos5l_padframe_0/gpio_10_in sg13cmos5l_padframe_0/gpio_10_out
++ sg13cmos5l_padframe_0/gpio_10_oe sg13cmos5l_padframe_0/gpio_11_in sg13cmos5l_padframe_0/gpio_11_out
++ sg13cmos5l_padframe_0/gpio_11_oe sg13cmos5l_padframe_0/analog_0_esd sg13cmos5l_padframe_0/analog_1_esd
++ sg13cmos5l_padframe_0/analog_2_esd sg13cmos5l_padframe_0/analog_3_esd sg13cmos5l_padframe_0/s1_an_0_esd
++ sg13cmos5l_padframe_0/s1_an_1_esd sg13cmos5l_padframe_0/s2_an_0_esd sg13cmos5l_padframe_0/s2_an_1_esd
++ sg13cmos5l_padframe_0/s3_an_0_esd sg13cmos5l_padframe_0/s3_an_1_esd sg13cmos5l_padframe_0/s4_an_0_esd
++ sg13cmos5l_padframe_0/s5_an_0_esd sg13cmos5l_padframe_0/s5_an_1_esd sg13cmos5l_padframe_0/s5_an_2_esd
++ sg13cmos5l_padframe_0/s6_an_0_esd sg13cmos5l_padframe_0/s6_an_1_esd sg13cmos5l_padframe_0/s7_an_0_esd
++ sg13cmos5l_padframe_0/s7_an_1_esd sg13cmos5l_padframe_0/s8_an_0_esd sg13cmos5l_padframe_0/s9_an_0_esd
++ sg13cmos5l_padframe_0/s9_an_1_esd sg13cmos5l_padframe_0/s9_an_2_esd sg13cmos5l_padframe_0/s10_an_0_esd
++ sg13cmos5l_padframe_0/s10_an_1_esd sg13cmos5l_padframe_0/s10_an_2_esd sg13cmos5l_padframe_0/s11_an_0_esd
++ sg13cmos5l_padframe_0/s12_an_0_esd sg13cmos5l_padframe_0/s12_an_1_esd sg13cmos5l_padframe_0/s13_an_0_esd
++ sg13cmos5l_padframe_0/s13_an_1_esd sg13cmos5l_padframe_0/s14_an_0_esd sg13cmos5l_padframe_0/s14_an_1_esd
++ sg13cmos5l_padframe_0/s14_an_2_esd sg13cmos5l_padframe_0/s15_an_0_esd sg13cmos5l_padframe_0/s16_an_0_esd
++ sg13cmos5l_padframe_0/s16_an_1_esd sg13cmos5l_padframe_0/s17_an_0_esd sg13cmos5l_padframe_0/s17_an_1_esd
++ sg13cmos5l_padframe_0/s18_an_0_esd sg13cmos5l_padframe_0/s18_an_1_esd sg13cmos5l_padframe_0/mask_rev[0]
++ sg13cmos5l_padframe_0/mask_rev[1] sg13cmos5l_padframe_0/mask_rev[2] sg13cmos5l_padframe_0/mask_rev[3]
++ sg13cmos5l_padframe_0/mask_rev[4] sg13cmos5l_padframe_0/mask_rev[5] sg13cmos5l_padframe_0/mask_rev[6]
++ sg13cmos5l_padframe_0/mask_rev[7] sg13cmos5l_padframe_0/mask_rev[8] sg13cmos5l_padframe_0/mask_rev[9]
++ sg13cmos5l_padframe_0/mask_rev[20] sg13cmos5l_padframe_0/mask_rev[21] sg13cmos5l_padframe_0/mask_rev[22]
++ sg13cmos5l_padframe_0/mask_rev[23] sg13cmos5l_padframe_0/mask_rev[24] sg13cmos5l_padframe_0/mask_rev[25]
++ sg13cmos5l_padframe_0/mask_rev[26] vdd1v2 vdd1v2 sg13cmos5l_padframe_0/mask_rev[27]
++ sg13cmos5l_padframe_0/mask_rev[28] sg13cmos5l_padframe_0/mask_rev[29] sg13cmos5l_padframe_0/mask_rev[10]
++ sg13cmos5l_padframe_0/mask_rev[11] sg13cmos5l_padframe_0/mask_rev[13] sg13cmos5l_padframe_0/mask_rev[12]
++ sg13cmos5l_padframe_0/mask_rev[13] sg13cmos5l_padframe_0/mask_rev[30] sg13cmos5l_padframe_0/mask_rev[14]
++ sg13cmos5l_padframe_0/mask_rev[31] sg13cmos5l_padframe_0/mask_rev[15] sg13cmos5l_padframe_0/mask_rev[16]
++ sg13cmos5l_padframe_0/mask_rev[17] sg13cmos5l_padframe_0/mask_rev[18] sg13cmos5l_padframe_0/mask_rev[19]
++ vss3v3 chipalooza_frame
 .ends
 

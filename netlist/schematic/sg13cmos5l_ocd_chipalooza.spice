@@ -1,3 +1,45 @@
+** sch_path: /home/tim/gits/sg13cmos5l_ocd_chipalooza/xschem/sg13cmos5l_ocd_chipalooza.sch
+.subckt sg13cmos5l_ocd_chipalooza SDO analog[3] analog[2] analog[1] analog[0] gpio[11] gpio[10] gpio[9] gpio[8] gpio[7] gpio[6]
++ gpio[5] gpio[4] gpio[3] gpio[2] gpio[1] gpio[0] vdd3v3 vss3v3 vdd1v2 vss1v2 vddd SDI SCK clk CSB s18_an[1] s18_an[0] s17_an[1] s17_an[0]
++ s16_an[1] s16_an[0] s15_an[0] s14_an[2] s14_an[1] s14_an[0] s13_an[1] s13_an[0] s12_an[1] s12_an[0] s11_an[0] s10_an[2] s10_an[1] s10_an[0]
++ s9_an[2] s9_an[1] s9_an[0] s8_an[0] s7_an[1] s7_an[0] s6_an[1] s6_an[0] s5_an[2] s5_an[1] s5_an[0] s4_an[0] s3_an[1] s3_an[0] s2_an[1]
++ s2_an[0] s1_an[1] s1_an[0]
+*.PININFO SDO:B analog[3:0]:B gpio[11:0]:B vdd3v3:B vss3v3:B vdd1v2:B vss1v2:B vddd:B SDI:I SCK:I clk:I CSB:I s18_an[1:0]:B
+*+ s17_an[1:0]:B s16_an[1:0]:B s15_an[0]:B s14_an[2:0]:B s13_an[1:0]:B s12_an[1:0]:B s11_an[0]:B s10_an[2:0]:B s9_an[2:0]:B s8_an[0]:B
+*+ s7_an[1:0]:B s6_an[1:0]:B s5_an[2:0]:B s4_an[0]:B s3_an[1:0]:B s2_an[1:0]:B s1_an[1:0]:B
+x1 vdd1v2 vss1v2 vdd3v3 vss3v3 vddd gpio[11] gpio[10] gpio[9] gpio[8] gpio[7] gpio[6] gpio[5] gpio[4] gpio[3] gpio[2] gpio[1]
++ gpio[0] analog[3] analog[2] analog[1] analog[0] SDO SDI CSB SCK clk s1_an[1] s1_an[0] s2_an[1] s2_an[0] s3_an[1] s3_an[0] s4_an[0]
++ s5_an[2] s5_an[1] s5_an[0] s6_an[1] s6_an[0] s7_an[1] s7_an[0] s8_an[0] s9_an[2] s9_an[1] s9_an[0] s10_an[2] s10_an[1] s10_an[0] s11_an[0]
++ s12_an[1] s12_an[0] s13_an[1] s13_an[0] s14_an[2] s14_an[1] s14_an[0] s15_an[0] s16_an[1] s16_an[0] s17_an[1] s17_an[0] s18_an[1] s18_an[0]
++ sdo_out sdo_ena CSB_in SCK_in SDI_in clk_in gpio_in[0] gpio_out[0] gpio_oe[0] gpio_in[1] gpio_out[1] gpio_oe[1] gpio_in[2] gpio_out[2]
++ gpio_oe[2] gpio_in[3] gpio_out[3] gpio_oe[3] gpio_in[4] gpio_out[4] gpio_oe[4] gpio_in[5] gpio_out[5] gpio_oe[5] gpio_in[6] gpio_out[6]
++ gpio_oe[6] gpio_in[7] gpio_out[7] gpio_oe[7] gpio_in[8] gpio_out[8] gpio_oe[8] gpio_in[9] gpio_out[9] gpio_oe[9] gpio_in[10] gpio_out[10]
++ gpio_oe[10] gpio_in[11] gpio_out[11] gpio_oe[11] s1_an_0_esd s1_an_1_esd s2_an_0_esd s2_an_1_esd s3_an_0_esd s3_an_1_esd s4_an_0_esd
++ s5_an_0_esd s5_an_1_esd s5_an_2_esd s6_an_0_esd s6_an_1_esd s7_an_0_esd s7_an_1_esd s8_an_0_esd s9_an_0_esd s9_an_1_esd s9_an_2_esd
++ s10_an_0_esd s10_an_1_esd s10_an_2_esd s11_an_0_esd s12_an_0_esd s12_an_1_esd s13_an_0_esd s13_an_1_esd s14_an_0_esd s14_an_1_esd s14_an_2_esd
++ s15_an_0_esd s16_an_0_esd s16_an_1_esd s17_an_0_esd s17_an_1_esd s18_an_0_esd s18_an_1_esd analog_esd[0] analog_esd[1] analog_esd[2]
++ analog_esd[3] mask_rev[31] mask_rev[30] mask_rev[29] mask_rev[28] mask_rev[27] mask_rev[26] mask_rev[25] mask_rev[24] mask_rev[23] mask_rev[22]
++ mask_rev[21] mask_rev[20] mask_rev[19] mask_rev[18] mask_rev[17] mask_rev[16] mask_rev[15] mask_rev[14] mask_rev[13] mask_rev[12] mask_rev[11]
++ mask_rev[10] mask_rev[9] mask_rev[8] mask_rev[7] mask_rev[6] mask_rev[5] mask_rev[4] mask_rev[3] mask_rev[2] mask_rev[1] mask_rev[0]
++ sg13cmos5l_padframe
+x2 vdd3v3 vss3v3 vdd1v2 vss1v2 vddd gpio_out[11] gpio_out[10] gpio_out[9] gpio_out[8] gpio_out[7] gpio_out[6] gpio_out[5]
++ gpio_out[4] gpio_out[3] gpio_out[2] gpio_out[1] gpio_out[0] gpio_oe[11] gpio_oe[10] gpio_oe[9] gpio_oe[8] gpio_oe[7] gpio_oe[6] gpio_oe[5]
++ gpio_oe[4] gpio_oe[3] gpio_oe[2] gpio_oe[1] gpio_oe[0] gpio_in[11] gpio_in[10] gpio_in[9] gpio_in[8] gpio_in[7] gpio_in[6] gpio_in[5]
++ gpio_in[4] gpio_in[3] gpio_in[2] gpio_in[1] gpio_in[0] analog[3] analog[2] analog[1] analog[0] analog_esd[3] analog_esd[2] analog_esd[1]
++ analog_esd[0] mask_rev[31] mask_rev[30] mask_rev[29] mask_rev[28] mask_rev[27] mask_rev[26] mask_rev[25] mask_rev[24] mask_rev[23] mask_rev[22]
++ mask_rev[21] mask_rev[20] mask_rev[19] mask_rev[18] mask_rev[17] mask_rev[16] mask_rev[15] mask_rev[14] mask_rev[13] mask_rev[12] mask_rev[11]
++ mask_rev[10] mask_rev[9] mask_rev[8] mask_rev[7] mask_rev[6] mask_rev[5] mask_rev[4] mask_rev[3] mask_rev[2] mask_rev[1] mask_rev[0] CSB_in
++ SDI_in SCK_in clk_in sdo_ena sdo_out s9_an[0] s9_an[1] s9_an[2] s10_an[0] s10_an[1] s10_an[2] s9_an_0_esd s10_an_0_esd s9_an_1_esd
++ s10_an_1_esd s10_an_2_esd s8_an[0] s11_an[0] s8_an_0_esd s11_an_0_esd s7_an[0] s7_an[1] s12_an[0] s12_an[1] s7_an_0_esd s12_an_0_esd
++ s12_an_1_esd s6_an[0] s6_an[1] s13_an[0] s13_an[1] s6_an_0_esd s13_an_0_esd s6_an_1_esd s13_an_1_esd s5_an[0] s5_an[1] s5_an[2] s14_an[0]
++ s14_an[1] s14_an[2] s5_an_0_esd s14_an_0_esd s5_an_1_esd s14_an_1_esd s14_an_2_esd s4_an[0] s15_an[0] s4_an_0_esd s15_an_0_esd s3_an[0]
++ s3_an[1] s16_an[0] s16_an[1] s3_an_0_esd s16_an_0_esd s16_an_1_esd s2_an[0] s2_an[1] s17_an[0] s17_an[1] s2_an_0_esd s17_an_0_esd
++ s2_an_1_esd s17_an_1_esd s1_an[0] s1_an[1] s18_an[0] s18_an[1] s1_an_0_esd s18_an_0_esd s18_an_1_esd s1_an_1_esd s3_an_1_esd s5_an_2_esd
++ s7_an_1_esd s9_an_2_esd chipalooza_frame
+.ends
+
+* expanding   symbol:  chipalooza_frame.sym # of pins=71
+** sym_path: /home/tim/gits/sg13cmos5l_ocd_chipalooza/xschem/chipalooza_frame.sym
 ** sch_path: /home/tim/gits/sg13cmos5l_ocd_chipalooza/xschem/chipalooza_frame.sch
 .subckt chipalooza_frame vdd3v3 vss3v3 vdd1v2 vss1v2 vddd gpio_out[11] gpio_out[10] gpio_out[9] gpio_out[8] gpio_out[7]
 + gpio_out[6] gpio_out[5] gpio_out[4] gpio_out[3] gpio_out[2] gpio_out[1] gpio_out[0] gpio_oe[11] gpio_oe[10] gpio_oe[9] gpio_oe[8] gpio_oe[7]
@@ -501,6 +543,7 @@ x101 vdd1v2 vss1v2 vdd3v3 voltgen_value[2] voltgen_value[1] voltgen_value[0] vbg
 + voltgen_ena[2] voltgen_ena[1] voltgen_high vgen_ena2 sg13cmos5l_ocd_ip__voltgen_v3
 x102 vdd3v3 voltgen_vout net1 vss3v3 net2 vgen_ena2 sg13cmos5l_ocd_ip__classab_buffer
 .ends
+
 
 * expanding   symbol:  sg13cmos5l_ocd_ip__biasgen2.sym # of pins=24
 ** sym_path: /home/tim/gits/sg13cmos5l_ocd_chipalooza/dependencies/sg13cmos5l_ocd_ip__biasgen/xschem/sg13cmos5l_ocd_ip__biasgen2.sym
